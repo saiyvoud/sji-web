@@ -23,7 +23,7 @@ export const LoginWithGoogle = async (value) => {
     const response = await api.post("auth/google", value);
     return response.data;
   } catch (error) {
-    // console.log(error)
+    console.log(error)
     throw error.response.data.messages
   }
 };
@@ -49,6 +49,15 @@ export const verifyEmail = async (data) => {
     const response = await api.post("auth/verify-email", data);
     return response.data;
   } catch (error) {
+    return false;
+  }
+}
+export const resentVerifyEmail = async (data) => {
+  try {
+    const response = await api.post("auth/resend-otp", data);
+    return response.data;
+  } catch (error) {
+    console.log(error)
     return false;
   }
 }

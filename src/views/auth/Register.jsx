@@ -233,7 +233,7 @@ export const Register = () => {
               "Register"
             )}
           </Button>
-          <div className="relative mt-5 flex w-full items-center justify-center">
+          {/* <div className="relative mt-5 flex w-full items-center justify-center">
             <p className="absolute bg-white px-2 text-gray-500">or</p>
             <hr className="w-full border border-gray-300" />
           </div>
@@ -244,7 +244,7 @@ export const Register = () => {
               Sign in with Google
             </span>
             <img src={googleLogo} alt="google" className="w-6" />
-          </button>
+          </button> */}
 
           <p className="mt-2 text-center text-[14px]">
             Have an account ?{" "}

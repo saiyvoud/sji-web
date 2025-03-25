@@ -25,9 +25,10 @@ export const signInWithGoogle = async () => {
         // console.log(result);
         return result.user;
     } catch (error) {
-        // Error("Login error", "Please try again")
-        window.location.reload();
-        throw error;
+        Error("Login error", "Please try again")
+        //window.location.reload();
+        // console.log(error);
+        return false;
     }
 };
 

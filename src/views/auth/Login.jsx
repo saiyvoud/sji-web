@@ -63,16 +63,13 @@ export const Login = () => {
   const handlesignInWithGoogle = async () => {
     setIsLoading(true);
     const user = await signInWithGoogle();
-    // console.log(user);
+    console.log(user);
     if (user) {
       LoginWithGoogle({
         "googleId": user.uid,
         "name": user.displayName,
         "email": user.email
-      }).finally(() => {
-        setIsLoading(false);
       })
-      
     }
     setIsLoading(false);
   }
@@ -151,22 +148,18 @@ export const Login = () => {
               <p className="absolute bg-white px-2 text-gray-500">or</p>
               <hr className="w-full border border-gray-300" />
             </div>
-            <button className="mt-5 flex w-full items-center justify-center gap-x-2 rounded-lg border border-gray-300 py-2">
+            <div
+              onClick={handlesignInWithGoogle}
+              className="mt-5 flex w-full items-center justify-center gap-x-2 rounded-lg border border-gray-300 py-2">
               <span
-                onClick={handlesignInWithGoogle}
+
                 className="text-[16px] font-semibold"
               >
 
                 Sign in with Google
               </span>
               <img src={googleLogo} alt="google" className="w-6" />
-            </button>
-            {/* <button className="mt-4 flex w-full items-center justify-center gap-x-2 rounded-lg border border-gray-300 py-2">
-            <span className="text-[16px] font-semibold">
-              Sign up with Facebook
-            </span>
-            <img src={facebookLogo} alt="google" className="w-6" />
-          </button> */}
+            </div>
             <p className="mt-2 text-center text-[14px]">
               Don't have an account ?{" "}
               <Link to="/register" className="text-orange-500 underline">

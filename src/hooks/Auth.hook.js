@@ -83,7 +83,7 @@ export const useLoginWithGoogle = () => {
       clearRedirectUrl();
     },
     onError: (error) => {
-      Error("Login error", error)
+      Error("Email is exists", "Please Login with your email and password");
     },
   });
 };

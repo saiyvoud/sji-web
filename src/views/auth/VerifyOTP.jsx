@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useRegisterTempStore } from '../../store/authStore'
 import { useNavigate } from "react-router-dom";
-import { verifyEmail, verifyOTP } from '../../api/Auth';
+import { resentVerifyEmail, verifyOTP } from '../../api/Auth';
 import Loading from '../../components/Loading';
 import { Error, Success } from '../../helper/sweetAlert';
 //import { useLogin } from '../../hooks/Auth.hook';
@@ -78,13 +78,12 @@ const VerifyOTP = () => {
     };
     const handleResent = async () => {
         setIsLoading(true);
-        const res = await verifyEmail({ email: getRegisterTemp().email });
+        const res = await resentVerifyEmail({ email: getRegisterTemp().email });
         setIsLoading(false);
         if (res) {
             Success("Re-sent", "Please check your email to get the new OTP");
         } else {
-            console.log(res);
-            Error("Re-sent Error", res);
+            Error("Re-sent Error", "Please wait at least 1 minute before requesting another OTP.");
         }
     }
     return (
