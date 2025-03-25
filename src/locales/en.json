@@ -1,0 +1,114 @@
+{
+  "profile": {
+    "title": "Profile",
+    "username": "Username",
+    "email": "Email",
+    "phone": "Phone",
+    "address": "Address",
+    "edit": "Edit",
+    "save": "Save",
+    "cancel": "Cancel",
+    "changePassword": "Change Password",
+    "oldPassword": "Old Password",
+    "newPassword": "New Password",
+    "confirmPassword": "Confirm Password",
+    "confirm": "Confirm",
+    "logout": "Logout",
+    "confirmLogout": "You want to log out ?"
+  },
+  "alert": {
+    "confirm":"confirm",
+    "cancel":"cancel"
+  },
+  "navbar": {
+    "home": "Home",
+    "ourService": "Our Service",
+    "news": "News",
+    "analysis": "Analysis",
+    "article": "Article",
+    "about": "About us",
+    "contact": "Contact us",
+    "login": "Login",
+    "logout": "Logout",
+    "profile": "Profile",
+    "confirmLogout":"You want to log out ?"
+  },
+  "language": {
+    "laos": "Laos",
+    "english": "English"
+  },
+  "home": {
+    "title": "Teach you to invest.",
+    "premium": "Premium",
+    "ourServices": "Our Services",
+    "briefInfo": "Brief Information About Us",
+    "investmentExperience": "Investment Experience",
+    "teachingExperience": "Experience in Teaching Lao Stocks and Foreign Stocks",
+    "ourExperience": "Our Experience",
+    "membershipPackages": "Membership Packages",
+    "freePackageDesc": "Membership registration is free of charge. You can view financial news analysis and",
+    "membershipRegistration": "Membership Registration",
+    "registration": "Registration",
+    "able": "Able",
+    "tryNow": "Try Now",
+    "note": "Note:",
+    "consultationNote": "We offer consultation services 1 to 3 times before you decide to become a member"
+  },
+  "sliderHome": {
+    "laoStockRecommendations": "Lao Stock Recommendations",
+    "fundRecommendations": "Fund Recommendations",
+    "freeRegistration": "Registration is free with no costs. You can view financial news analysis and financial news analysis and financial news and view financial news analysis and",
+    "readMore": "Read more"
+  },
+  "OurService": {
+    "title": {
+      "title": "Our Service",
+      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates culpa temporibus facere quam sequi adipisci voluptatum illo velit in quod nulla minus vitae, nam rem ipsum eaque consequatur assumenda explicabo!"
+    },
+    "serviceTitle1": "Lao Stock Recommendations",
+    "serviceTitle2": "Fund Recommendations",
+    "serviceTitle3": "Foreign Stock Recommendations",
+    "serviceTitle4": "Investment Teaching",
+    "serviceTitle5": "Investment Services",
+    "description1": "We provide unlimited usage services according to your needs to save on unnecessary usage.",
+    "description2": "We provide unlimited usage services according to your needs to save on unnecessary usage.",
+    "example": {
+      "title": "Sample Videos Introducing Investment in Stocks and Funds",
+      "button": "All",
+      "video_title": "Video Introduction to Investing in Lao Stocks",
+      "video_title2": "Lao Stocks",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo."
+    }
+  },
+  "news": {
+    "title": "News",
+    "learnMore": "Learn More",
+    "back": "Back"
+  },
+  "analysis": {
+    "title": "Analysis",
+    "foreignAnalysis": "Overseas Stock Analysis",
+    "selectCompany": "Select Company",
+    "backToCompanies": "Back to Companies",
+    "companyName": "Company",
+    "searchPlaceholder": "Search company...",
+    "searchButton": "Search",
+    "companyHistory": "History",
+    "picture": "company picture",
+    "financialStatements": "Financial Statements",
+    "financialRatiosAndDividends": "Financial Ratios and Dividends",
+    "viewGraph": "View Graph",
+    "incomeStatement": "Income Statement",
+    "balanceSheet": "Balance Sheet",
+    "cashFlow": "Cash Flow",
+    "annual": "Annual",
+    "currency": "Currency: USD",
+    "totalRevenue": "Total Revenue",
+    "basicDetails": "Basic Details",
+    "grossProfit": "Gross Profit",
+    "details": "Details",
+    "operatingIncome": "Operating Income",
+    "incomeBeforeTax": "Income Before Tax",
+    "backToCompanyPage": "Back to Company Page"
+  }
+}

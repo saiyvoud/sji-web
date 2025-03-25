@@ -1,0 +1,115 @@
+{
+  "profile": {
+    "title": "ໂປຣໄຟລ໌",
+    "personalInfo": "ຂໍ້ມູນສ່ວນຕົວ",
+    "username": "ຊື່ຜູ້ໃຊ້",
+    "email": "ອີເມວ",
+    "phone": "ເບີໂທລະສັບ",
+    "address": "ທີ່ຢູ່",
+    "changePassword": "ປ່ຽນລະຫັດຜ່ານ",
+    "currentPassword": "ລະຫັດຜ່ານປັດຈຸບັນ",
+    "newPassword": "ລະຫັດຜ່ານໃໝ່",
+    "confirmPassword": "ຢືນຢັນລະຫັດຜ່ານ",
+    "save": "ບັນທຶກ",
+    "cancel": "ຍົກເລີກ",
+    "changePasswordSuccess": "ປ່ຽນລະຫັດຜ່ານສຳເລັດ",
+    "changePasswordFail": "ປ່ຽນລະຫັດຜ່ານບໍ່ສຳເລັດ",
+    "changePasswordError": "ລະຫັດຜ່ານປັດຈຸບັນບໍ່ຖືກຕ້ອງ",
+    "changePasswordError2": "ລະຫັດຜ່ານໃໝ່ບໍ່ຄົງຢູ່ກວ່າ 6 ໂຕອັນ"
+  },
+  "alert": {
+    "confirm": "ຕົກລົງ",
+    "cancel": "ຍົກເລີກ"
+  },
+  "navbar": {
+    "home": "ໜ້າຫຼັກ",
+    "ourService": "ບໍລິການຂອງເຮົາ",
+    "news": "ບົດຂ່າວ",
+    "analysis": "ບົດວິເຄາະ",
+    "article": "ບົດຄວາມ",
+    "about": "ກ່ຽວກັບພວກເຮົາ",
+    "contact": "ຕິດຕໍ່ເຮົາ",
+    "login": "ເຂົ້າສູ່ລະບົບ",
+    "logout": "ອອກຈາກລະບົບ",
+    "profile": "ໂປຣໄຟລ໌",
+    "confirmLogout": "ອອກຈາກລະບົບ ?"
+  },
+  "language": {
+    "laos": "ພາສາລາວ",
+    "english": "English"
+  },
+  "home": {
+    "title": "ສອນເຈົ້າລົງທຶນ",
+    "premium": "ສະໝັກສະມາຊິກ",
+    "ourServices": "ບໍລິການຂອງພວກເຮົາ",
+    "briefInfo": "ຂໍ້ມູນໂດຍຫຍໍ້ ກ່ຽວກັບພວກເຮົາ",
+    "investmentExperience": "ປະສົບການໃນການລົງທຶນ",
+    "teachingExperience": "ປະສົບການໃນການສອນຮຸ້ນລາວ ແລະ ຕ່າງປະເທດ",
+    "ourExperience": "ປະສົບການຂອງພວກເຮົາ",
+    "membershipPackages": "ແພັກເກຈການສະໝັກສະມາຊິກ",
+    "freePackageDesc": "ການສະໝັກສະມາຊິກແມ່ນຟຣີບໍ່ມີຄ່າ ໃຊ້ຈ່າຍໃດໆສາມາດເບິ່ງການວິເຄາະຂ່າວ ການເງິນແລະ",
+    "membershipRegistration": "ການສະໝັກສະມາຊິກ",
+    "registration": "ການສະໝັກ",
+    "able": "ສາມາດ",
+    "tryNow": "ລອງເລີຍ",
+    "note": "ໝາຍເຫດ:",
+    "consultationNote": "ທາງເຮົາມີບໍລິການໃຫ້ຄຳປຶກສາກ່ອນຈະຕັດສິນໃຈສະໝັກເປັນສະມາຊິກ 1 ເຖິງ 3 ຄັ້ງ"
+  },
+  "sliderHome": {
+    "laoStockRecommendations": "ຄຳແນະນຳຮຸ້ນລາວ",
+    "fundRecommendations": "ຄຳແນະນຳກອງທຶນ",
+    "freeRegistration": "ການສະໝັກສະມາຊິກແມ່ນຟຣີບໍ່ມີຄ່າໃຊ້ຈ່າຍໃດໆ ສາມາດເບິ່ງການວິເຄາະຂ່າວການເງິນແລະບິ່ງການ ວິເຄາະຂ່າວການເງິນແລະຂ່າວການເງິນແລະບິ່ງການ ວິເຄາະຂ່າວການເງິນແລະ",
+    "readMore": "ອ່ານຕໍ່"
+  },
+  "OurService": {
+    "title": {
+      "title": "ບໍລິການຂອງພວກເຮົາ",
+      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates culpa temporibus facere quam sequi adipisci voluptatum illo velit in quod nulla minus vitae, nam rem ipsum eaque consequatur assumenda explicabo!"
+    },
+    "serviceTitle1": "ຄຳແນະນຳຫຸ້ນລາວ",
+    "serviceTitle2": "ຄຳແນະນຳກອງທຶນ",
+    "serviceTitle3": "ຄຳແນະນຳຫຸຸ້ນຕ່າງປະເທດ",
+    "serviceTitle4": "ສອນລົງທືນ",
+    "serviceTitle5": "ບໍລິການການລົງທຶນ",
+    "description1": "ພວກເຮົາໃຫ້ບໍລິການທີຮັບຮອງການໃຊ້ງານແບບບໍ່ມີຂີດຈຳກັດ ຕາມການໃຊ້ງານໄດ້ ເພື່ອປະຫຍັດການໃຊ້ທີ່ບໍ່ຈຳເປັນ",
+    "description2": "ພວກເຮົາໃຫ້ບໍລິການທີຮັບຮອງການໃຊ້ງານແບບບໍ່ມີຂີດຈຳກັດ ຕາມການໃຊ້ງານໄດ້ ເພື່ອປະຫຍັດການໃຊ້ທີ່ບໍ່ຈຳເປັນ",
+    "example": {
+      "title": "ວີດີໂອຕົວຢ່າງແນະນຳການລົງທຶນໃນຮຸ້ນ ແລະ ກອງທຶນ",
+      "button": "ທັງໝົດ",
+      "video_title": "ວີດີໂອແນະນຳການລົງທຶນ",
+      "video_title2": "ຮຸ້ນລາວ",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo."
+    }
+  },
+  "news": {
+    "title": "ຂ່າວສານ",
+    "learnMore": "ອ່ານເພີ່ມເຕີມ",
+    "back": "ກັບຄືນ"
+  },
+  "analysis": {
+    "title": "ບົດວິເຄາະ",
+    "foreignAnalysis": "ບົດວິເຄາະໃນຕ່າງປະເທດ",
+    "selectCompany": "ເລືອກບໍລິສັດ",
+    "backToCompanies": "ກັບຄືນໜ້າບໍລິສັດ",
+    "companyName": "ບໍລິສັດ",
+    "searchPlaceholder": "ຄົ້ນຫາບໍລິສັດ...",
+    "searchButton": "ຄົ້ນຫາ",
+    "companyHistory": "ປະຫວັດບໍລິສັດ",
+    "picture": "ຮູບພາບບໍລິສັດ",
+    "financialStatements": "ງົບການເງິນ",
+    "financialRatiosAndDividends": "ອັດຕາສ່ວນທາງການເງິນ ແລະເງິນປັນຜົນ",
+    "viewGraph": "ເບິ່ງກຣາຟ",
+    "incomeStatement": "Income Statement",
+    "balanceSheet": "Balance Sheet",
+    "cashFlow": "Cash Flow",
+    "annual": "ປະຈຳປີ",
+    "currency": "ສະກຸນເງິນ: USD",
+    "totalRevenue": "ລາຍໄດ້ລວມ",
+    "basicDetails": "ລາຍລະອຽດພື້ນຖານ",
+    "grossProfit": "ກຳໄລຂັ້ນຕ່ຳ",
+    "details": "ລາຍລະອຽດ",
+    "operatingIncome": "ລາຍໄດ້ຈາກການດຳເນີນງານ",
+    "incomeBeforeTax": "ລາຍໄດ້ກ່ອນຫັກພາສີ",
+    "backToCompanyPage": "ກັບຄືນໜ້າບໍລິສັດ"
+  }
+}
