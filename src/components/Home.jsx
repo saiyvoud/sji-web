@@ -49,21 +49,17 @@ export const Home = () => {
           />
           <div
             data-aos="fade-right"
-            // data-aos-easing="linear"
             data-aos-duration="1400"
             className="container relative z-50 mx-auto mb-5 h-full max-w-[340px] pt-[70px] text-white sm:max-w-[620px] md:max-w-[700px] lg:mb-0 lg:max-w-[900px] xl:max-w-6xl"
           >
             <div className="flex items-center justify-between md:mt-5">
               <div className="sm:flex sm:flex-[2] sm:flex-col sm:items-start sm:gap-y-4 md:w-full md:flex-[2] lg:w-full xl:flex-[3]">
                 <h1 className="mb-1 mt-5 text-[40px] font-bold text-[#F97316]">
-                  {t("home.title")}
+                  SJI Invsetment
                 </h1>
-                <p className="text-[14px] text-justify">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Voluptates culpa temporibus
-                  <br /> facere quam sequi <br /> adipisci voluptatum illo velit
-                  in quod nulla minus vitae, nam rem ipsum eaque consequatur
-                  assumenda explicabo!
+                <p className="text-sm lg:text-lg md:text-lg text-justify">
+                  The Big Data for Your Win, and Smart Insights for Your Success<br />
+                  ການລົງທຶນທີ່ປະສົບຄວາມສຳເລັດຂອງທ່ານມາຈາກຂໍ້ມູນ ຂະໜາດໃຫຍ່ຂອງພວກເຮົາ <br />
                 </p>
                 {!AuthDetail?.data && (
                   <button
@@ -132,7 +128,7 @@ export const Home = () => {
                   >
                     <div className="flex flex-col items-center">
                       <h1 className="text-[28px] font-bold text-orange-600 sm:text-[28px] md:text-[30px]">
-                        6Y
+                        8Y
                       </h1>
                       <p className="text-center text-[16px] font-bold sm:text-[18px]">
                         {t("home.investmentExperience")}
@@ -140,7 +136,7 @@ export const Home = () => {
                     </div>
                     <div className="flex flex-col items-center">
                       <h1 className="text-[28px] font-bold text-orange-600 sm:text-[28px] md:text-[30px]">
-                        4Y
+                        5Y
                       </h1>
                       <p className="text-center text-[16px] font-bold sm:text-[18px]">
                         {t("home.teachingExperience")}
@@ -154,7 +150,7 @@ export const Home = () => {
                   >
                     <div className="flex flex-col items-center">
                       <h1 className="text-[28px] font-bold text-orange-600 sm:text-[28px] md:text-[30px]">
-                        6Y
+                        8Y
                       </h1>
                       <p className="text-center text-[16px] font-bold sm:text-[18px]">
                         {t("home.investmentExperience")}
@@ -162,7 +158,7 @@ export const Home = () => {
                     </div>
                     <div className="flex flex-col items-center">
                       <h1 className="text-[28px] font-bold text-orange-600 sm:text-[28px] md:text-[30px]">
-                        4Y
+                        5Y
                       </h1>
                       <p className="text-center text-[16px] font-bold sm:text-[18px]">
                         {t("home.teachingExperience")}

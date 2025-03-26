@@ -2,13 +2,17 @@ import { useState } from "react";
 import { Navbar } from "../../components/Navbar";
 
 import bgOverlay from "../../assets/images/bg.png";
+import bgOverlay2 from "../../assets/images/bg3.png"
 import { Link } from "react-router-dom/dist";
 import { useGetArticle } from "../../hooks/News.hook";
 import Loading from "../../components/Loading";
 import Swal from "sweetalert2";
 import Empty from "../../components/Empty";
 import Skeleton from "../../components/Skeleton";
+import { useTranslation } from "react-i18next";
+import { convertIsoToNormal } from "../../helper/dateTime";
 export const Article = () => {
+  const { t } = useTranslation();
   const [showAll, setShowAll] = useState(false);
   const initialDisplayCount = 12;
 
@@ -34,6 +38,7 @@ export const Article = () => {
   const handleLearnMore = () => {
     setShowAll(!showAll);
   };
+  console.log(data);
   return (
     <Navbar>
       {isLoading ? (
@@ -41,70 +46,53 @@ export const Article = () => {
         <Skeleton type="card" count={6} />
       ) : (
         <>
-          <div className="relative z-0 h-full w-full before:absolute before:-z-[1] before:h-full before:w-full before:bg-[#003049] sm:h-[800px] sm:before:h-[800px] md:h-[850px] md:before:h-[850px] lg:before:h-full">
-            <img
-              src={bgOverlay}
-              className="absolute hidden h-screen w-full sm:block sm:h-[800px] md:h-[850px] md:opacity-55"
-            />
-            <div className="container relative z-50 mx-auto h-full max-w-[340px] pt-[70px] text-white sm:max-w-[620px] md:max-w-[700px] lg:max-w-[900px] xl:max-w-6xl">
-              <div className="mt-5 flex flex-col pb-5 sm:pb-0">
-                <h1 className="mb-5 text-[35px] font-bold text-[#F97316] sm:text-[40px] md:text-[40px] lg:mb-0">
-                  ບົດຄວາມ
+          {/* Header */}
+          <div className="bg-[#003049] relative pt-44 pb-8 md:pt-40 lg:pt-0 lg:pb-0">
+            <img alt="" src={bgOverlay2} className=" hidden lg:block bg-cover h-[350px] w-full" />
+            <div className="w-full absolute bottom-0">
+              <div className=" container px-2 lg:px-0 w-full lg:w-[1200px] md:[900px] mx-auto">
+                <h1 className=" text-[35px] font-bold text-[#F97316] sm:text-[40px] md:text-[40px] lg:mb-0">
+                  {t("navbar.article")}
                 </h1>
-                <h4 className="mb-5 text-[18px] font-semibold uppercase sm:text-[20px]">
+                <h4 className="text-white mb-5 text-[18px] font-semibold uppercase sm:text-[20px]">
                   Building more efficient portfolios with ETFs
                 </h4>
-                <div className="rounded-lg border-2 sm:border-4">
-                  <img
-                    src="https://thunhoon.com/cache/image/article/268969/f9d1fd94-6a5f-46c2-b403-978e7ea32b2b.jpeg"
-                    alt=""
-                    className="h-[250px] w-full object-cover sm:h-[300px] md:h-[350px]"
-                  />
-                </div>
-                <div className="mt-5 h-fit w-full rounded-lg bg-white/30 px-2 py-2 sm:px-10 sm:py-5">
-                  <p className="text-[16px] sm:text-[16px] md:text-[18px]">
-                    Exchange Traded Funds (ETFs) have become essential building
-                    blocks used extensively by financial professionals in
-                    constructing diversified investment portfolios. ETFs can
-                    offer broad or targeted, precision exposure to a wide range
-                    of asset classes providing investors with levers to pull
-                    when tailoring bespoke investment strategies to meet their
-                    varied investment goals.
-                  </p>
-                </div>
               </div>
             </div>
           </div>
-
-          <div className="container mx-auto h-full max-w-[340px] pb-5 sm:max-w-[620px] sm:pb-20 md:max-w-[700px] md:pb-10 lg:max-w-[900px] xl:max-w-6xl">
-            <div className="py-4 sm:py-10">
-              <div className="grid grid-cols-2 place-items-center gap-y-3 sm:grid-cols-2 sm:gap-7 md:grid-cols-3 md:gap-x-3 md:gap-y-5 xl:grid-cols-4">
+          {/* content */}
+          <div className=" w-full bg-gray-100 py-5">
+            <div className=" container px-2 lg:px-0 w-full lg:w-[1200px] md:[900px] mx-auto">
+              <div className=" grid grid-cols-2 lg:grid-cols-4 md:grid-cols-3 gap-3 lg:gap-5">
                 {data?.data?.data?.length > 0 ? (
                   data?.data?.data.map((item, index) => (
                     <Link
                       to={`${item.id}`}
                       key={index}
-                      className="w-[170px] cursor-pointer rounded-lg px-2 py-2 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] sm:h-[350px] sm:w-[300px] sm:px-4 sm:py-4 md:w-[220px] md:px-2 md:py-3 lg:w-[290px] xl:h-[370px] xl:w-[280px]"
+                      className="group w-full relative p-4 bg-white rounded-lg shadow-sm hover:shadow-lg "
                     >
-                      <h4 className="mb-2 line-clamp-1 text-ellipsis text-[14px] font-bold text-gray-800 sm:mb-3 sm:text-[16px] md:text-[14px] lg:text-[16px]">
-                        {item.title}
-                      </h4>
-                      <img
-                        className="mb-2 h-[150px] w-[420px] rounded-lg"
-                        src={item.cover}
-                      />
-                      <p className="mb-2 line-clamp-3 text-ellipsis text-[12px] text-gray-800 sm:text-[14px]">
-                        {item.content}
-                      </p>
-                      <span className="text-[12px] text-gray-400">
-                        20,ພຶດສະພາ,2024
-                      </span>
+                      <div className="w-full overflow-hidden">
+                        <img alt="" src={item?.cover} className=" object-cover transition-transform duration-300 ease-in-out hover:scale-110" />
+                      </div>
+                      <p className=" text-sm lg:text-lg font-medium mt-2 h-[100px] lg:[75px]">{item.title}</p>
+                      <p className=" text-sm italic text-gray-500 text-right">{item?.type}{","}{convertIsoToNormal(item.updatedAt)}</p>
+                      <div className="w-full absolute left-0 bottom-0 h-[50%] bg-black opacity-50 hover:my_card-">
+                        <div className="">
+                          <span className=" bg-orange-500 text-white px-3 rounded-lg">ອ່ານຕໍ່</span>
+                        </div>
+                      </div>
                     </Link>
                   ))
                 ) : (
                   <Empty />
                 )}
               </div>
+              
+            </div>
+          </div>
+
+          {/* <div className="container mx-auto h-full max-w-[340px] pb-5 sm:max-w-[620px] sm:pb-20 md:max-w-[700px] md:pb-10 lg:max-w-[900px] xl:max-w-6xl">
+
               {data?.data?.data?.length > initialDisplayCount && (
                 <div className="mt-14 flex justify-center">
                   <button
@@ -116,7 +104,7 @@ export const Article = () => {
                 </div>
               )}
             </div>
-          </div>
+          </div> */}
         </>
       )}
     </Navbar>

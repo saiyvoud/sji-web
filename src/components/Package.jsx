@@ -11,7 +11,7 @@ const Package = () => {
     const { data, error, isLoading } = useGetPAckages("page=1&limit=5");
     const { AuthDetail } = useAuthStore();
     const packages = data?.data?.data;
-    // console.log(packages)
+    console.log(packages)
     const handleRegisterPackage = (id) => {
         if (AuthDetail?.data?.token) {
             navigate("/register/package/" + id);
@@ -67,21 +67,18 @@ const Package = () => {
                                 key={index}
                                 data-aos="fade-up"
                                 data-aos-duration="1400"
-                                className="group flex h-[300px] w-[300px] cursor-pointer flex-col rounded-lg border border-[#CBD5E1] px-5 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] md:w-[225px] lg:w-[290px] hover:border-orange-400 hover:bg-[#FFEDD5] ease-in-out duration-300"
+                                className="group flex min-h-[300px] w-[300px] cursor-pointer flex-col rounded-lg border border-[#CBD5E1] px-5 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] md:w-[225px] lg:w-[290px] hover:border-orange-400 hover:bg-[#FFEDD5] ease-in-out duration-300"
                             >
-                                <h2 className="my-4 text-center text-[24px] font-bold text-[#FB923C]">
+                                <h2 className="my-2 py-2 text-center text-2xl font-bold text-[#FB923C] border-b border-orange-500">
                                     {item.name.toUpperCase()}
                                 </h2>
-                                <p className="mb-5 w-full text-[18px]">
-                                    {item.description}
-                                </p>
-                                <ul className="list-inside list-disc text-[18px]">
-                                    <li>duration: {item.duration}{" "}{item.durationType}</li>
-                                </ul>
+                                <div className=' border-b border-gray-300 pb-2' dangerouslySetInnerHTML={{ __html: item?.description }} />
+                                <div className=' mt-2' dangerouslySetInnerHTML={{ __html: item?.feature }} />
+                                <p>ໄລຍະເວລາ: {item?.duration}{" "}{item.durationType}</p>
                                 <div className=' pt-5'>
                                     <p> Price: <span className=' text-[25px] font-bold text-orange-600'>{item.price.toLocaleString()}{" "}{"₭"}</span></p>
                                 </div>
-                                <div className="mb-5 flex h-full w-full items-end">
+                                <div className="mt-2 mb-5 flex h-full w-full items-end">
                                     <div
                                         className="h-[40px] text-center w-full rounded-md border border-orange-400 py-1 text-[20px] font-bold text-orange-400 group-hover:bg-orange-400 group-hover:text-white duration-300"
                                     >

@@ -1,6 +1,8 @@
 import React from "react";
 import { Navbar } from "../../components/Navbar";
 import bgOverlay from "../../assets/images/bg.png";
+import bgOverlay2 from "../../assets/images/bg3.png";
+import serviceImg from "../../assets/images/trade3.jpg";
 import SliderNews from "./components/SliderNews";
 
 import newsImg1 from "../../assets/images/news/gold.jpg";
@@ -46,24 +48,24 @@ export const News = () => {
         <Skeleton type="card" count={6} />
       ) : (
         <div>
-          <div className="relative z-0 h-full w-full bg-[#002133] before:absolute before:-z-[1] before:w-full sm:h-[650px] sm:before:h-[650px] sm:before:bg-[#003049] xl:h-screen xl:before:h-screen">
-            <img
-              src={bgOverlay}
-              className="absolute hidden h-screen w-full object-cover sm:block sm:h-[650px] xl:h-screen"
-            />
-            <div className="container relative z-50 mx-auto h-full max-w-[340px] pt-[70px] text-white sm:max-w-[620px] md:max-w-[700px] lg:max-w-[900px] xl:max-w-6xl">
-              <h1 className="top-14 mt-10 flex items-start text-[30px] font-bold text-[#F97316] sm:relative sm:mt-0 sm:text-[35px] md:text-[40px]">
-                {t("news.title")}
-              </h1>
-              <div className="relative flex items-center">
-                <SliderNews />
+          <div className="w-full bg-[#002133] pt-24 pb-8">
+            <div className=" container px-2 lg:px-0 w-full lg:w-[1200px] md:[900px] mx-auto">
+              <div className=" flex justify-around items-center">
+                <div className=""  data-aos="fade-left">
+                  <h1 className="text-4xl lg:text-6xl font-bold text-[#F97316]">{t("news.title")}</h1>
+                  <p className="text-white text-sm">ຂ່າວສານ ຕະຫຼາດຮຸ້ນ ພາຍໃນ ແລະ ຕ່າງປະເທດ</p>
+                </div>
+                <div className=" hidden lg:inline-block"  data-aos="fade-right">
+                  <img
+                    src={serviceImg}
+                    alt=""
+                    className="h-20 w-20 lg:h-40 lg:w-40 rounded-full object-cover shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px] border-4 border-white"
+                  />
+                </div>
               </div>
             </div>
           </div>
           <div className="container mx-auto h-full max-w-[340px] sm:max-w-[620px] md:max-w-[700px] lg:max-w-[900px] xl:max-w-6xl">
-            <h1 className="mb-3 mt-10 flex items-start text-[28px] font-bold text-[#1F2937] sm:mb-7 sm:text-[30px] lg:text-[35px]">
-              Lastest News
-            </h1>
 
             <div className="mb-10 grid grid-cols-1 place-items-center gap-y-5 sm:grid-cols-2 sm:place-items-center sm:gap-y-5 md:grid-cols-3 md:gap-y-4 xl:grid-cols-4">
               {data?.data?.data?.length > 0 ? (

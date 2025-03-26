@@ -93,7 +93,7 @@ export default function Footer() {
           </div>
         </div>
       </footer>
-      <p className=" bg-blue-gray-900 text-white text-center py-7 md:py-4 lg:py-4"> @copyright, MiDi Technology 2025</p>
+      <p className=" bg-blue-gray-900 text-white text-center py-5 md:py-4 lg:py-4"> @copyright, MiDi Technology 2025</p>
     </>
   );
 }
