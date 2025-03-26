@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Navbar } from "./Navbar";
 
 import bgOverlay from "../assets/images/bg.png";
+import SJI_logo from "../assets/logo/sji-white.svg"
 import stockImg from "../assets/images/stock.jpg";
 import MosueWheelSlider from "./MosueWheelSlider";
 import SliderHome from "../views/Homepage/SliderHome";
@@ -40,12 +41,44 @@ export const Home = () => {
   };
   return (
     <Navbar>
-      <div className="bg-[#002133] md:bg-[#003049]">
-        <div className="relative z-0 h-full w-full before:absolute before:-z-[1] before:h-[300px] before:w-full before:bg-[#002133] sm:h-[700px] sm:before:h-[700px] sm:before:bg-[#002133] xl:h-screen xl:before:h-screen">
+      <>
+        <div className="bg-[#002133] text-black pt-20 pb-5 lg:pt-20 ">
+          <div className=" container px-2 lg:px-0 w-full lg:w-[1200px] md:[900px] mx-auto">
+            <div className=" flex justify-around items-center">
+              <div className=" w-full flex flex-col justify-center items-center">
+                <img
+                  alt=""
+                  src={SJI_logo}
+                  className="w-[200px] object-cover"
+                />
+                <h1 className="mb-1 mt-5 text-[40px] font-bold text-[#F97316]">
+                  SJI Invsetment
+                </h1>
+                <p className="text-[10px] lg:text-lg md:text-lg text-center text-white">
+                  The Big Data for Your Win, and Smart Insights for Your Success<br />
+                  ການລົງທຶນທີ່ປະສົບຄວາມສຳເລັດຂອງທ່ານມາຈາກຂໍ້ມູນ ຂະໜາດໃຫຍ່ຂອງພວກເຮົາ <br />
+                </p>
+                {!AuthDetail?.data && (
+                  <button
+                    onClick={() => handleScroll("package")}
+                    type="button"
+                    className="mt-5 rounded bg-[#FB923C] px-5 py-2 font-semibold">
+                    {t("home.tryNow")}
+                  </button>
+                )}
+              </div>
+              <div className=" w-full hidden lg:block">
+                <MosueWheelSlider />
+              </div>
+            </div>
+          </div>
+
+        </div>
+        {/* <div className="relative z-0 h-full w-full before:absolute before:-z-[1] before:h-[300px] before:w-full before:bg-[#002133] sm:h-[700px] sm:before:h-[700px] sm:before:bg-[#002133] xl:h-screen xl:before:h-screen">
           <img
             alt=""
-            src={bgOverlay}
-            className="absolute hidden md:block lg:block w-full h-full object-cover"
+            src={SJI_logo}
+            className="absolute hidden md:block lg:block w-[500px] object-cover"
           />
           <div
             data-aos="fade-right"
@@ -76,11 +109,11 @@ export const Home = () => {
                 data-aos-duration="1400"
                 className="mt-5 flex flex-col items-center gap-y-5 sm:flex-[2] md:flex-[2]"
               >
-                {windowWidth > 480 && <MosueWheelSlider />}
+                {windowWidth > 480 && }
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
         <div className="w-full bg-white pb-10">
           <div className="container mx-auto h-full max-w-[340px] sm:max-w-[620px] md:max-w-[700px] lg:max-w-[900px] xl:max-w-6xl">
             <div
@@ -185,7 +218,7 @@ export const Home = () => {
             </div>
           </div>
         </div>
-      </div>
+      </>
     </Navbar>
   );
 };
