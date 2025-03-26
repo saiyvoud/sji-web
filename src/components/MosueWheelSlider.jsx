@@ -51,35 +51,35 @@ export default function MosueWheelSlider() {
           <img
             src={stockImg}
             alt=""
-            className="h-[180px] w-[300px] rounded-md object-cover shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px]"
+            className="h-[180px] w-[300px] rounded-lg object-cover shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px]"
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
             src={trade2}
             alt=""
-            className="h-[180px] w-[300px] rounded-md object-cover shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px]"
+            className="h-[180px] w-[300px] rounded-lg object-cover shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px]"
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
             src={trade3}
             alt=""
-            className="h-[180px] w-[300px] rounded-md object-cover shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px]"
+            className="h-[180px] w-[300px] rounded-lg object-cover shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px]"
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
             src={stockImg}
             alt=""
-            className="h-[180px] w-[300px] rounded-md object-cover shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px]"
+            className="h-[180px] w-[300px] rounded-lg object-cover shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px]"
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
             src={trade4}
             alt=""
-            className="h-[180px] w-[300px] rounded-md object-cover shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px]"
+            className="h-[180px] w-[300px] rounded-lg object-cover shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px]"
           />
         </SwiperSlide>
       </Swiper>

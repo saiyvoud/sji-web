@@ -42,7 +42,7 @@ export default function Footer() {
                 className="h-20 w-20 rounded-full border-[2px] border-[#F97316] object-cover lg:h-20 lg:w-20"
               />
               <h5 className="mt-2 lg:mt-0 logoName text-[16px] font-semibold text-white lg:text-[20px]">
-                ສອນເຈົ້າລົງທຶນ
+              SJI Investment
               </h5>
             </div>
           </div>

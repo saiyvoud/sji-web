@@ -76,10 +76,8 @@ export const Article = () => {
                       </div>
                       <p className=" text-sm lg:text-lg font-medium mt-2 h-[100px] lg:[75px]">{item.title}</p>
                       <p className=" text-sm italic text-gray-500 text-right">{item?.type}{","}{convertIsoToNormal(item.updatedAt)}</p>
-                      <div className="w-full absolute left-0 bottom-0 h-[50%] bg-black opacity-50 hover:my_card-">
-                        <div className="">
-                          <span className=" bg-orange-500 text-white px-3 rounded-lg">ອ່ານຕໍ່</span>
-                        </div>
+                      <span className="z-50 absolute left-1/2 -translate-x-1/2 bottom-0 bg-orange-500 text-white px-3 rounded-lg text-lg hidden group-hover:bottom-[40%] group-hover:inline-block">ອ່ານຕໍ່</span>
+                      <div className="w-full absolute transition-all duration-300 ease-in-out left-0 bottom-0 h-[0%] group-hover:h-[50%] bg-orange-500 opacity-20 rounded-t-full">
                       </div>
                     </Link>
                   ))
@@ -87,7 +85,7 @@ export const Article = () => {
                   <Empty />
                 )}
               </div>
-              
+
             </div>
           </div>
 
