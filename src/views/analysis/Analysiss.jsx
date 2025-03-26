@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import "./analysiss.css"
 import { Navbar } from "../../components/Navbar";
 
 // data countires
@@ -27,7 +27,7 @@ export const Analysiss = () => {
   }
   const { data, error, isLoading } = useGetcountry(finBy);
 
-  // console.log("data", data);
+  console.log(data);
 
   if (error) {
     Swal.fire({
@@ -58,16 +58,20 @@ export const Analysiss = () => {
               <h1 className="p-4 text-center text-[35px] font-extrabold text-black sm:pb-10 sm:pt-7">
                 {t("analysis.foreignAnalysis")}
               </h1>
-              <div className="grid grid-cols-2 place-items-center gap-3 sm:grid-cols-3 sm:gap-3 lg:grid-cols-4 xl:gap-y-5">
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {data?.data?.data.map((item, index) => {
                   return (
                     <Link
                       to={`country/${item.id}`}
                       key={index}
-                      className="ease before:content-['*] relative z-0 flex h-[100px] w-[160px] cursor-pointer items-center justify-center rounded bg-cover bg-center shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px] duration-300 before:absolute before:-z-[1] before:h-full before:w-full before:rounded before:bg-black before:opacity-30 hover:scale-[1.02] sm:h-[180px] sm:w-[200px] md:h-[140px] lg:h-[160px] lg:w-[220px] xl:w-[270px]"
-                      style={{ backgroundImage: `url(${item.locationImg})` }}
+                      className="w-full relative shadow-lg rounded-lg h-[200px] overflow-hidden hover:scale-105 ease-in-out duration-700"
                     >
-                      <div className="flex flex-col items-center leading-loose">
+                      <img
+                        src={item.background}
+                        alt=""
+                        className="w-full h-[200px] object-cover"
+                      />
+                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  flex flex-col items-center leading-loose">
                         <img
                           src={item.flag}
                           alt=""

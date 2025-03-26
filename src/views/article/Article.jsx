@@ -85,7 +85,6 @@ export const Article = () => {
                   <Empty />
                 )}
               </div>
-
             </div>
           </div>
 

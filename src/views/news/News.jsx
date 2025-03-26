@@ -19,7 +19,7 @@ import Loading from "../../components/Loading";
 import Swal from "sweetalert2";
 import Empty from "../../components/Empty";
 import Skeleton from "../../components/Skeleton";
-
+import { convertIsoToNormal } from "../../helper/dateTime";
 export const News = () => {
   const { t } = useTranslation();
   const [textSearch, setTextSearch] = useState("");
@@ -31,7 +31,7 @@ export const News = () => {
     finBy += "&search=news";
   }
   const { data, error, isLoading } = useGetArticle(finBy);
-
+  // console.log(data)
   if (error) {
     Swal.fire({
       title: "ເກີດຂໍ້ຜິດພາດ",
@@ -51,11 +51,11 @@ export const News = () => {
           <div className="w-full bg-[#002133] pt-24 pb-8">
             <div className=" container px-2 lg:px-0 w-full lg:w-[1200px] md:[900px] mx-auto">
               <div className=" flex justify-around items-center">
-                <div className=""  data-aos="fade-left">
+                <div className="" data-aos="fade-left">
                   <h1 className="text-4xl lg:text-6xl font-bold text-[#F97316]">{t("news.title")}</h1>
                   <p className="text-white text-sm">ຂ່າວສານ ຕະຫຼາດຮຸ້ນ ພາຍໃນ ແລະ ຕ່າງປະເທດ</p>
                 </div>
-                <div className=" hidden lg:inline-block"  data-aos="fade-right">
+                <div className=" hidden lg:inline-block" data-aos="fade-right">
                   <img
                     src={serviceImg}
                     alt=""
@@ -65,7 +65,33 @@ export const News = () => {
               </div>
             </div>
           </div>
-          <div className="container mx-auto h-full max-w-[340px] sm:max-w-[620px] md:max-w-[700px] lg:max-w-[900px] xl:max-w-6xl">
+          <div className=" w-full bg-gray-100 py-5">
+            <div className=" container px-2 lg:px-0 w-full lg:w-[1200px] md:[900px] mx-auto">
+              <div className=" grid grid-cols-2 lg:grid-cols-4 md:grid-cols-3 gap-3 lg:gap-5">
+                {data?.data?.data?.length > 0 ? (
+                  data?.data?.data.map((item, index) => (
+                    <Link
+                      to={`/news/gold/${item.id}`}
+                      key={index}
+                      className="group w-full relative p-4 bg-white rounded-lg shadow-sm hover:shadow-lg "
+                    >
+                      <div className="w-full overflow-hidden">
+                        <img alt="" src={item?.cover} className=" object-cover transition-transform duration-300 ease-in-out hover:scale-110" />
+                      </div>
+                      <p className=" text-sm lg:text-lg font-medium mt-2 h-[100px] lg:[75px]">{item.title}</p>
+                      <p className=" text-sm italic text-gray-500 text-right">{item?.type}{","}{convertIsoToNormal(item.updatedAt)}</p>
+                      <span className="z-50 absolute left-1/2 -translate-x-1/2 bottom-0 bg-orange-500 text-white px-3 rounded-lg text-lg hidden group-hover:bottom-[40%] group-hover:inline-block">ອ່ານຕໍ່</span>
+                      <div className="w-full absolute transition-all duration-300 ease-in-out left-0 bottom-0 h-[0%] group-hover:h-[50%] bg-orange-500 opacity-20 rounded-t-lg">
+                      </div>
+                    </Link>
+                  ))
+                ) : (
+                  <Empty />
+                )}
+              </div>
+            </div>
+          </div>
+          {/* <div className="container mx-auto h-full max-w-[340px] sm:max-w-[620px] md:max-w-[700px] lg:max-w-[900px] xl:max-w-6xl">
 
             <div className="mb-10 grid grid-cols-1 place-items-center gap-y-5 sm:grid-cols-2 sm:place-items-center sm:gap-y-5 md:grid-cols-3 md:gap-y-4 xl:grid-cols-4">
               {data?.data?.data?.length > 0 ? (
@@ -97,7 +123,7 @@ export const News = () => {
                 {t("news.learnMore")}
               </button>
             </div>
-          </div>
+          </div> */}
         </div>
       )}
       {Outlet}

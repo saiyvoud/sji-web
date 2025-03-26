@@ -25,8 +25,8 @@ export const AboutUs = () => {
 
   return (
     <Navbar>
-      <div>
-        <div className="relative z-0 h-full w-full before:absolute before:-z-[1] before:h-full before:w-full before:bg-[#002133] sm:before:h-[600px] sm:before:bg-[#003049] md:before:h-[600px] lg:h-[650px] lg:before:h-[650px] xl:h-screen xl:before:h-screen">
+      <div className=" pt-[30px]">
+        {/* <div className="relative z-0 h-full w-full before:absolute before:-z-[1] before:h-full before:w-full before:bg-[#002133] sm:before:h-[600px] sm:before:bg-[#003049] md:before:h-[600px] lg:h-[650px] lg:before:h-[650px] xl:h-screen xl:before:h-screen">
           <img
             alt=""
             src={bgOverlay}
@@ -72,7 +72,7 @@ export const AboutUs = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className="container mx-auto h-full max-w-[340px] pb-20 sm:max-w-[620px] lg:max-w-[900px] xl:max-w-6xl">
           {/* ຜູ້ກໍ່ຕັ້ງ */}
@@ -86,7 +86,9 @@ export const AboutUs = () => {
               <h2 className="my-5 inline-block border-b-4 border-orange-600 px-5 py-4 text-[40px] font-semibold text-[#374151] md:mt-10 md:py-2">
                 ຜຸ້ຮ່ວມກໍ່ຕັ້ງ
               </h2>
+
             </div>
+            <h1 className=" text-red-500 text-4xl"> ບໍ່ທັນແປງແລ້ວ </h1>
             <div className="my-10 grid w-full grid-cols-1 gap-16 sm:grid-cols-2 sm:gap-x-8">
               <div
                 data-aos="fade-up"
