@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import { Navbar } from "./Navbar";
 
 import bgOverlay from "../assets/images/bg.png";
@@ -31,16 +29,15 @@ export const Home = () => {
   const { data, error, isLoading } = useGetMe();
 
   useEffect(() => {
-    AOS.init({
-      delay: 50, // values from 0 to 3000, with step 50ms
-      duration: 400, // values from 0 to 3000, with step 50ms
-      easing: "ease", // default easing for AOS animation
-    });
+
     const handleResize = () => setWindowWidth(window.innerWidth);
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-  // console.log(data)
+  console.log(data)
+  const handleScroll = (id) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
   return (
     <Navbar>
       <div className="bg-[#002133] md:bg-[#003049]">
@@ -48,20 +45,20 @@ export const Home = () => {
           <img
             alt=""
             src={bgOverlay}
-            className="absolute hidden sm:block sm:h-full sm:w-full xl:h-screen"
+            className="absolute hidden md:block lg:block w-full h-full object-cover"
           />
           <div
             data-aos="fade-right"
-            data-aos-easing="linear"
+            // data-aos-easing="linear"
             data-aos-duration="1400"
             className="container relative z-50 mx-auto mb-5 h-full max-w-[340px] pt-[70px] text-white sm:max-w-[620px] md:max-w-[700px] lg:mb-0 lg:max-w-[900px] xl:max-w-6xl"
           >
             <div className="flex items-center justify-between md:mt-5">
               <div className="sm:flex sm:flex-[2] sm:flex-col sm:items-start sm:gap-y-4 md:w-full md:flex-[2] lg:w-full xl:flex-[3]">
-                <h1 className="mb-1 mt-3 text-[40px] font-bold text-[#F97316]">
+                <h1 className="mb-1 mt-5 text-[40px] font-bold text-[#F97316]">
                   {t("home.title")}
                 </h1>
-                <p className="text-[14px]">
+                <p className="text-[14px] text-justify">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Voluptates culpa temporibus
                   <br /> facere quam sequi <br /> adipisci voluptatum illo velit
@@ -69,19 +66,17 @@ export const Home = () => {
                   assumenda explicabo!
                 </p>
                 {!AuthDetail?.data && (
-                  <button type="button" className="mt-5">
-                    <Link
-                      to={"/home/membership"}
-                      className="rounded bg-[#FB923C] px-5 py-2 font-semibold"
-                    >
-                      {t("home.premium")}
-                    </Link>
+                  <button
+                    onClick={() => handleScroll("package")}
+                    type="button"
+                    className="mt-5 rounded bg-[#FB923C] px-5 py-2 font-semibold">
+                    {t("home.tryNow")}
                   </button>
                 )}
               </div>
               <div
                 data-aos="fade-left"
-                data-aos-easing="linear"
+                // data-aos-easing="linear"
                 data-aos-duration="1400"
                 className="mt-5 flex flex-col items-center gap-y-5 sm:flex-[2] md:flex-[2]"
               >
@@ -94,100 +89,21 @@ export const Home = () => {
           <div className="container mx-auto h-full max-w-[340px] sm:max-w-[620px] md:max-w-[700px] lg:max-w-[900px] xl:max-w-6xl">
             <div
               data-aos="fade-up"
-              data-aos-duration="3000"
-              className="flex justify-center"
-            >
-              <h2 className="pb-0 pt-7 text-[28px] font-extrabold text-[#1F2937] sm:text-[34px]">
-                {t("home.ourServices")}
-              </h2>
-            </div>
-            <div
-              data-aos="fade-up"
-              data-aos-easing="linear"
-              data-aos-duration="1500"
-              className="relative block h-full w-full"
-            >
-              {windowWidth < 700 && <SliderHomeMB />}
-              {windowWidth > 800 && <SliderHome />}
-              {windowWidth < 800 && windowWidth > 700 && <SliderHomeMD />}
-            </div>
-
-            <div
-              data-aos="fade-up"
               data-aos-delay="50"
-              data-aos-easing="linear"
-              data-aos-duration="1500"
+              data-aos-duration="1400"
               className="flex justify-center"
             >
-              <h2 className="pb-5 pt-7 text-[24px] font-extrabold text-[#1F2937] sm:pb-2 sm:text-[34px]">
+              <h2 className="pb-5 mt-10 text-[24px] font-extrabold text-[#1F2937] sm:pb-2 sm:text-[34px]">
                 {t("home.briefInfo")}
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 place-items-center sm:grid-cols-2">
+            <div className=" grid grid-cols-1 place-items-center sm:grid-cols-2">
               <div
-                data-aos="fade-right"
-                data-aos-easing="linear"
-                data-aos-duration="1500"
-                className="flex w-full justify-center sm:w-[300px] sm:rounded-lg lg:w-[380px]"
-              >
-                <img
-                  src={graphImg}
-                  alt=""
-                  className="h-[400px] w-[500px] rounded-xl object-cover sm:w-[320px] lg:w-full"
-                />
-              </div>
-              <div
-                data-aos="fade-left"
-                data-aos-easing="linear"
-                data-aos-duration="1500"
-                className="flex justify-between gap-x-6"
-              >
-                <div className="flex flex-col items-center gap-y-4">
-                  <div className="flex flex-col items-center">
-                    <h1 className="text-[28px] font-bold text-orange-600 sm:text-[28px] md:text-[30px]">
-                      6Y
-                    </h1>
-                    <p className="text-center text-[16px] font-bold sm:text-[18px]">
-                      {t("home.investmentExperience")}
-                    </p>
-                  </div>
-                  <div className="flex flex-col items-center">
-                    <h1 className="text-[28px] font-bold text-orange-600 sm:text-[28px] md:text-[30px]">
-                      4Y
-                    </h1>
-                    <p className="text-center text-[16px] font-bold sm:text-[18px]">
-                      {t("home.teachingExperience")}
-                    </p>
-                  </div>
-                </div>
-                <div className="flex flex-col items-center gap-y-4">
-                  <div className="flex flex-col items-center">
-                    <h1 className="text-[28px] font-bold text-orange-600 sm:text-[28px] md:text-[30px]">
-                      6Y
-                    </h1>
-                    <p className="text-center text-[16px] font-bold sm:text-[18px]">
-                      {t("home.investmentExperience")}
-                    </p>
-                  </div>
-                  <div className="flex flex-col items-center">
-                    <h1 className="text-[28px] font-bold text-orange-600 sm:text-[28px] md:text-[30px]">
-                      4Y
-                    </h1>
-                    <p className="text-center text-[16px] font-bold sm:text-[18px]">
-                      {t("home.teachingExperience")}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-10 grid grid-cols-1 place-items-center sm:grid-cols-2">
-              <div
-                data-aos="fade-left"
-                data-aos-easing="linear"
-                data-aos-duration="1500"
-                className="flex justify-center sm:hidden lg:hidden lg:w-full"
+                data-aos="fade-up"
+                data-aos-delay="50"
+                data-aos-duration="1400"
+                className="flex justify-center lg:w-full"
               >
                 <div className="flex h-[370px] w-[350px] cursor-pointer items-end justify-center rounded-xl bg-[#457B9D] hover:shadow-md sm:h-[340px] sm:w-[300px] lg:w-full">
                   <img
@@ -199,10 +115,9 @@ export const Home = () => {
               </div>
               <div className="">
                 <div
-                  data-aos="fade-right"
-                  data-aos-easing="linear"
-                  data-aos-duration="1500"
-                  className="mb-0 mt-5 flex flex-col items-center justify-center py-4 sm:mb-5 sm:mt-0"
+                  data-aos="fade-up"
+                  data-aos-duration="1400"
+                  className="mb-0  flex flex-col items-center justify-center py-4 sm:mb-5 sm:mt-0"
                 >
                   <h2 className="text-[24px] font-bold text-[#6B7280]">
                     {t("home.ourExperience")}
@@ -212,8 +127,7 @@ export const Home = () => {
                 <div className="flex justify-between gap-x-6">
                   <div
                     data-aos="fade-up"
-                    data-aos-easing="linear"
-                    data-aos-duration="1300"
+                    data-aos-duration="1400"
                     className="flex flex-col items-center gap-y-4"
                   >
                     <div className="flex flex-col items-center">
@@ -235,7 +149,6 @@ export const Home = () => {
                   </div>
                   <div
                     data-aos="fade-up"
-                    data-aos-easing="linear"
                     data-aos-duration="1400"
                     className="flex flex-col items-center gap-y-4"
                   >
@@ -258,31 +171,15 @@ export const Home = () => {
                   </div>
                 </div>
               </div>
-
-              <div
-                data-aos="fade-left"
-                data-aos-easing="linear"
-                data-aos-duration="1500"
-                className="hidden justify-center sm:flex lg:flex xl:w-full"
-              >
-                <div className="flex h-[370px] w-[350px] cursor-pointer items-end justify-center rounded-xl bg-[#457B9D] hover:shadow-md sm:h-[340px] sm:w-[300px] lg:w-full">
-                  <img
-                    src={aiyA}
-                    alt=""
-                    className="h-[350px] w-[300px] rounded-xl object-cover sm:h-[320px] sm:w-[280px]"
-                  />
-                </div>
-              </div>
             </div>
 
-            {/* show package */}
-            {
-              data?.data?.package === null && <Package />
-            }
-            {
-              !data && <Package />
-            }
-            <div className="mb-16 mt-14 text-center">
+            <div id="package">
+              {/* show package */}
+              {
+                !data?.data?.package && <Package />
+              }
+            </div>
+            <div className="mt-10 text-center">
               <h5 className="text-[16px] sm:text-[18px]">
                 {t("home.note")} <br className="sm:hidden" />
                 <span className="text-orange-400 sm:ml-2">

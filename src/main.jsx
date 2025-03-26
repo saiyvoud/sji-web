@@ -6,6 +6,8 @@ import "./i18n.js";
 import { ThemeProvider } from "@material-tailwind/react";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { useEffect } from "react";
+
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {

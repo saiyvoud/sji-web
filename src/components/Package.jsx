@@ -14,7 +14,7 @@ const Package = () => {
     // console.log(packages)
     const handleRegisterPackage = (id) => {
         if (AuthDetail?.data?.token) {
-            navigate("/register/package/"+id);
+            navigate("/register/package/" + id);
         } else {
             Swal.fire({
                 title: `ສະໝັກແພັກເກດ`,
@@ -42,11 +42,10 @@ const Package = () => {
         <>
             <div
                 data-aos="fade-up"
-                data-aos-easing="linear"
-                data-aos-duration="1500"
-                className="flex justify-center"
+                data-aos-duration="1400"
+                className="mt-10 flex justify-center  border-t-2 border-[#F97316]"
             >
-                <h2 className="pb-5 pt-5 text-[24px] font-extrabold text-[#1F2937] sm:text-[34px]">
+                <h2 className="py-5 text-[24px] font-extrabold text-[#1F2937] sm:text-[34px]">
                     {t("home.membershipPackages")}
                 </h2>
             </div>
@@ -58,7 +57,7 @@ const Package = () => {
                     <CardSkeleton />
                 </div>
             }
-            <div className="grid grid-cols-1 place-items-center gap-x-5 gap-y-8 sm:grid-cols-2 sm:gap-5 md:grid-cols-3 md:gap-x-1">
+            <div className="grid grid-cols-1 place-items-center gap-x-5 gap-y-8 sm:grid-cols-2 sm:gap-3 md:grid-cols-3 md:gap-x-1">
                 {
                     !isLoading &&
                     packages.map((item, index) => {
@@ -67,20 +66,16 @@ const Package = () => {
                                 onClick={() => handleRegisterPackage(item.id)}
                                 key={index}
                                 data-aos="fade-up"
-                                data-aos-easing="linear"
-                                data-aos-duration="1200"
-                                className="group flex h-[400px] w-[300px] cursor-pointer flex-col rounded-lg border border-[#CBD5E1] px-5 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] sm:h-[380px] sm:w-[300px] md:w-[225px] lg:w-[290px] hover:border-orange-400 hover:bg-[#FFEDD5] ease-in-out duration-300"
+                                data-aos-duration="1400"
+                                className="group flex h-[300px] w-[300px] cursor-pointer flex-col rounded-lg border border-[#CBD5E1] px-5 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] md:w-[225px] lg:w-[290px] hover:border-orange-400 hover:bg-[#FFEDD5] ease-in-out duration-300"
                             >
                                 <h2 className="my-4 text-center text-[24px] font-bold text-[#FB923C]">
                                     {item.name.toUpperCase()}
                                 </h2>
                                 <p className="mb-5 w-full text-[18px]">
-                                    {/* {t("home.freePackageDesc")} */}
                                     {item.description}
                                 </p>
                                 <ul className="list-inside list-disc text-[18px]">
-                                    <li>duration: {item.duration}{" "}{item.durationType}</li>
-                                    <li>duration: {item.duration}{" "}{item.durationType}</li>
                                     <li>duration: {item.duration}{" "}{item.durationType}</li>
                                 </ul>
                                 <div className=' pt-5'>

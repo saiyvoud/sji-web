@@ -3,6 +3,7 @@ import { useLocation, NavLink, useNavigate, Link } from "react-router-dom";
 import { IoClose, IoMenu } from "react-icons/io5";
 import { useTranslation } from "react-i18next";
 import logo from "../assets/logo.png";
+import SJI_logo from "../assets/logo/sji-bg-blue.svg";
 import flagLaos from "../assets/images/flag-laos.png";
 import flagUs from "../assets/images/flag-us.png";
 import SelectCountry from "./SelectCountry";
@@ -86,9 +87,9 @@ export const Navbar = ({ children }) => {
         <div className="container mx-auto flex h-[70px] max-w-[340px] items-center justify-between sm:h-[60px] sm:max-w-[620px] md:max-w-[700px] lg:max-w-[900px] xl:h-[70px] xl:max-w-6xl 2xl:max-w-7xl">
           <NavLink to={"/"}>
             <img
-              src={logo}
+              src={SJI_logo}
               alt="logo"
-              className="w-12 sm:w-10 xl:w-14 2xl:w-[65px]"
+              className="w-12 sm:w-10 xl:w-14 2xl:w-[65px] border-2 border-orange-500 rounded-full"
             />
           </NavLink>
           <ul

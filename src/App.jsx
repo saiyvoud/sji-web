@@ -1,10 +1,14 @@
-import { useState } from "react";
+import { useEffect } from "react";
+
+import AOS from "aos";
+import "aos/dist/aos.css";
 import "./App.css";
 import RouterPath from "./router/Router";
-import Footer from "./components/Footer";
 
 function App() {
-  const [count, setCount] = useState(0);
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <>
       <RouterPath />
