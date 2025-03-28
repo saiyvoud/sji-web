@@ -39,9 +39,9 @@ export const NewsGold = () => {
         <div>
           {/* header */}
           <div className=" pt-20 lg:pt-24 px-2 lg:px-10 ">
-            <h1 className=" flex justify-start items-center gap-2">
+            <h1 className=" flex justify-start items-center gap-2 ">
               <FaLongArrowAltRight />
-              <span className=" cursor-pointer underline text-sm" onClick={() => navigate(-1)}>News</span>
+              <span className=" cursor-pointer underline text-sm" onClick={() => navigate(-1)}>{t("navbar.news")}</span>
               <FaLongArrowAltRight />
               <span className=" italic text-sm">{data?.data?.title}</span>
             </h1>

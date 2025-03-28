@@ -168,9 +168,6 @@ export const AnalysisFinancial = ({ data }) => {
                       >
                         <div className="flex flex-col items-center justify-center">
                           <p className="font-semibold">{val}</p>
-                          {/* <span className="text-[14px] font-semibold text-red-500">
-                                                  +30.1 %
-                                                </span> */}
                         </div>
                       </td>
                     ))}
