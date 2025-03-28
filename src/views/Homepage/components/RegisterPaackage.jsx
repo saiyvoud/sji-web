@@ -18,13 +18,16 @@ const RegisterPaackage = () => {
     const { data, error, isLoading } = useGetPackage(id);
     const item = data?.data
     const [image, setImage] = useState(null);
+    const [imageTemp, setImageTemp] = useState(null);
+
     const [loading, setLoading] = useState(false);
 
     const handleFileChange = (event) => {
         const file = event.target.files?.[0];
         if (file && file.type.startsWith("image/")) {
+            setImage(file);
             const reader = new FileReader();
-            reader.onload = (e) => setImage(e.target?.result);
+            reader.onload = (e) => setImageTemp(e.target?.result);
             reader.readAsDataURL(file);
         }
     };
@@ -33,8 +36,9 @@ const RegisterPaackage = () => {
         event.preventDefault();
         const file = event.dataTransfer.files[0];
         if (file && file.type.startsWith("image/")) {
+            setImage(file);
             const reader = new FileReader();
-            reader.onload = (e) => setImage(e.target?.result);
+            reader.onload = (e) => setImageTemp(e.target?.result);
             reader.readAsDataURL(file);
         }
     };
@@ -49,7 +53,10 @@ const RegisterPaackage = () => {
             )
         }
     }
-    const removeImage = () => setImage(null);
+    const removeImage = () => {
+        setImage(null);
+        setImageTemp(null);
+    };
 
     const Submit = async (event) => {
         event.preventDefault();
@@ -128,13 +135,13 @@ const RegisterPaackage = () => {
                             <div className="w-full mt-4 grid grid-cols-1 md:flex md:justify-around lg::flex lg::justify-around">
                                 <div className="w-full mb-4 flex flex-col  justify-center items-center">
                                     <p>BCEL ONE</p>
-                                    <QRCodeSVG size={250} value="00020101021133380004BCEL0106ONEPAY0216mch5f76a7f5ca7d25204569753034185802LA6002SV6304182B" />
-                                    <p>SENGSAVANG ຕັດຫຍິບ</p>
+                                    <QRCodeSVG size={250} value="00020101021138670016A00526628466257701082771041802030010324NEXFOLPOLCIYSAQLCEVWDCAP53034185802LA630473F6" />
+                                    <p>MANYLOUD SOMNANONG</p>
                                 </div>
                                 <div className=" w-full flex justify-center items-center">
                                     {image ?
                                         <div className="relative w-[60%]">
-                                            <img src={image} alt="Preview" className="w-full object-cover rounded-lg" />
+                                            <img src={imageTemp} alt="Preview" className="w-full object-cover rounded-lg" />
                                             <div
                                                 onClick={removeImage}
                                                 className="absolute top-2 right-2 bg-red-500 text-white p-1 rounded-full hover:bg-red-700 transition"

@@ -19,6 +19,7 @@ export const getPackage = async (id) => {
 
 export const createOrderPackage = async (data) => {
     try {
+        console.log(data)
         const formData = new FormData();
         formData.append('packageId', data.packageId);
         formData.append('slip', data.slip);
