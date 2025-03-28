@@ -49,7 +49,7 @@ export const Home = () => {
                 <img
                   alt=""
                   src={SJI_logo}
-                  className="w-[200px] object-cover"
+                  className="w-[50%] lg:w-[200px] object-cover"
                 />
                 <h1 className="mb-1 mt-5 text-[40px] font-bold text-[#F97316]">
                   SJI Invsetment

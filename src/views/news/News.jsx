@@ -75,10 +75,10 @@ export const News = () => {
                       key={index}
                       className="group w-full relative p-4 bg-white rounded-lg shadow-sm hover:shadow-lg "
                     >
-                      <div className="w-full overflow-hidden">
-                        <img alt="" src={item?.cover} className=" object-cover transition-transform duration-300 ease-in-out hover:scale-110" />
+                      <div className="w-full h-[120px] lg:h-[200px] overflow-hidden">
+                        <img alt="" src={item?.cover} className=" w-full h-[120px] lg:h-[200px] object-cover transition-transform duration-300 ease-in-out hover:scale-110" />
                       </div>
-                      <p className=" text-sm lg:text-lg font-medium mt-2 h-[100px] lg:[75px]">{item.title}</p>
+                      <p className=" text-sm lg:text-lg font-medium mt-2 h-[60px]">{item.title}</p>
                       <p className=" text-sm italic text-gray-500 text-right">{item?.type}{","}{convertIsoToNormal(item.updatedAt)}</p>
                       <span className="z-50 absolute left-1/2 -translate-x-1/2 bottom-0 bg-orange-500 text-white px-3 rounded-lg text-lg hidden group-hover:bottom-[40%] group-hover:inline-block">ອ່ານຕໍ່</span>
                       <div className="w-full absolute transition-all duration-300 ease-in-out left-0 bottom-0 h-[0%] group-hover:h-[50%] bg-orange-500 opacity-20 rounded-t-lg">
