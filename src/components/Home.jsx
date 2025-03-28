@@ -4,6 +4,7 @@ import { Navbar } from "./Navbar";
 import bgOverlay from "../assets/images/bg.png";
 import SJI_logo from "../assets/logo/sji-white.svg"
 import SJI_log_black from "../assets/logo/sji-bg-blue.svg"
+import SJI_log_white from "../assets/logo/sji-logo-white.png"
 import stockImg from "../assets/images/stock.jpg";
 import MosueWheelSlider from "./MosueWheelSlider";
 import SliderHome from "../views/Homepage/SliderHome";
@@ -49,7 +50,7 @@ export const Home = () => {
               <div className=" w-full flex flex-col justify-center items-center">
                 <img
                   alt=""
-                  src={SJI_log_black}
+                  src={SJI_log_white}
                   className="w-[50%] lg:w-[200px] object-cover"
                 />
                 <h1 className="mb-1 mt-5 text-[40px] font-bold text-[#F97316]">

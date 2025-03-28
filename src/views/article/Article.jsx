@@ -47,16 +47,12 @@ export const Article = () => {
       ) : (
         <>
           {/* Header */}
-          <div className="bg-[#003049] relative pt-44 pb-8 md:pt-40 lg:pt-0 lg:pb-0">
-            <img alt="" src={bgOverlay2} className=" hidden lg:block bg-cover h-[350px] w-full" />
-            <div className="w-full absolute bottom-0">
-              <div className=" container px-2 lg:px-0 w-full lg:w-[1200px] md:[900px] mx-auto">
-                <h1 className=" text-[35px] font-bold text-[#F97316] sm:text-[40px] md:text-[40px] lg:mb-0">
-                  {t("navbar.article")}
-                </h1>
-                <h4 className="text-white mb-5 text-[18px] font-semibold uppercase sm:text-[20px]">
-                  Building more efficient portfolios with ETFs
-                </h4>
+          <div className="w-full bg-[#002133] pt-24 pb-8">
+            <div className=" container px-2 lg:px-0 w-full lg:w-[1200px] md:[900px] mx-auto">
+              <div className=" flex justify-around items-center">
+                <div className="" data-aos="fade-left">
+                  <h1 className="text-4xl lg:text-6xl font-bold text-[#F97316]">{t("navbar.article")}</h1>
+                </div>
               </div>
             </div>
           </div>
