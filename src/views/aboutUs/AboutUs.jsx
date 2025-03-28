@@ -5,8 +5,8 @@ import "aos/dist/aos.css";
 // images
 import bgOverlay from "../../assets/images/bg.png";
 import personImg from "../../assets/images/emp.jpg";
-import aiyA from "../../assets/images/aiy-a.png";
-import aiyB from "../../assets/images/aiy-b.png";
+import aiyA from "../../assets/images/aiyA_.jpg";
+import aiyB from "../../assets/images/aiyB_.png";
 import visionImg from "../../assets/images/vision.png";
 import visionImg2 from "../../assets/images/vision2.jpg";
 import visionImg3 from "../../assets/images/vision3.jpg";
@@ -24,7 +24,7 @@ export const AboutUs = () => {
     <Navbar>
       <>
 
-        <div className="w-full bg-white pt-24 pb-8">
+        <div className="w-full bg-white pt-24 pb-8 mb-20">
           {/* header */}
           <div className=" container px-2 lg:px-0 w-full lg:w-[1200px] md:[900px] mx-auto">
             <div className=" flex justify-center items-center">
@@ -40,11 +40,11 @@ export const AboutUs = () => {
           <div className=" container px-2 lg:px-0 w-full lg:w-[1200px] md:[900px] mx-auto">
             <div className=" mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5">
               <div data-aos="fade-up" className="w-full bg-[#FB923C] p-1 flex justify-between rounded-lg gap-3">
-                <div className="w-full bg-white rounded-lg">
+                <div className="w-full bg-white rounded-lg overflow-hidden">
                   <img
                     src={aiyA}
                     alt=""
-                    className="w-full "
+                    className="w-[500px]"
                   />
                 </div>
                 <div className=" w-full text-white flex justify-center items-center">
@@ -53,10 +53,11 @@ export const AboutUs = () => {
                     <p className=" text-sm font-bold text-center">SOMNANONG</p>
                     <Link
                       to="https://www.facebook.com/manyloud.somnanong"
-
+                      className=" flex justify-center"
                     ><CiFacebook size={30} />
                     </Link>
                   </div>
+
                 </div>
               </div>
               <div data-aos="fade-up" className="w-full bg-[#FB923C] p-1 flex justify-between rounded-lg gap-3">
@@ -73,7 +74,7 @@ export const AboutUs = () => {
                     <p className=" text-sm font-bold text-center">SOMNANONG</p>
                     <Link
                       to="http://facebook.com/sayvuad.somnanong"
-
+                      className=" flex justify-center"
                     ><CiFacebook size={30} />
                     </Link>
                   </div>
@@ -81,245 +82,75 @@ export const AboutUs = () => {
               </div>
             </div>
           </div>
-        </div>
-        <div className=" pt-[30px]">
-
-          <div className="container mx-auto h-full max-w-[340px] pb-20 sm:max-w-[620px] lg:max-w-[900px] xl:max-w-6xl">
-            {/* ຜູ້ກໍ່ຕັ້ງ */}
-            <div className="w-full bg-white sm:mt-10">
-              <div
-                data-aos="fade-up"
-                data-aos-easing="linear"
-                data-aos-duration="1500"
-                className="flex items-center justify-center"
-              >
-                <h2 className="my-5 inline-block border-b-4 border-orange-600 px-5 py-4 text-[40px] font-semibold text-[#374151] md:mt-10 md:py-2">
-                  ຜຸ້ຮ່ວມກໍ່ຕັ້ງ
-                </h2>
-
-              </div>
-              <h1 className=" text-red-500 text-4xl"> ບໍ່ທັນແປງແລ້ວ </h1>
-              <div className="my-10 grid w-full grid-cols-1 gap-16 sm:grid-cols-2 sm:gap-x-8">
-                <div
-                  data-aos="fade-up"
-                  data-aos-easing="linear"
-                  data-aos-duration="1500"
-                  className="flex h-[300px] w-full rounded-md border-[2px] border-[#FB923C] bg-[#FB923C] shadow-[0_3px_10px_rgb(0,0,0,0.2)]"
-                >
-                  <div
-                    data-aos="fade-right"
-                    data-aos-easing="linear"
-                    data-aos-duration="1500"
-                    className="flex h-full w-[400px] items-end rounded-md bg-white px-2 sm:w-full sm:px-0"
-                  >
-                    <img
-                      src={aiyA}
-                      alt=""
-                      className="h-[270px] w-[250px] object-cover"
-                    />
-                  </div>
-                  <div
+          {/* section 2 */}
+          <div className=" container px-2 lg:px-0 w-full lg:w-[1200px] md:[900px] mx-auto">
+            <div className=" mt-20">
+              <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5">
+                <div>
+                  <h1
                     data-aos="fade-left"
-                    data-aos-easing="linear"
-                    data-aos-duration="1500"
-                    className="ml-5 flex h-full w-full flex-col justify-around sm:items-start"
-                  >
-                    <div>
-                      <p>Name</p>
-                      <p>Position</p>
-                    </div>
-                    <div className="flex gap-x-5 text-[28px]">
-                      <FaFacebookF className="cursor-pointer hover:text-[#FB923C]" />
-                      <FaTwitter className="cursor-pointer hover:text-[#FB923C]" />
-                      <FaLinkedinIn className="cursor-pointer hover:text-[#FB923C]" />
-                    </div>
-                  </div>
-                </div>
-                <div
-                  data-aos="fade-up"
-                  data-aos-easing="linear"
-                  data-aos-duration="1500"
-                  className="flex h-[300px] w-full rounded-md border-[2px] border-[#FB923C] bg-[#FB923C] shadow-[0_3px_10px_rgb(0,0,0,0.2)]"
-                >
-                  <div
-                    data-aos="fade-right"
-                    data-aos-easing="linear"
-                    data-aos-duration="1500"
-                    className="flex h-full w-[400px] items-end rounded-md bg-white px-2 sm:w-full sm:px-0"
-                  >
-                    <img
-                      src={aiyB}
-                      alt=""
-                      className="h-[270px] w-[250px] object-cover"
-                    />
-                  </div>
-                  <div
+                    className="mt-5 md:mt-10 lg:mt-10 text-3xl font-medium lg:text-4xl text-center text-[#F97316]">ຈຸດປະສົງຂອງພວກເຮົາ</h1>
+                  <p
                     data-aos="fade-left"
-                    data-aos-easing="linear"
-                    data-aos-duration="1500"
-                    className="ml-5 flex h-full w-full flex-col justify-around sm:items-start"
-                  >
-                    <div>
-                      <p>Name</p>
-                      <p>Position</p>
-                    </div>
-                    <div className="flex gap-x-5 text-[28px]">
-                      <FaFacebookF className="cursor-pointer hover:text-[#FB923C]" />
-                      <FaTwitter className="cursor-pointer hover:text-[#FB923C]" />
-                      <FaLinkedinIn className="cursor-pointer hover:text-[#FB923C]" />
-                    </div>
-                  </div>
+                    className="mt-5 text-lg font-semibold text-[#374151] text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. A, soluta? Dolore, ullam laudantium vel ratione sint veritatis totam rerum vero quod deleniti consectetur officia at eaque ipsa iste debitis. Vitae!</p>
                 </div>
-              </div>
-            </div>
-
-            {/* ວິໄສທັດ */}
-            <div className="w-full bg-white">
-              <div
-                data-aos="fade-up"
-                data-aos-easing="linear"
-                data-aos-duration="1500"
-                className="flex items-center justify-center"
-              >
-                <h2 className="inline-block px-5 py-4 text-[30px] font-semibold text-[#374151] sm:my-5 sm:text-[40px]">
-                  ວິໃສທັດຂອງພວກເຮົາ
-                </h2>
-              </div>
-              <div className="mb-5 grid w-full grid-cols-1 gap-x-10 sm:mb-10 sm:grid-cols-2 sm:place-items-center">
-                <div
-                  data-aos="fade-right"
-                  data-aos-easing="linear"
-                  data-aos-duration="1500"
-                  className="mb-3 flex sm:mb-0"
-                >
+                <div>
                   <img
+                    data-aos="fade-left"
                     src={visionImg}
-                    className="h-[300px] w-full rounded-lg object-cover sm:h-[400px] sm:w-[550px]"
+                    className=" h-[300px] w-full rounded-lg object-cover sm:h-[400px] sm:w-[550px]"
                     alt=""
                   />
                 </div>
-                <div
-                  data-aos="fade-left"
-                  data-aos-easing="linear"
-                  data-aos-duration="1500"
-                >
-                  <h4 className="mt-3 text-[28px] font-semibold text-[#F97316] sm:mb-4 sm:mt-0 xl:text-[34px]">
-                    ຈຸດປະສົງຂອງພວກເຮົາ
-                  </h4>
-                  <p className="text-[16px] font-semibold text-[#374151] sm:text-[16px] xl:text-[18px]">
-                    ພວກເຮົາມີຈຸດປະສົງຢາກໃຫ້ຄົນລາວທຸກຄົນມີ
-                    ຄວາມຮູ້ຄວາມເຂົ້າໃຈຄວາມຮູ້ຄວາມເຂົ້າໃຈກ່ຽວ
-                    ກັບການລົງທຶນແລະສາມາດສ້າງກຳໄລຈາກຕະ
-                    ຫຼາດຮຸ້ນທົວໂລກເພື່ອສົງເສີມໃຫ້ປະເທດເຮົາມີ
-                    ປະສິດທີພາບໃນດ້ານບຸກຄະລາກອນທາງດ້ານ ການເງິນທີ່ເກັ່ງຂື້ນ
-                  </p>
-                  <p className="my-2 text-[16px] font-semibold text-[#374151] sm:text-[16px] xl:text-[18px]">
-                    ພວກເຮົາມີຈຸດປະສົງຢາກໃຫ້ຄົນລາວທຸກຄົນມີ
-                    ຄວາມຮູ້ຄວາມເຂົ້າໃຈຄວາມຮູ້ຄວາມເຂົ້າໃຈກ່ຽວ
-                    ກັບການລົງທຶນແລະສາມາດສ້າງກຳໄລຈາກຕະ
-                    ຫຼາດຮຸ້ນທົວໂລກເພື່ອສົງເສີມໃຫ້ປະເທດເຮົາມີ
-                    ປະສິດທີພາບໃນດ້ານບຸກຄະລາກອນທາງດ້ານ ການເງິນທີ່ເກັ່ງຂື້ນ
-                  </p>
-                  <p className="text-[16px] font-semibold text-[#374151] sm:text-[16px] xl:text-[18px]">
-                    ພວກເຮົາມີຈຸດປະສົງຢາກໃຫ້ຄົນລາວທຸກຄົນມີ
-                    ຄວາມຮູ້ຄວາມເຂົ້າໃຈຄວາມຮູ້ຄວາມເຂົ້າໃຈກ່ຽວ
-                    ກັບການລົງທຶນແລະສາມາດສ້າງກຳໄລຈາກຕະ
-                    ຫຼາດຮຸ້ນທົວໂລກເພື່ອສົງເສີມໃຫ້ປະເທດເຮົາມີ
-                    ປະສິດທີພາບໃນດ້ານບຸກຄະລາກອນທາງດ້ານ ການເງິນທີ່ເກັ່ງຂື້ນ
-                  </p>
-                </div>
               </div>
-              <div className="mb-5 grid w-full grid-cols-1 gap-x-10 sm:mb-10 sm:grid-cols-2 sm:place-items-center">
-                <div
-                  data-aos="fade-right"
-                  data-aos-easing="linear"
-                  data-aos-duration="1500"
-                >
-                  <h4 className="mt-3 text-[28px] font-semibold text-[#F97316] sm:mb-4 sm:mt-0 xl:text-[34px]">
-                    ວິໃສທັດຂອງພວກເຮົາ
-                  </h4>
-                  <p className="text-[16px] font-semibold text-[#374151] sm:text-[16px] xl:text-[18px]">
-                    ພວກເຮົາມີຈຸດປະສົງຢາກໃຫ້ຄົນລາວທຸກຄົນມີ
-                    ຄວາມຮູ້ຄວາມເຂົ້າໃຈຄວາມຮູ້ຄວາມເຂົ້າໃຈກ່ຽວ
-                    ກັບການລົງທຶນແລະສາມາດສ້າງກຳໄລຈາກຕະ
-                    ຫຼາດຮຸ້ນທົວໂລກເພື່ອສົງເສີມໃຫ້ປະເທດເຮົາມີ
-                    ປະສິດທີພາບໃນດ້ານບຸກຄະລາກອນທາງດ້ານ ການເງິນທີ່ເກັ່ງຂື້ນ
-                  </p>
-                  <p className="my-2 text-[16px] font-semibold text-[#374151] sm:text-[16px] xl:text-[18px]">
-                    ພວກເຮົາມີຈຸດປະສົງຢາກໃຫ້ຄົນລາວທຸກຄົນມີ
-                    ຄວາມຮູ້ຄວາມເຂົ້າໃຈຄວາມຮູ້ຄວາມເຂົ້າໃຈກ່ຽວ
-                    ກັບການລົງທຶນແລະສາມາດສ້າງກຳໄລຈາກຕະ
-                    ຫຼາດຮຸ້ນທົວໂລກເພື່ອສົງເສີມໃຫ້ປະເທດເຮົາມີ
-                    ປະສິດທີພາບໃນດ້ານບຸກຄະລາກອນທາງດ້ານ ການເງິນທີ່ເກັ່ງຂື້ນ
-                  </p>
-                  <p className="text-[16px] font-semibold text-[#374151] sm:text-[16px] xl:text-[18px]">
-                    ພວກເຮົາມີຈຸດປະສົງຢາກໃຫ້ຄົນລາວທຸກຄົນມີ
-                    ຄວາມຮູ້ຄວາມເຂົ້າໃຈຄວາມຮູ້ຄວາມເຂົ້າໃຈກ່ຽວ
-                    ກັບການລົງທຶນແລະສາມາດສ້າງກຳໄລຈາກຕະ
-                    ຫຼາດຮຸ້ນທົວໂລກເພື່ອສົງເສີມໃຫ້ປະເທດເຮົາມີ
-                    ປະສິດທີພາບໃນດ້ານບຸກຄະລາກອນທາງດ້ານ ການເງິນທີ່ເກັ່ງຂື້ນ
-                  </p>
-                </div>
-                <div
-                  data-aos="fade-left"
-                  data-aos-easing="linear"
-                  data-aos-duration="1500"
-                  className="flex"
-                >
+              <div className="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5">
+                <div className=" hidden md:block lg:block">
                   <img
+                    data-aos="fade-right"
                     src={visionImg2}
-                    className="hidden h-[300px] w-full rounded-lg object-cover sm:block sm:h-[400px] sm:w-[550px]"
-                    alt=""
-                  />
-                </div>
-              </div>
-              <div className="grid w-full grid-cols-1 gap-x-10 sm:grid-cols-2 sm:place-items-center">
-                <div
-                  data-aos="fade-right"
-                  data-aos-easing="linear"
-                  data-aos-duration="1500"
-                  className="flex"
-                >
-                  <img
-                    src={visionImg3}
                     className="h-[300px] w-full rounded-lg object-cover sm:h-[400px] sm:w-[550px]"
                     alt=""
                   />
                 </div>
-                <div
-                  data-aos="fade-left"
-                  data-aos-easing="linear"
-                  data-aos-duration="1500"
-                >
-                  <h4 className="mb-4 text-[28px] font-semibold text-[#F97316] xl:text-[34px]">
-                    ເປົ້າໝາຍຂອງພວກເຮົາ
-                  </h4>
-                  <p className="text-[16px] font-semibold text-[#374151] sm:text-[16px] xl:text-[18px]">
-                    ພວກເຮົາມີຈຸດປະສົງຢາກໃຫ້ຄົນລາວທຸກຄົນມີ
-                    ຄວາມຮູ້ຄວາມເຂົ້າໃຈຄວາມຮູ້ຄວາມເຂົ້າໃຈກ່ຽວ
-                    ກັບການລົງທຶນແລະສາມາດສ້າງກຳໄລຈາກຕະ
-                    ຫຼາດຮຸ້ນທົວໂລກເພື່ອສົງເສີມໃຫ້ປະເທດເຮົາມີ
-                    ປະສິດທີພາບໃນດ້ານບຸກຄະລາກອນທາງດ້ານ ການເງິນທີ່ເກັ່ງຂື້ນ
-                  </p>
-                  <p className="my-2 text-[16px] font-semibold text-[#374151] sm:text-[16px] xl:text-[18px]">
-                    ພວກເຮົາມີຈຸດປະສົງຢາກໃຫ້ຄົນລາວທຸກຄົນມີ
-                    ຄວາມຮູ້ຄວາມເຂົ້າໃຈຄວາມຮູ້ຄວາມເຂົ້າໃຈກ່ຽວ
-                    ກັບການລົງທຶນແລະສາມາດສ້າງກຳໄລຈາກຕະ
-                    ຫຼາດຮຸ້ນທົວໂລກເພື່ອສົງເສີມໃຫ້ປະເທດເຮົາມີ
-                    ປະສິດທີພາບໃນດ້ານບຸກຄະລາກອນທາງດ້ານ ການເງິນທີ່ເກັ່ງຂື້ນ
-                  </p>
-                  <p className="text-[16px] font-semibold text-[#374151] sm:text-[16px] xl:text-[18px]">
-                    ພວກເຮົາມີຈຸດປະສົງຢາກໃຫ້ຄົນລາວທຸກຄົນມີ
-                    ຄວາມຮູ້ຄວາມເຂົ້າໃຈຄວາມຮູ້ຄວາມເຂົ້າໃຈກ່ຽວ
-                    ກັບການລົງທຶນແລະສາມາດສ້າງກຳໄລຈາກຕະ
-                    ຫຼາດຮຸ້ນທົວໂລກເພື່ອສົງເສີມໃຫ້ປະເທດເຮົາມີ
-                    ປະສິດທີພາບໃນດ້ານບຸກຄະລາກອນທາງດ້ານ ການເງິນທີ່ເກັ່ງຂື້ນ
-                  </p>
+                <div>
+                  <h1
+                    data-aos="fade-right"
+                    className="mt-5 md:mt-10 lg:mt-10 text-3xl font-medium lg:text-4xl text-center text-[#F97316]">ວິໃສທັດຂອງພວກເຮົາ</h1>
+                  <p
+                    data-aos="fade-right"
+                    className="mt-5 text-lg font-semibold text-[#374151] text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. A, soluta? Dolore, ullam laudantium vel ratione sint veritatis totam rerum vero quod deleniti consectetur officia at eaque ipsa iste debitis. Vitae!</p>
+                </div>
+                <div className=" block lg:hidden md:hidden">
+                  <img
+                    data-aos="fade-right"
+                    src={visionImg2}
+                    className="h-[300px] w-full rounded-lg object-cover sm:h-[400px] sm:w-[550px]"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5">
+                <div>
+                  <h1
+                    data-aos="fade-left"
+                    className="mt-5 md:mt-10 lg:mt-10 text-3xl font-medium lg:text-4xl text-center text-[#F97316]">ເປົ້າໝາຍຂອງພວກເຮົາ</h1>
+                  <p
+                    data-aos="fade-left"
+                    className="mt-5 text-lg font-semibold text-[#374151] text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. A, soluta? Dolore, ullam laudantium vel ratione sint veritatis totam rerum vero quod deleniti consectetur officia at eaque ipsa iste debitis. Vitae!</p>
+                </div>
+                <div>
+                  <img
+                    data-aos="fade-left"
+                    src={visionImg3}
+                    className=" h-[300px] w-full rounded-lg object-cover sm:h-[400px] sm:w-[550px]"
+                    alt=""
+                  />
                 </div>
               </div>
             </div>
           </div>
         </div>
+
       </>
     </Navbar>
   );
