@@ -84,25 +84,6 @@ export const Analysiss = () => {
               </div>
             </div>
           </div>
-          <div className="relative z-0 w-full before:absolute before:-z-[1] before:h-[200px] before:w-full before:bg-[#003049] sm:before:h-[350px]">
-            <img
-              src={bgOverlay2}
-              className="absolute hidden h-[350px] w-full bg-cover bg-bottom sm:block"
-            />
-            <div className="container relative z-50 mx-auto h-full max-w-[340px] pt-[70px] text-white sm:max-w-[620px] lg:max-w-[900px] xl:max-w-6xl">
-              <div className="relative flex h-[150px] items-center justify-center sm:h-[280px]">
-                <h1 className="bottom-4 left-2 mb-3 flex text-[40px] font-bold text-[#F97316] sm:absolute sm:text-[50px]">
-                  {t("analysis.title")}
-                </h1>
-              </div>
-              <div className="mb-10 h-full w-full bg-white">
-                <h1 className="p-4 text-center text-[35px] font-extrabold text-black sm:pb-10 sm:pt-7">
-                  {t("analysis.foreignAnalysis")}
-                </h1>
-
-              </div>
-            </div>
-          </div>
         </>
 
       )}
