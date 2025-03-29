@@ -6,7 +6,7 @@ import Loading from '../../components/Loading';
 import { Error, Success } from '../../helper/sweetAlert';
 //import { useLogin } from '../../hooks/Auth.hook';
 import { useSignup } from '../../hooks/Auth.hook';
-
+import { Helmet } from 'react-helmet-async';
 const VerifyOTP = () => {
     const navigate = useNavigate();
     const { mutate: Signup, error, isPending } = useSignup();
@@ -88,6 +88,10 @@ const VerifyOTP = () => {
     }
     return (
         <>
+            <Helmet>
+                <title>Verify OTP -SJI Investment</title>
+                <meta name="robots" content="noindex, nofollow" />
+            </Helmet>
             {isLoading && <Loading />}
             {isPending && <Loading />}
             <div class=" w-[300px] lg:w-[30%] md:w-[50%] mx-auto mt-20 border border-gray-300 rounded-lg shadow-lg p-5">

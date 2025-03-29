@@ -38,10 +38,6 @@ export const OurService = () => {
           <meta property="og:description" content="The Big Data for Your Win, and Smart Insights for Your Success ການລົງທຶນທີ່ປະສົບຄວາມສຳເລັດຂອງທ່ານມາຈາກຂໍ້ມູນ ຂະໜາດໃຫຍ່ຂອງພວກເຮົາ" />
           <meta property="og:image" content="https://sji.homefind.la/assets/sji-logo-white-9gw7qHl4.png" />
           <meta property="og:url" content="https://sji.homefind.la" />
-          <meta property="og:title" content="SJI Investment - " />
-          <meta property="og:description" content="The Big Data for Your Win, and Smart Insights for Your Success ການລົງທຶນທີ່ປະສົບຄວາມສຳເລັດຂອງທ່ານມາຈາກຂໍ້ມູນ ຂະໜາດໃຫຍ່ຂອງພວກເຮົາ" />
-          <meta property="og:image" content="https://sji.homefind.la/assets/sji-logo-white-9gw7qHl4.png" />
-          <meta property="og:url" content="https://sji.homefind.la" />
         </Helmet>
         <div>
           <div className="w-full bg-[#003049]">
@@ -57,7 +53,7 @@ export const OurService = () => {
             </div>
             <div>
               <div className="container px-2 lg:px-0 w-full lg:w-[1200px] md:[900px] mx-auto">
-                <h1 data-aos="fade-up" className=" text-center font-black pb-5 pt-5 text-4xl md:text-6xl text-white lg:text-6xl">{t("OurService.title.title")}</h1>
+                <h1 data-aos="fade-up" className=" text-center font-black pb-5 pt-5 text-2xl md:text-4xl text-white lg:text-4xl">{t("OurService.title.title")}</h1>
                 <div data-aos="fade-up" className=" mt-5 grid grid-cols-3 gap-3">
                   <div className=" bg-white rounded-lg px-1 py-2">
                     <div className=" mb-3 flex items-center justify-center">

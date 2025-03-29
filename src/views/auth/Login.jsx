@@ -13,6 +13,7 @@ import { decryptPassword } from "../../helper/cryptoJS";
 import { Navigate } from "react-router-dom";
 import { signInWithGoogle } from "../../helper/FirebaseApp";
 import Loading from "../../components/Loading";
+import { Helmet } from "react-helmet-async";
 
 export const Login = () => {
   const { mutate: Login, error, isPending } = useLogin();
@@ -63,7 +64,7 @@ export const Login = () => {
   const handlesignInWithGoogle = async () => {
     setIsLoading(true);
     const user = await signInWithGoogle();
-    console.log(user);
+    // console.log(user);
     if (user) {
       LoginWithGoogle({
         "googleId": user.uid,
@@ -76,6 +77,10 @@ export const Login = () => {
   // ll
   return (
     <>
+      <Helmet>
+        <title>Login -SJI Investment</title>
+        <meta name="robots" content="noindex, nofollow"/>
+      </Helmet>
       {isLoading && <Loading />}
       <div className="grid grid-cols-1 md:grid-cols-12">
         <div className="col-span-8 hidden w-full md:col-span-7 md:block">

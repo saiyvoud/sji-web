@@ -17,13 +17,22 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { CiFacebook } from "react-icons/ci";
+import { Helmet } from "react-helmet-async";
 export const AboutUs = () => {
 
 
   return (
     <Navbar>
       <>
-
+        <Helmet>
+          <title>About Us - SJI Investment</title>
+          <meta name="robots" content="index, follow" />
+          <meta name="theme-color" content="#ffffff" />
+          <meta name="author" content="MiDi Technology, ບໍລິສັດ ມີດີ ເທັກໂນໂລຊີ ຈຳກັດ" />
+          <meta name="keywords" content={`ການບໍລິການ, SJI,Investment,ສອນເຈົ້າລົງທຶນ, ລົງທຶນ,สอนลงทุน, การลงทุน`} />
+          <meta name="description" content="The Big Data for Your Win, and Smart Insights for Your Success ການລົງທຶນທີ່ປະສົບຄວາມສຳເລັດຂອງທ່ານມາຈາກຂໍ້ມູນ ຂະໜາດໃຫຍ່ຂອງພວກເຮົາ" />
+          <meta property="og:title" content="About Us - SJI Investment" />
+        </Helmet>
         <div className="w-full bg-white pt-24 pb-8 mb-20">
           {/* header */}
           <div className=" container px-2 lg:px-0 w-full lg:w-[1200px] md:[900px] mx-auto">

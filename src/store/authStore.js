@@ -78,3 +78,20 @@ export const useRegisterTempStore = create(
     },
   ),
 );
+
+export const useAllowCookieStore = create(
+  persist(
+    (set, get) => ({
+      data: false,
+      setAllow: (data) => {
+        set({ data: data });
+      },
+      clearAllow: () => set({ data: null }),
+      getAllow: () => get().data
+    }),
+    {
+      name: "AllowCookie",
+      getStorage: () => localStorage,
+    },
+  ),
+);

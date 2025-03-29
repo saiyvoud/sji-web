@@ -8,11 +8,27 @@ import { useTranslation } from "react-i18next";
 import { MdEmail } from "react-icons/md";
 import { FaPhone } from "react-icons/fa6";
 import { FaLocationDot } from "react-icons/fa6";
-
+import { Helmet } from "react-helmet-async";
 export const Contact = () => {
   const { t } = useTranslation();
   return (
     <Navbar>
+      <Helmet>
+        <title>Advertising - SJI Investment</title>
+        <meta name="robots" content="index, follow" />
+        <meta name="theme-color" content="#ffffff" />
+        <meta name="author" content="MiDi Technology, ບໍລິສັດ ມີດີ ເທັກໂນໂລຊີ ຈຳກັດ" />
+        <meta name="keywords" content={`ການບໍລິການ, SJI,Investment,ສອນເຈົ້າລົງທຶນ, ລົງທຶນ,สอนลงทุน, การลงทุน`} />
+        <meta name="description" content="ບໍລິສັດ ມິດິ ເທັກໂນໂລຊີ ຈຳກັດ
+MiDi Technology Company Limited Specializing in applications, software, website development and IT training in Laos
+✅ ພັດທະນາໂປຣແກຣມ
+✅ ພັດທະນາເວັບໄຊ
+✅ ພັດທະນາແອັບພິເຄຊັນ
+ບ້ານ ທົ່ງສ້າງນາງ ເມືອງ ຈັນທະບູລີ ນະຄອນຫຼວງວຽງຈັນ
+a.manyloud@gmail.com
+" />
+        <meta property="og:title" content="Advertising - SJI Investment" />
+      </Helmet>
       <div className="w-full bg-[#002133] pt-24 pb-8">
         <div className=" container px-2 lg:px-0 w-full lg:w-[1200px] md:[900px] mx-auto">
           <div className=" flex justify-around items-center">

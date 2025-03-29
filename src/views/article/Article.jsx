@@ -11,6 +11,7 @@ import Empty from "../../components/Empty";
 import Skeleton from "../../components/Skeleton";
 import { useTranslation } from "react-i18next";
 import { convertIsoToNormal } from "../../helper/dateTime";
+import { Helmet } from "react-helmet-async";
 export const Article = () => {
   const { t } = useTranslation();
   const [showAll, setShowAll] = useState(false);
@@ -38,9 +39,21 @@ export const Article = () => {
   const handleLearnMore = () => {
     setShowAll(!showAll);
   };
-  console.log(data);
+  // console.log(data);
   return (
     <Navbar>
+      <Helmet>
+        <title>Article -SJI Investment</title>
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="MiDi Technology, ບໍລິສັດ ມີດີ ເທັກໂນໂລຊີ ຈຳກັດ" />
+        <meta name="keywords" content="Article, ການບໍລິການ, SJI,Investment,ສອນເຈົ້າລົງທຶນ, ລົງທຶນ,สอนลงทุน, การลงทุน" />
+        <meta name="robots" content="index, follow" />
+        <meta name="description" content="The Big Data for Your Win, and Smart Insights for Your Success ການລົງທຶນທີ່ປະສົບຄວາມສຳເລັດຂອງທ່ານມາຈາກຂໍ້ມູນ ຂະໜາດໃຫຍ່ຂອງພວກເຮົາ" />
+        <meta property="og:title" content="Article- SJI Investment" />
+        <meta property="og:description" content="The Big Data for Your Win, and Smart Insights for Your Success ການລົງທຶນທີ່ປະສົບຄວາມສຳເລັດຂອງທ່ານມາຈາກຂໍ້ມູນ ຂະໜາດໃຫຍ່ຂອງພວກເຮົາ" />
+        <meta property="og:image" content="https://sji.homefind.la/assets/sji-logo-white-9gw7qHl4.png" />
+        {/* <meta property="og:url" content="https://sji.homefind.la" /> */}
+      </Helmet>
       {isLoading ? (
         // <Loading fullScreen={true} size={50} />
         <Skeleton type="card" count={6} />
@@ -68,7 +81,7 @@ export const Article = () => {
                       className="group w-full relative p-4 bg-white rounded-lg shadow-sm hover:shadow-lg "
                     >
                       <div className="w-full overflow-hidden">
-                        <img alt="" src={item?.cover} className=" object-cover transition-transform duration-300 ease-in-out hover:scale-110" />
+                        <img alt="" src={item?.cover} loading="lazy" className=" object-cover transition-transform duration-300 ease-in-out hover:scale-110" />
                       </div>
                       <p className=" text-sm lg:text-lg font-medium mt-2 h-[100px] lg:[75px]">{item.title}</p>
                       <p className=" text-sm italic text-gray-500 text-right">{item?.type}{","}{convertIsoToNormal(item.updatedAt)}</p>

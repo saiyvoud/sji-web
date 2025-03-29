@@ -76,6 +76,7 @@ export const News = () => {
                     <img
                       src={serviceImg}
                       alt=""
+                      loading="lazy"
                       className="h-20 w-20 lg:h-40 lg:w-40 rounded-full object-cover shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px] border-4 border-white"
                     />
                   </div>

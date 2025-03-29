@@ -13,6 +13,7 @@ import { useAuthStore } from "../../store/authStore";
 import { signInWithGoogle } from "../../helper/FirebaseApp";
 import Loading from "../../components/Loading";
 import { useLoginWithGoogle } from "../../hooks/Auth.hook";
+import { Helmet } from "react-helmet-async";
 export const Register = () => {
   const { mutate: Signup, error, isPending } = useSignup();
   const { mutate: LoginWithGoogle, error1, isPending1 } = useLoginWithGoogle();
@@ -106,6 +107,10 @@ export const Register = () => {
   }
   return (
     <div className="grid grid-cols-1 md:grid-cols-12">
+      <Helmet>
+        <title>Register -SJI Investment</title>
+        <meta name="robots" content="noindex, nofollow" />
+      </Helmet>
       {isLoading && <Loading />}
       <div className="col-span-8 hidden w-full md:col-span-6 md:block lg:col-span-7">
         <img src={bgAuth} alt="" className="h-[800px] w-full object-cover" />

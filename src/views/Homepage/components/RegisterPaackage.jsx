@@ -12,8 +12,11 @@ import CardSkeleton from "../../../components/CardSkeleton";
 import { Warning } from "../../../helper/sweetAlert";
 import { createOrderPackage } from "../../../api/Package";
 import Loading from "../../../components/Loading"
+import { useTranslation } from "react-i18next";
+import { Helmet } from "react-helmet-async";
 const RegisterPaackage = () => {
     const navigate = useNavigate();
+    const { t } = useTranslation();
     const { id } = useParams();
     const { data, error, isLoading } = useGetPackage(id);
     const item = data?.data
@@ -79,25 +82,21 @@ const RegisterPaackage = () => {
     }
     return (
         <Navbar>
+            <Helmet>
+                <title>Buy Package -SJI Investment</title>
+                <meta name="robots" content="noindex, nofollow" />
+            </Helmet>
             {loading && <Loading />}
             <div>
-                <div className="relative z-0 w-full before:absolute before:-z-[1] before:h-[350px] before:w-full before:bg-[#003049]">
-                    <img
-                        src={bgOverlay2}
-                        className="absolute h-[350px] w-full bg-cover bg-bottom"
-                    />
-                    <div className="container relative z-50 mx-auto h-full max-w-[340px] pt-[70px] text-white sm:max-w-[620px] lg:max-w-[900px]">
-                        <div className="relative h-[280px]">
-                            <div
-                                className="absolute bottom-4 left-2 flex cursor-pointer items-center hover:text-[#F97316]"
-                                onClick={() => navigate(-1)}
-                            >
-                                <ImArrowLeft className="mr-5 text-[24px]" />
-                                <h1 className="text-[32px] font-bold sm:text-[50px]">
-                                    ກັບຄືນ
-                                </h1>
-                            </div>
-                        </div>
+                <div className="w-full bg-[#003049] pt-24">
+                    <div
+                        className=" container max-w-[1200px] mx-auto text-white flex justify-start items-center"
+                        onClick={() => navigate(-1)}
+                    >
+                        <ImArrowLeft className="mr-5 text-[24px]" />
+                        <h1 className="text-[32px] font-bold sm:text-[50px]">
+                            ກັບຄືນ
+                        </h1>
                     </div>
                 </div>
                 <div className="container mx-auto my-10 h-full w-full max-w-[340px] bg-white sm:max-w-[620px] lg:max-w-[900px]">
@@ -108,17 +107,11 @@ const RegisterPaackage = () => {
                             <h2 className="my-4 text-center text-[24px] font-bold text-[#FB923C]">
                                 {item?.name.toUpperCase()}
                             </h2>
-                            <p className="mb-5 w-full text-[18px] text-center">
-                                {/* {t("home.freePackageDesc")} */}
-                                {item?.description}
-                            </p>
-                            <ul className="list-inside list-disc text-[18px] text-center">
-                                <li>duration: {item?.duration}{" "}{item?.durationType}</li>
-                                <li>duration: {item?.duration}{" "}{item?.durationType}</li>
-                                <li>duration: {item?.duration}{" "}{item?.durationType}</li>
-                            </ul>
-                            <div className=' pt-4 text-center'>
-                                <p> Price: <span className=' text-[25px] font-bold text-orange-600'>{item?.price.toLocaleString()}{" "}{"₭"}</span></p>
+                            <div className=' border-b border-gray-300 pb-2 text-center mx-auto' dangerouslySetInnerHTML={{ __html: item?.description }} />
+                            <div className=' mt-2 text-center' dangerouslySetInnerHTML={{ __html: item?.feature }} />
+                            <p className=" text-center">ໄລຍະເວລາ: {item?.duration}{" "}{item.durationType}</p>
+                            <div className=' pt-5 text-center'>
+                                <p> Price: <span className=' text-[25px] font-bold text-orange-600'>{item.price.toLocaleString()}{" "}{"₭"}</span></p>
                             </div>
                         </div>
                         :

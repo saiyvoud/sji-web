@@ -22,7 +22,7 @@ import investingLogo from "../assets/images/investing-logo.jpg";
 export default function Footer() {
   return (
     <>
-      <footer className="relative z-[999] w-full bg-[#003049] py-5 lg:pt-5">
+      <footer className="relative z-[50] w-full bg-[#003049] py-5 lg:pt-5">
         <div className="container mx-auto h-full max-w-[340px] sm:max-w-[620px] md:max-w-[700px] lg:max-w-[900px] xl:max-w-6xl">
           <div className="flex sm:items-center justify-around gap-x-4 px-2">
             <div className="flex flex-col items-center gap-x-4 sm:flex-row lg:mb-0">
