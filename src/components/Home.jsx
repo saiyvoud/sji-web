@@ -69,7 +69,7 @@ export const Home = () => {
                   </button>
                 )}
               </div>
-              <div className=" w-full hidden lg:block">
+              <div className=" w-[50%] hidden lg:block">
                 <MosueWheelSlider />
               </div>
             </div>

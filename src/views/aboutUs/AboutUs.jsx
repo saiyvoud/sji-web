@@ -92,7 +92,10 @@ export const AboutUs = () => {
                     className="mt-5 md:mt-10 lg:mt-10 text-3xl font-medium lg:text-4xl text-center text-[#F97316]">ຈຸດປະສົງຂອງພວກເຮົາ</h1>
                   <p
                     data-aos="fade-left"
-                    className="mt-5 text-lg font-semibold text-[#374151] text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. A, soluta? Dolore, ullam laudantium vel ratione sint veritatis totam rerum vero quod deleniti consectetur officia at eaque ipsa iste debitis. Vitae!</p>
+                    className="mt-5 text-lg font-semibold text-[#374151] text-justify">
+                    ພວກເຮົາສ້າງ SJI Investment ຂື້ນມາເພື່ອຈຸດປະສົງໃນການໃຫ້ຄົນລາວເຂົ້າເຖິງຂໍ້ມຸນທາງການເງິນທີ່ວວອງໄວ ແລະ ສະດວກ ເພາະພວກເຮົາເຂົ້າໃຈດີວ່າຂໍ້ມູນມີຄວາມສຳຄັນຫລາຍໃນການລງທຶນ.
+
+                  </p>
                 </div>
                 <div>
                   <img
@@ -118,7 +121,10 @@ export const AboutUs = () => {
                     className="mt-5 md:mt-10 lg:mt-10 text-3xl font-medium lg:text-4xl text-center text-[#F97316]">ວິໃສທັດຂອງພວກເຮົາ</h1>
                   <p
                     data-aos="fade-right"
-                    className="mt-5 text-lg font-semibold text-[#374151] text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. A, soluta? Dolore, ullam laudantium vel ratione sint veritatis totam rerum vero quod deleniti consectetur officia at eaque ipsa iste debitis. Vitae!</p>
+                    className="mt-5 text-lg font-semibold text-[#374151] text-justify">
+                    ພວກເຮົາມີວິໄສທັດໃນການພັດທະນາລະບົບ Technology ທີ່ຕອບໂຈດໃນເລືອງການໃຫ້ຂໍ້ມູນທາງການເງິນ ແລະ ການລົງທຶນລວມໄປເຖິງການວາງແຜນການເງິນຂອງທ່າ ເພື່ອອານະຄົດທີ່ສົດໃສ
+
+                  </p>
                 </div>
                 <div className=" block lg:hidden md:hidden">
                   <img
@@ -136,7 +142,10 @@ export const AboutUs = () => {
                     className="mt-5 md:mt-10 lg:mt-10 text-3xl font-medium lg:text-4xl text-center text-[#F97316]">ເປົ້າໝາຍຂອງພວກເຮົາ</h1>
                   <p
                     data-aos="fade-left"
-                    className="mt-5 text-lg font-semibold text-[#374151] text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. A, soluta? Dolore, ullam laudantium vel ratione sint veritatis totam rerum vero quod deleniti consectetur officia at eaque ipsa iste debitis. Vitae!</p>
+                    className="mt-5 text-lg font-semibold text-[#374151] text-justify">
+                    ນຳພາຄົນລາວໃຫ້ເຂົ້າໃຈໃນເລືອງການເງິນ ແລະ ທັນຂ່າວເສດຖະກິດເພື່ອໃຫ້ທຸກທ່ານສາມາດປັບຕົວເອງທັນທຸກເຫດການຈະເກີດຂື້ນໃນອານະຄົດ
+
+                  </p>
                 </div>
                 <div>
                   <img
