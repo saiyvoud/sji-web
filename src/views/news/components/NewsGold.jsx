@@ -15,6 +15,7 @@ import Swal from "sweetalert2";
 import Skeleton from "../../../components/Skeleton";
 import { useNavigate } from "react-router-dom";
 import { FaLongArrowAltRight } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 export const NewsGold = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -37,6 +38,19 @@ export const NewsGold = () => {
         <Skeleton type="card" />
       ) : (
         <div>
+          <Helmet>
+            <title>{data?.data?.title} - SJI Investment</title>
+            <meta name="robots" content="index, follow" />
+            <meta name="author" content="MiDi Technology, ບໍລິສັດ ມີດີ ເທັກໂນໂລຊີ ຈຳກັດ" />
+            <meta name="keywords" content="News, ການບໍລິການ, SJI,Investment,ສອນເຈົ້າລົງທຶນ, ລົງທຶນ,สอนลงทุน, การลงทุน" />
+            <meta name="robots" content="index, follow" />
+            <meta name="description" content={data?.data?.content} />
+            <meta property="og:title" content="News - SJI Investment" />
+            <meta property="og:description" content={data?.data?.content} />
+            <meta property="og:image" content={data?.data?.cover} />
+            <meta property="og:title" content={`${data?.data?.title} - SJI Investment`} />
+            <meta property="og:url" content={"https://sji.homefind.la/news/gold/"+id} />
+          </Helmet>
           {/* header */}
           <div className=" pt-20 lg:pt-24 px-2 lg:px-10 ">
             <h1 className=" flex justify-start items-center gap-2 ">
