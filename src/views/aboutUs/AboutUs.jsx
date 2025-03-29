@@ -8,8 +8,8 @@ import personImg from "../../assets/images/emp.jpg";
 import aiyA from "../../assets/images/aiyA_.jpg";
 import aiyB from "../../assets/images/aiyB_.png";
 import visionImg from "../../assets/images/vision.png";
-import visionImg2 from "../../assets/images/vision2.jpg";
-import visionImg3 from "../../assets/images/vision3.jpg";
+import visionImg2 from "../../assets/images/m2.webp";
+import visionImg3 from "../../assets/images/m1.webp";
 
 // icons
 import { FaLinkedinIn } from "react-icons/fa";

@@ -20,6 +20,7 @@ import SliderHomeMD from "../views/Homepage/SliderHomeMD";
 import { useAuthStore } from "../store/authStore";
 import Package from "./Package";
 import { useGetMe } from "../hooks/Auth.hook";
+import { Helmet } from "react-helmet-async";
 
 export const Home = () => {
   const { t, i18n } = useTranslation();
@@ -37,13 +38,22 @@ export const Home = () => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-  console.log(data)
+  // console.log(data)
   const handleScroll = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
   return (
-    <Navbar>
-      <>
+    <>
+      <Helmet>
+        {/* <title>SJI Investment - ສອນເຈົ້າລົງທຶນ</title> */}
+        <meta property="og:title" content="SJI Investment - ສອນເຈົ້າລົງທຶນ" />
+        <meta property="og:description" content="The Big Data for Your Win, and Smart Insights for Your Success ການລົງທຶນທີ່ປະສົບຄວາມສຳເລັດຂອງທ່ານມາຈາກຂໍ້ມູນ ຂະໜາດໃຫຍ່ຂອງພວກເຮົາ" />
+        <meta property="og:image" content="https://sji.homefind.la/assets/sji-logo-white-9gw7qHl4.png" />
+        <meta property="og:url" content="https://sji.homefind.la" />
+        <meta property="og:author" content="MiDi Technology, ບໍລິສັດ ມີດີ ເທັກໂນໂລຊີ ຈຳກັດ" />
+        <meta property="og:keywords" content="SJI,Investment,ສອນເຈົ້າລົງທຶນ, ລົງທຶນ,สอนลงทุน, การลงทุน, SEO,MiDi Technology, ບໍລິສັດ ມີດີ ເທັກໂນໂລຊີ ຈຳກັດ" />
+      </Helmet>
+      <Navbar>
         <div className="bg-[#002133] text-black pt-20 pb-5 lg:pt-20 ">
           <div className=" container px-2 lg:px-0 w-full lg:w-[1200px] md:[900px] mx-auto">
             <div className=" flex justify-around items-center">
@@ -220,7 +230,7 @@ export const Home = () => {
             </div>
           </div>
         </div>
-      </>
-    </Navbar>
+      </Navbar>
+    </>
   );
 };
