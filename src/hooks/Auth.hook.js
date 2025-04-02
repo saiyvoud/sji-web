@@ -96,6 +96,5 @@ export const useGetMe = () => {
     onError: (error) => {
       console.error("Get me error:", error.message);
     },
-
   });
 };

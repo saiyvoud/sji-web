@@ -88,7 +88,6 @@ export const OurService = () => {
             </div>
           </div>
         </div>
-
       </Navbar >
     </>
   );

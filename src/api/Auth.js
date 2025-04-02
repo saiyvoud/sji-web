@@ -61,3 +61,12 @@ export const resentVerifyEmail = async (data) => {
     return false;
   }
 }
+export const editProfile = async (data) => {
+  try {
+    const response = await api.put("edit", data);
+    return response.data;
+  } catch (error) {
+    console.log(error)
+    return false;
+  }
+}

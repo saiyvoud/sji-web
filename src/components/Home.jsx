@@ -31,7 +31,6 @@ export const Home = () => {
   const { AuthDetail } = useAuthStore();
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const { data, error, isLoading } = useGetMe();
-
   useEffect(() => {
 
     const handleResize = () => setWindowWidth(window.innerWidth);

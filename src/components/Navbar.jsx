@@ -174,7 +174,7 @@ export const Navbar = ({ children }) => {
                   </MenuHandler>
                   <MenuList>
                     <MenuItem></MenuItem>
-                    {/* <MenuItem className="font-lao"><Link to="/profile">{t("navbar.profile")}</Link></MenuItem> */}
+                    <MenuItem className="font-lao"><Link to="/profile">{t("navbar.profile")}</Link></MenuItem>
                     <MenuItem
                       className="font-lao "
                       onClick={handleLogout}
