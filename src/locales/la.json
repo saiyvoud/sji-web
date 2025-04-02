@@ -18,7 +18,8 @@
     "changePasswordSuccess": "ປ່ຽນລະຫັດຜ່ານສຳເລັດ",
     "changePasswordFail": "ປ່ຽນລະຫັດຜ່ານບໍ່ສຳເລັດ",
     "changePasswordError": "ລະຫັດຜ່ານປັດຈຸບັນບໍ່ຖືກຕ້ອງ",
-    "changePasswordError2": "ລະຫັດຜ່ານໃໝ່ບໍ່ຄົງຢູ່ກວ່າ 6 ໂຕອັນ"
+    "changePasswordError2": "ລະຫັດຜ່ານໃໝ່ຕ້ອງຫຼາຍກວ່າ 5 ຫຼັກ",
+    "changePasswordError3": "ລະຫັດຜ່ານໃໝ່ບໍ່ຕົງກັນ"
   },
   "alert": {
     "confirm": "ຕົກລົງ",

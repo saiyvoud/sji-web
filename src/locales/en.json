@@ -2,26 +2,29 @@
   "profile": {
     "title": "Profile",
     "username": "Username",
-    "fname":"First name",
-    "lname":"Last name",
+    "fname": "First name",
+    "lname": "Last name",
     "email": "Email",
     "phone": "Phone",
     "address": "Address",
     "edit": "Edit",
     "save": "Save",
     "cancel": "Cancel",
-    "changeInfo":"Edit",
+    "changeInfo": "Edit",
     "changePassword": "Change Password",
-    "oldPassword": "Old Password",
+    "currentPassword": "Current Password",
     "newPassword": "New Password",
     "confirmPassword": "Confirm Password",
     "confirm": "Confirm",
     "logout": "Logout",
-    "confirmLogout": "You want to log out ?"
+    "confirmLogout": "You want to log out ?",
+    "changePasswordError": "You password is wrong!",
+    "changePasswordError2": "New password must be more than 5 characters.",
+    "changePasswordError3": "Confirm password does not match."
   },
   "alert": {
-    "confirm":"confirm",
-    "cancel":"cancel"
+    "confirm": "confirm",
+    "cancel": "cancel"
   },
   "navbar": {
     "home": "Home",
@@ -34,7 +37,7 @@
     "login": "Login",
     "logout": "Logout",
     "profile": "Profile",
-    "confirmLogout":"You want to log out ?"
+    "confirmLogout": "You want to log out ?"
   },
   "language": {
     "laos": "Laos",

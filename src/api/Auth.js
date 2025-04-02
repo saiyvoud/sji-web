@@ -70,3 +70,11 @@ export const editProfile = async (data) => {
     return false;
   }
 }
+export const changePass = async (data) => {
+  try {
+    const response = await api.put("changed-password", data);
+    return response.data;
+  } catch (error) {
+    return error;
+  }
+}

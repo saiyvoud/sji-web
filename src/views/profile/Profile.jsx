@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 import { Button, Input } from '@material-tailwind/react';
 import { useGetMe } from '../../hooks/Auth.hook';
 import Swal from 'sweetalert2';
-import { editProfile } from '../../api/Auth';
+import { changePass, editProfile } from '../../api/Auth';
 import PhoneInput from "react-phone-input-2";
 import { Error, Success } from '../../helper/sweetAlert';
 import Loading from '../../components/Loading';
@@ -80,101 +80,129 @@ const Profile = () => {
             }
         }
     }
-    if (data) {
-        return (
-            <Navbar>
-                {loading && <Loading />}
-                <div className=' py-28 bg-gray-200'>
-                    <div className="container px-2 lg:px-0 w-full lg:w-[1200px] md:[900px] mx-auto ">
-                        <div className=' bg-white px-3 py-5 rounded-lg'>
-                            <h1 className="mb-5 text-lg lg:text-xl font-bold text-[#F97316] text-center">
-                                {t("profile.title")}
-                            </h1>
-                            <div className=' grid grid-cols-1 gap-3 md:grid-cols-3 lg:grid-cols-3'>
-                                <Input type='text' className='' label={t("profile.username")} value={data?.data?.username ? data?.data?.username : data?.data?.displayName} readOnly />
-                                <Input
-                                    type='text'
-                                    label={t("profile.fname")}
-                                    value={data?.data?.firstName}
-                                    readOnly
-                                />
-                                <Input
-                                    type='text'
-                                    label={t("profile.lname")}
-                                    value={data?.data?.lastName}
-                                    readOnly
-                                />
-                            </div>
-                            <div className=' mt-3 grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-2'>
-                                <Input
-                                    type='text'
-                                    label={t("profile.phone")}
-                                    value={data?.data?.phoneNumber}
-                                    readOnly
-                                />
-                                <Input type='text' label={t("profile.email")} value={data?.data?.email} readOnly />
-                            </div>
-                            <div className=' mt-3 grid grid-cols-1 gap-3 md:grid-cols-3 lg:grid-cols-3'>
-                                <Input type='text' label="google id" value={data?.data?.googleId} readOnly />
-                                <Input type='text' label={"Display Name"} value={data?.data?.displayName} readOnly />
-                                <Input type='text' label={"Email"} value={data?.data?.email} readOnly />
-                            </div>
-                            <div className=' flex justify-center items-center mt-5'>
-                                <Button onClick={handleEdit} color="blue" className=' font-lao'>{t("profile.changeInfo")}</Button>
-                            </div>
+    const handleChangePass = async () => {
+        if (oldPass && newPass && conPass) {
+            if (newPass !== conPass) {
+                Error(t("profile.changePasswordError3"))
+                return;
+            }
+            if (newPass.length < 6) {
+                Error(t("profile.changePasswordError2"))
+                return;
+            }
+            setLoading(true);
+            const result = await changePass({
+                "oldPassword": oldPass,
+                "password": newPass,
+                "confirmPassword": conPass
+            });
+            setLoading(false);
+            if (result.status) {
+                Success("Success");
+                window.location.reload();
+            }
+            if (result?.response?.data?.status !== 200) {
+                console.log(result)
+                Error(result?.response?.data?.messages || result?.response?.data?.error)
+            }
+
+        }
+
+    }
+
+    return (
+        <Navbar>
+            {loading && <Loading />}
+            <div className=' py-28 bg-gray-200'>
+                <div className="container px-2 lg:px-0 w-full lg:w-[1200px] md:[900px] mx-auto ">
+                    <div className=' bg-white px-3 py-5 rounded-lg'>
+                        <h1 className="mb-5 text-lg lg:text-xl font-bold text-[#F97316] text-center">
+                            {t("profile.title")}
+                        </h1>
+                        <div className=' grid grid-cols-1 gap-3 md:grid-cols-3 lg:grid-cols-3'>
+                            <Input type='text' className='' label={t("profile.username")} value={data?.data?.username ? data?.data?.username : data?.data?.displayName} readOnly />
+                            <Input
+                                type='text'
+                                label={t("profile.fname")}
+                                value={data?.data?.firstName}
+                                readOnly
+                            />
+                            <Input
+                                type='text'
+                                label={t("profile.lname")}
+                                value={data?.data?.lastName}
+                                readOnly
+                            />
                         </div>
-                        {data?.data?.package &&
-                            <div className='mt-5 bg-white px-3 py-5 rounded-lg'>
-                                <h1 className="mb-5 text-lg lg:text-xl font-bold text-[#F97316] text-center">
-                                    Package
-                                </h1>
-                                < div
-                                    className="w-full p-2 rounded-lg shadow-[0px_2px_2px_rgba(255,215,0,0.7)] border border-orange-400 bg-[#FFEDD5]"
-                                >
-                                    <h2 className="my-4 text-center text-[24px] font-bold text-[#FB923C]">
-                                        {data?.data?.package?.name.toUpperCase()}
-                                    </h2>
-                                    <div className=' border-b border-gray-300 pb-2 text-center mx-auto' dangerouslySetInnerHTML={{ __html: data?.data?.package?.description }} />
-                                    <div className=' mt-2 text-center' dangerouslySetInnerHTML={{ __html: data?.data?.package?.feature }} />
-                                    <p className=" text-center">ໄລຍະເວລາ: {data?.data?.package?.duration}{" "}{data?.data?.package?.durationType}</p>
-                                    <div className=' pt-5 text-center'>
-                                        <p> Price: <span className=' text-[25px] font-bold text-orange-600'>{data?.data?.package?.price.toLocaleString()}{" "}{"₭"}</span></p>
-                                    </div>
-                                </div>
-                            </div>
-                        }
+                        <div className=' mt-3 grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-2'>
+                            <Input
+                                type='text'
+                                label={t("profile.phone")}
+                                value={data?.data?.phoneNumber}
+                                readOnly
+                            />
+                            <Input type='text' label={t("profile.email")} value={data?.data?.email} readOnly />
+                        </div>
+                        <div className=' mt-3 grid grid-cols-1 gap-3 md:grid-cols-3 lg:grid-cols-3'>
+                            <Input type='text' label="google id" value={data?.data?.googleId} readOnly />
+                            <Input type='text' label={"Display Name"} value={data?.data?.displayName} readOnly />
+                            <Input type='text' label={"Email"} value={data?.data?.email} readOnly />
+                        </div>
+                        <div className=' flex justify-center items-center mt-5'>
+                            <Button onClick={handleEdit} color="blue" className=' font-lao'>{t("profile.changeInfo")}</Button>
+                        </div>
+                    </div>
+                    {data?.data?.package &&
                         <div className='mt-5 bg-white px-3 py-5 rounded-lg'>
                             <h1 className="mb-5 text-lg lg:text-xl font-bold text-[#F97316] text-center">
-                                {t("profile.changePassword")}
+                                Package
                             </h1>
-                            <div className=' grid grid-cols-1 gap-3 md:grid-cols-3 lg:grid-cols-3'>
-                                <Input
-                                    type='password'
-                                    label={t("profile.oldPassword")}
-                                    value={oldPass}
-                                    onChange={(e) => { setOldPass(e.target.value) }} />
-                                <Input
-                                    type='password'
-                                    label={t("profile.newPassword")}
-                                    value={newPass}
-                                    onChange={(e) => { setNewPass(e.target.value) }}
-                                />
-                                <Input
-                                    type='password'
-                                    label={t("profile.confirmPassword")}
-                                    value={conPass}
-                                    onChange={(e) => { setConPass(e.target.value) }}
-                                />
+                            < div
+                                className="w-full p-2 rounded-lg shadow-[0px_2px_2px_rgba(255,215,0,0.7)] border border-orange-400 bg-[#FFEDD5]"
+                            >
+                                <h2 className="my-4 text-center text-[24px] font-bold text-[#FB923C]">
+                                    {data?.data?.package?.name.toUpperCase()}
+                                </h2>
+                                <div className=' border-b border-gray-300 pb-2 text-center mx-auto' dangerouslySetInnerHTML={{ __html: data?.data?.package?.description }} />
+                                <div className=' mt-2 text-center' dangerouslySetInnerHTML={{ __html: data?.data?.package?.feature }} />
+                                <p className=" text-center">ໄລຍະເວລາ: {data?.data?.package?.duration}{" "}{data?.data?.package?.durationType}</p>
+                                <div className=' pt-5 text-center'>
+                                    <p> Price: <span className=' text-[25px] font-bold text-orange-600'>{data?.data?.package?.price.toLocaleString()}{" "}{"₭"}</span></p>
+                                </div>
                             </div>
-                            <div className=' flex justify-center items-center mt-5'>
-                                <Button  color="blue" className=' font-lao'>{t("profile.changePassword")}</Button>
-                            </div>
+                        </div>
+                    }
+                    <div className='mt-5 bg-white px-3 py-5 rounded-lg'>
+                        <h1 className="mb-5 text-lg lg:text-xl font-bold text-[#F97316] text-center">
+                            {t("profile.changePassword")}
+                        </h1>
+                        <div className=' grid grid-cols-1 gap-3 md:grid-cols-3 lg:grid-cols-3'>
+                            <Input
+                                type='password'
+                                label={t("profile.currentPassword")}
+                                value={oldPass}
+                                onChange={(e) => { setOldPass(e.target.value) }} />
+                            <Input
+                                type='password'
+                                label={t("profile.newPassword")}
+                                value={newPass}
+                                onChange={(e) => { setNewPass(e.target.value) }}
+                            />
+                            <Input
+                                type='password'
+                                label={t("profile.confirmPassword")}
+                                value={conPass}
+                                onChange={(e) => { setConPass(e.target.value) }}
+                            />
+                        </div>
+                        <div className=' flex justify-center items-center mt-5'>
+                            <Button onClick={handleChangePass} color="blue" className=' font-lao'>{t("profile.changePassword")}</Button>
                         </div>
                     </div>
                 </div>
-            </Navbar >
-        )
-    }
+            </div>
+        </Navbar >
+    )
 }
 
 export default Profile
