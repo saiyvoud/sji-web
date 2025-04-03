@@ -1,10 +1,9 @@
 import React from "react";
 
-const FacebookShareButton = (url) => {
-    console.log(url)
+const FacebookShareButton = ({ url }) => {
+    const _url = encodeURIComponent(url); // Link bạn muốn chia sẻ
+    const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${_url}`;
     const shareToFacebook = () => {
-        const _url = encodeURIComponent(url); // Link bạn muốn chia sẻ
-        const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${_url}`;
         window.open(facebookShareUrl, "_blank", "width=600,height=400");
     };
     return (

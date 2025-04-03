@@ -26,7 +26,7 @@ export const ArticleDetail = () => {
       showConfirmButton: false,
     });
   }
-
+  console.log(data?.data?.cover)
   const navigate = useNavigate();
   return (
     <Navbar>
@@ -36,6 +36,8 @@ export const ArticleDetail = () => {
         <meta name="author" content="MiDi Technology, ບໍລິສັດ ມີດີ ເທັກໂນໂລຊີ ຈຳກັດ" />
         <meta name="keywords" content={`article SJI,Investment,ສອນເຈົ້າລົງທຶນ, ລົງທຶນ,สอนลงทุน, การลงทุน`} />
         <meta name="robots" content="index, follow" />
+        <meta name="image" content={data?.data?.cover} />
+        <meta name="url" content={"https://www.sjiinvestment.la/article/" + id} />
         <meta name="description" content="The Big Data for Your Win, and Smart Insights for Your Success ການລົງທຶນທີ່ປະສົບຄວາມສຳເລັດຂອງທ່ານມາຈາກຂໍ້ມູນ ຂະໜາດໃຫຍ່ຂອງພວກເຮົາ" />
         <meta property="og:title" content={`${data?.data?.title} - SJI Investment`} />
         <meta property="og:description" content={data?.data?.content} />
