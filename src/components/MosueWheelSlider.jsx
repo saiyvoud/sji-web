@@ -49,6 +49,7 @@ export default function MosueWheelSlider() {
       >
         <SwiperSlide>
           <img
+            loading="lazy"
             src={stockImg}
             alt=""
             className="h-[180px] w-[300px] rounded-lg object-cover shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px]"
@@ -56,6 +57,7 @@ export default function MosueWheelSlider() {
         </SwiperSlide>
         <SwiperSlide>
           <img
+            loading="lazy"
             src={trade2}
             alt=""
             className="h-[180px] w-[300px] rounded-lg object-cover shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px]"
@@ -63,6 +65,7 @@ export default function MosueWheelSlider() {
         </SwiperSlide>
         <SwiperSlide>
           <img
+            loading="lazy"
             src={trade3}
             alt=""
             className="h-[180px] w-[300px] rounded-lg object-cover shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px]"
@@ -70,6 +73,7 @@ export default function MosueWheelSlider() {
         </SwiperSlide>
         <SwiperSlide>
           <img
+            loading="lazy"
             src={stockImg}
             alt=""
             className="h-[180px] w-[300px] rounded-lg object-cover shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px]"
@@ -77,6 +81,7 @@ export default function MosueWheelSlider() {
         </SwiperSlide>
         <SwiperSlide>
           <img
+            loading="lazy"
             src={trade4}
             alt=""
             className="h-[180px] w-[300px] rounded-lg object-cover shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px]"

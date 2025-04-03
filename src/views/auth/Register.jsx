@@ -3,7 +3,7 @@ import { Button, Input } from "@material-tailwind/react";
 import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
 import { LuLoader } from "react-icons/lu";
 import bgAuth from "../../assets/bg-register.jpg";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo/sji-bg-blue.png";
 import googleLogo from "../../assets/icons/google.png";
 import facebookLogo from "../../assets/icons/facebook.png";
 import { Link } from "react-router-dom";
@@ -113,11 +113,11 @@ export const Register = () => {
       </Helmet>
       {isLoading && <Loading />}
       <div className="col-span-8 hidden w-full md:col-span-6 md:block lg:col-span-7">
-        <img src={bgAuth} alt="" className="h-[800px] w-full object-cover" />
+        <img src={bgAuth} loading="lazy" alt="" className="h-[800px] w-full object-cover" />
       </div>
       <div className="col-span-4 w-full p-8 md:col-span-6 lg:col-span-5 lg:px-4 lg:py-8">
         <div className="flex items-center gap-x-3">
-          <img src={logo} alt="logo" className="w-7" />
+          <img loading="lazy" src={logo} alt="logo" className="w-7" />
           <h2>ສອນເຈົ້າລົງທຶນ</h2>
         </div>
         <form

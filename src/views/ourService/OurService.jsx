@@ -32,21 +32,15 @@ export const OurService = () => {
           <meta name="theme-color" content="#ffffff" />
           <meta name="author" content="MiDi Technology, ບໍລິສັດ ມີດີ ເທັກໂນໂລຊີ ຈຳກັດ" />
           <meta name="keywords" content="service, ການບໍລິການ, SJI,Investment,ສອນເຈົ້າລົງທຶນ, ລົງທຶນ,สอนลงทุน, การลงทุน" />
-          <meta name="robots" content="index, follow" />
-          <meta name="description" content="The Big Data for Your Win, and Smart Insights for Your Success ການລົງທຶນທີ່ປະສົບຄວາມສຳເລັດຂອງທ່ານມາຈາກຂໍ້ມູນ ຂະໜາດໃຫຍ່ຂອງພວກເຮົາ" />
-          <meta property="og:title" content="SJI Investment - ສອນເຈົ້າລົງທຶນ" />
-          <meta property="og:description" content="The Big Data for Your Win, and Smart Insights for Your Success ການລົງທຶນທີ່ປະສົບຄວາມສຳເລັດຂອງທ່ານມາຈາກຂໍ້ມູນ ຂະໜາດໃຫຍ່ຂອງພວກເຮົາ" />
-          <meta property="og:image" content="https://sji.homefind.la/assets/sji-logo-white-9gw7qHl4.png" />
-          <meta property="og:url" content="https://sji.homefind.la" />
         </Helmet>
         <div>
           <div className="w-full bg-[#003049]">
             <div className="w-full relative">
-              <img alt="" src={bg_header} className=" w-full hidden lg:block" />
-              <img alt="" src={bg_header_mobile} className=" w-full block lg:hidden" />
+              <img alt="" loading="lazy" src={bg_header} className=" w-full hidden lg:block" />
+              <img alt="" loading="lazy" src={bg_header_mobile} className=" w-full block lg:hidden" />
               <div className="w-full absolute top-20 lg:top-28 left-1/2 -translate-x-1/2">
                 <div className=" flex justify-center">
-                  <img alt="" src={SJI_logo} data-aos="fade-up" className=" w-[100px] md:w-[200px] lg:w-[200px]" />
+                  <img alt="" loading="lazy" src={SJI_logo} data-aos="fade-up" className=" w-[100px] md:w-[200px] lg:w-[200px]" />
                 </div>
                 <h1 data-aos="fade-up" className=" w-full mt-5 md:mt-10 lg:mt-10 text-white text-2xl md:text-4xl lg:text-6xl text-center">The Big Data For You Win</h1>
               </div>
@@ -57,21 +51,21 @@ export const OurService = () => {
                 <div data-aos="fade-up" className=" mt-5 grid grid-cols-3 gap-3">
                   <div className=" bg-white rounded-lg px-1 py-2">
                     <div className=" mb-3 flex items-center justify-center">
-                      <img alt="" src={icon1} className="w-10 lg:w-20"></img>
+                      <img alt="" loading="lazy" src={icon1} className="w-10 lg:w-20"></img>
                     </div>
                     <p className=" text-sm font-bold text-center lg:text-2xl  text-[#003049]">ໃຫ້ຂໍ້ມູນຂ່າວສານ <br /> ການລົງທຶນ</p>
                     <p className=" text-[10px] font-bold text-center lg:text-xl  text-[#003049]">Provider investment <br />news information</p>
                   </div>
                   <div className=" bg-white rounded-lg px-1 py-2">
                     <div className=" mb-3 flex items-center justify-center">
-                      <img alt="" src={icon2} className="w-10 lg:w-20"></img>
+                      <img alt=""  loading="lazy"src={icon2} className="w-10 lg:w-20"></img>
                     </div>
                     <p className=" text-sm font-bold text-center lg:text-2xl  text-[#003049]">ໃຫ້ຂໍ້ມູນຂ່າວສານ <br /> ການລົງທຶນ</p>
                     <p className=" text-[10px] font-bold text-center lg:text-xl  text-[#003049]">Provider investment <br />news information</p>
                   </div>
                   <div className=" bg-white rounded-lg px-1 py-2">
                     <div className=" mb-3 flex items-center justify-center">
-                      <img alt="" src={icon3} className="w-10 lg:w-20"></img>
+                      <img alt="" loading="lazy" src={icon3} className="w-10 lg:w-20"></img>
                     </div>
                     <p className=" text-sm font-bold text-center lg:text-2xl  text-[#003049]">ໃຫ້ຂໍ້ມູນຂ່າວສານ <br /> ການລົງທຶນ</p>
                     <p className=" text-[10px] font-bold text-center lg:text-xl  text-[#003049]">Provider investment <br />news information</p>
@@ -79,10 +73,10 @@ export const OurService = () => {
                 </div>
               </div>
               <div className=" relative">
-                <img alt="" src={bg_2} className="w-full object-cover"></img>
+                <img alt="" loading="lazy" src={bg_2} className="w-full object-cover"></img>
                 <div className=" w-full absolute top-20 flex flex-col items-center justify-center">
-                  <img alt="" data-aos="fade-up" src={icon_ui} className="w-full lg:w-[60%]"></img>
-                  <img alt="" data-aos="fade-up" src={contact_card} className=" hidden lg:block mt-40 w-full lg:w-[60%]"></img>
+                  <img alt="" data-aos="fade-up" loading="lazy" src={icon_ui} className="w-full lg:w-[60%]"></img>
+                  <img alt="" data-aos="fade-up" loading="lazy" src={contact_card} className=" hidden lg:block mt-40 w-full lg:w-[60%]"></img>
                 </div>
               </div>
             </div>

@@ -55,6 +55,7 @@ export const AnalysisDetail = () => {
               <div className="mt-5 flex justify-center items-center" data-aos="fade-left">
                 <div className="h-[60px] w-[60px] rounded-full md:w-[70px]">
                   <img
+                    loading="lazy"
                     src={data?.data?.flag}
                     alt=""
                     className="h-[60px] w-[60px] rounded-full border-2 object-cover"
@@ -82,6 +83,7 @@ export const AnalysisDetail = () => {
                       >
                         <div className="">
                           <img
+                            loading="lazy"
                             src={item.image}
                             alt=""
                             className="w-full object-cover"

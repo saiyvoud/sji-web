@@ -10,6 +10,7 @@ import { changePass, editProfile } from '../../api/Auth';
 import PhoneInput from "react-phone-input-2";
 import { Error, Success } from '../../helper/sweetAlert';
 import Loading from '../../components/Loading';
+import { delay } from 'lodash';
 const Profile = () => {
     const navigate = useNavigate();
     const { data, error, isLoading } = useGetMe();
@@ -99,11 +100,14 @@ const Profile = () => {
             setLoading(false);
             if (result.status) {
                 Success("Success");
-                window.location.reload();
+                setOldPass("");
+                setConPass("");
+                setNewPass("");
+
             }
             if (result?.response?.data?.status !== 200) {
                 console.log(result)
-                Error(result?.response?.data?.messages || result?.response?.data?.error)
+                Error(result?.response?.data?.messages || "Password is wrong")
             }
 
         }

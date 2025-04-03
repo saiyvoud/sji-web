@@ -46,21 +46,13 @@ export const Home = () => {
       <Helmet>
         <title>SJI Investment - ສອນເຈົ້າລົງທຶນ</title>
         <meta name="robots" content="index, follow" />
-        <meta name="theme-color" content="#ffffff" />
         <meta name="author" content="MiDi Technology, ບໍລິສັດ ມີດີ ເທັກໂນໂລຊີ ຈຳກັດ" />
-        <meta name="keywords" content="SJI,Investment,ສອນເຈົ້າລົງທຶນ, ລົງທຶນ,สอนลงทุน, การลงทุน, SEO,MiDi Technology, ບໍລິສັດ ມີດີ ເທັກໂນໂລຊີ ຈຳກັດ" />
+        <meta name="keywords" content="SJI Investment,ສອນເຈົ້າລົງທຶນ, ລົງທຶນ,สอนลงทุน, การลงทุน" />
         <meta name="robots" content="index, follow" />
         <meta name="description" content="The Big Data for Your Win, and Smart Insights for Your Success ການລົງທຶນທີ່ປະສົບຄວາມສຳເລັດຂອງທ່ານມາຈາກຂໍ້ມູນ ຂະໜາດໃຫຍ່ຂອງພວກເຮົາ" />
         <meta property="og:title" content="SJI Investment - ສອນເຈົ້າລົງທຶນ" />
         <meta property="og:description" content="The Big Data for Your Win, and Smart Insights for Your Success ການລົງທຶນທີ່ປະສົບຄວາມສຳເລັດຂອງທ່ານມາຈາກຂໍ້ມູນ ຂະໜາດໃຫຍ່ຂອງພວກເຮົາ" />
-        <meta property="og:image" content="https://sji.homefind.la/assets/sji-logo-white-9gw7qHl4.png" />
-        <meta property="og:url" content="https://sji.homefind.la" />
-        <meta property="og:title" content="SJI Investment - " />
-        <meta property="og:description" content="The Big Data for Your Win, and Smart Insights for Your Success ການລົງທຶນທີ່ປະສົບຄວາມສຳເລັດຂອງທ່ານມາຈາກຂໍ້ມູນ ຂະໜາດໃຫຍ່ຂອງພວກເຮົາ" />
-        <meta property="og:image" content="https://sji.homefind.la/assets/sji-logo-white-9gw7qHl4.png" />
-        <meta property="og:url" content="https://sji.homefind.la" />
-        <meta property="og:author" content="MiDi Technology, ບໍລິສັດ ມີດີ ເທັກໂນໂລຊີ ຈຳກັດ" />
-        <meta property="og:keywords" content="SJI,Investment,ສອນເຈົ້າລົງທຶນ, ລົງທຶນ,สอนลงทุน, การลงทุน, SEO,MiDi Technology, ບໍລິສັດ ມີດີ ເທັກໂນໂລຊີ ຈຳກັດ" />
+        <meta property="og:url" content="http://sjiinvestment.la" />
       </Helmet>
       <Navbar>
         <div className="bg-[#002133] text-black pt-20 pb-5 lg:pt-20 ">
@@ -68,6 +60,7 @@ export const Home = () => {
             <div className=" flex justify-around items-center">
               <div className=" w-full flex flex-col justify-center items-center">
                 <img
+                  loading="lazy"
                   alt=""
                   src={SJI_log_white}
                   className="w-[50%] lg:w-[200px] object-cover"
@@ -95,46 +88,7 @@ export const Home = () => {
           </div>
 
         </div>
-        {/* <div className="relative z-0 h-full w-full before:absolute before:-z-[1] before:h-[300px] before:w-full before:bg-[#002133] sm:h-[700px] sm:before:h-[700px] sm:before:bg-[#002133] xl:h-screen xl:before:h-screen">
-          <img
-            alt=""
-            src={SJI_logo}
-            className="absolute hidden md:block lg:block w-[500px] object-cover"
-          />
-          <div
-            data-aos="fade-right"
-            data-aos-duration="1400"
-            className="container relative z-50 mx-auto mb-5 h-full max-w-[340px] pt-[70px] text-white sm:max-w-[620px] md:max-w-[700px] lg:mb-0 lg:max-w-[900px] xl:max-w-6xl"
-          >
-            <div className="flex items-center justify-between md:mt-5">
-              <div className="sm:flex sm:flex-[2] sm:flex-col sm:items-start sm:gap-y-4 md:w-full md:flex-[2] lg:w-full xl:flex-[3]">
-                <h1 className="mb-1 mt-5 text-[40px] font-bold text-[#F97316]">
-                  SJI Invsetment
-                </h1>
-                <p className="text-sm lg:text-lg md:text-lg text-justify">
-                  The Big Data for Your Win, and Smart Insights for Your Success<br />
-                  ການລົງທຶນທີ່ປະສົບຄວາມສຳເລັດຂອງທ່ານມາຈາກຂໍ້ມູນ ຂະໜາດໃຫຍ່ຂອງພວກເຮົາ <br />
-                </p>
-                {!AuthDetail?.data && (
-                  <button
-                    onClick={() => handleScroll("package")}
-                    type="button"
-                    className="mt-5 rounded bg-[#FB923C] px-5 py-2 font-semibold">
-                    {t("home.tryNow")}
-                  </button>
-                )}
-              </div>
-              <div
-                data-aos="fade-left"
-                // data-aos-easing="linear"
-                data-aos-duration="1400"
-                className="mt-5 flex flex-col items-center gap-y-5 sm:flex-[2] md:flex-[2]"
-              >
-                {windowWidth > 480 && }
-              </div>
-            </div>
-          </div>
-        </div> */}
+
         <div className="w-full bg-white pb-10">
           <div className="container mx-auto h-full max-w-[340px] sm:max-w-[620px] md:max-w-[700px] lg:max-w-[900px] xl:max-w-6xl">
             <div
@@ -157,6 +111,7 @@ export const Home = () => {
               >
                 <div className="flex h-[370px] w-[350px] cursor-pointer items-end justify-center rounded-xl bg-[#457B9D] hover:shadow-md sm:h-[340px] sm:w-[300px] lg:w-full">
                   <img
+                  loading="lazy"
                     src={aiyA}
                     alt=""
                     className="h-[350px] w-[300px] rounded-xl object-cover sm:h-[320px] sm:w-[280px]"

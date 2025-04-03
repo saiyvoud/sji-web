@@ -27,6 +27,7 @@ export default function Footer() {
           <div className="flex sm:items-center justify-around gap-x-4 px-2">
             <div className="flex flex-col items-center gap-x-4 sm:flex-row lg:mb-0">
               <img
+                loading="lazy"
                 src={midiLogo}
                 alt=""
                 className="h-20 w-20 rounded-full object-cover lg:h-20 lg:w-20"
@@ -37,12 +38,13 @@ export default function Footer() {
             </div>
             <div className="flex flex-col items-center gap-x-4 sm:flex-row">
               <img
+                loading="lazy"
                 src={SJI_logo}
                 alt=""
                 className="h-20 w-20 rounded-full border-[2px] border-[#F97316] object-cover lg:h-20 lg:w-20"
               />
               <h5 className="mt-2 lg:mt-0 logoName text-[16px] font-semibold text-white lg:text-[20px]">
-              SJI Investment
+                SJI Investment
               </h5>
             </div>
           </div>

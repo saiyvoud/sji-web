@@ -51,6 +51,7 @@ export const AboutUs = () => {
               <div data-aos="fade-up" className="w-full bg-[#FB923C] p-1 flex justify-between rounded-lg gap-3">
                 <div className="w-full bg-white rounded-lg overflow-hidden">
                   <img
+                    loading="lazy"
                     src={aiyA}
                     alt=""
                     className="w-[500px]"
@@ -72,6 +73,7 @@ export const AboutUs = () => {
               <div data-aos="fade-up" className="w-full bg-[#FB923C] p-1 flex justify-between rounded-lg gap-3">
                 <div className="w-full bg-white rounded-lg overflow-hidden">
                   <img
+                    loading="lazy"
                     src={aiyB}
                     alt=""
                     className="w-[1000px]"
@@ -108,6 +110,7 @@ export const AboutUs = () => {
                 </div>
                 <div>
                   <img
+                  loading="lazy"
                     data-aos="fade-left"
                     src={visionImg}
                     className=" h-[300px] w-full rounded-lg object-cover sm:h-[400px] sm:w-[550px]"
@@ -118,6 +121,7 @@ export const AboutUs = () => {
               <div className="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5">
                 <div className=" hidden md:block lg:block">
                   <img
+                  loading="lazy"
                     data-aos="fade-right"
                     src={visionImg2}
                     className="h-[300px] w-full rounded-lg object-cover sm:h-[400px] sm:w-[550px]"
@@ -137,6 +141,7 @@ export const AboutUs = () => {
                 </div>
                 <div className=" block lg:hidden md:hidden">
                   <img
+                  loading="lazy"
                     data-aos="fade-right"
                     src={visionImg2}
                     className="h-[300px] w-full rounded-lg object-cover sm:h-[400px] sm:w-[550px]"
@@ -158,6 +163,7 @@ export const AboutUs = () => {
                 </div>
                 <div>
                   <img
+                  loading="lazy"
                     data-aos="fade-left"
                     src={visionImg3}
                     className=" h-[300px] w-full rounded-lg object-cover sm:h-[400px] sm:w-[550px]"

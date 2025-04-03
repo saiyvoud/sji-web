@@ -43,15 +43,13 @@ export const Analysiss = () => {
       <Helmet>
         <title>Analysis -SJI Investment</title>
         <meta name="robots" content="index, follow" />
-        <meta name="theme-color" content="#ffffff" />
         <meta name="author" content="MiDi Technology, ບໍລິສັດ ມີດີ ເທັກໂນໂລຊີ ຈຳກັດ" />
-        <meta name="keywords" content="Analysis, ການບໍລິການ, SJI,Investment,ສອນເຈົ້າລົງທຶນ, ລົງທຶນ,สอนลงทุน, การลงทุน" />
+        <meta name="keywords" content="Analysis sji, SJI,Investment,ສອນເຈົ້າລົງທຶນ, ລົງທຶນ,สอนลงทุน, การลงทุน" />
         <meta name="robots" content="index, follow" />
         <meta name="description" content="The Big Data for Your Win, and Smart Insights for Your Success ການລົງທຶນທີ່ປະສົບຄວາມສຳເລັດຂອງທ່ານມາຈາກຂໍ້ມູນ ຂະໜາດໃຫຍ່ຂອງພວກເຮົາ" />
         <meta property="og:title" content="SJI Investment - ສອນເຈົ້າລົງທຶນ" />
         <meta property="og:description" content="The Big Data for Your Win, and Smart Insights for Your Success ການລົງທຶນທີ່ປະສົບຄວາມສຳເລັດຂອງທ່ານມາຈາກຂໍ້ມູນ ຂະໜາດໃຫຍ່ຂອງພວກເຮົາ" />
-        <meta property="og:image" content="https://sji.homefind.la/assets/sji-logo-white-9gw7qHl4.png" />
-        <meta property="og:url" content="https://sji.homefind.la" />
+        <meta property="og:url" content="https://www.sjiinvestment.la/analysis" />
       </Helmet>
       <Navbar>
         {isLoading ? (
@@ -79,12 +77,14 @@ export const Analysiss = () => {
                         className="w-full relative shadow-lg rounded-lg h-[200px] overflow-hidden hover:scale-105 ease-in-out duration-700"
                       >
                         <img
+                          loading="lazy"
                           src={item.background}
                           alt=""
                           className="w-full h-[200px] object-cover"
                         />
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  flex flex-col items-center leading-loose">
                           <img
+                            loading="lazy"
                             src={item.flag}
                             alt=""
                             className="h-[80px] w-[80px] rounded-full object-cover"

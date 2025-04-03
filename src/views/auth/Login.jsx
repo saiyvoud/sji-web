@@ -3,7 +3,7 @@ import { Input, Checkbox } from "@material-tailwind/react";
 import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
 import { LuLoader } from "react-icons/lu";
 import bgAuth from "../../assets/bg-register.jpg";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo/sji-bg-blue.svg";
 import googleLogo from "../../assets/icons/google.png";
 import facebookLogo from "../../assets/icons/facebook.png";
 import { Link } from "react-router-dom";
@@ -84,11 +84,11 @@ export const Login = () => {
       {isLoading && <Loading />}
       <div className="grid grid-cols-1 md:grid-cols-12">
         <div className="col-span-8 hidden w-full md:col-span-7 md:block">
-          <img src={bgAuth} alt="" className="h-screen w-full object-cover" />
+          <img src={bgAuth} loading="lazy" alt="" className="h-screen w-full object-cover" />
         </div>
         <div className="col-span-4 w-full p-8 md:col-span-5">
           <div className="flex items-center gap-x-3">
-            <img src={logo} alt="logo" className="w-7" />
+            <img src={logo} loading="lazy" alt="logo" className="w-7" />
             <h2>ສອນເຈົ້າລົງທຶນ</h2>
           </div>
           <form

@@ -11,12 +11,13 @@ const PaySuccess = () => {
     const { data } = useParams();
 
     const jsonData = JSON.parse(decodeURIComponent(data));
-    console.log(jsonData);
+    // console.log(jsonData);
     return (
         <Navbar>
             <div>
                 <div className="relative z-0 w-full before:absolute before:-z-[1] before:h-[350px] before:w-full before:bg-[#003049]">
                     <img
+                        loading="lazy"
                         src={bgOverlay2}
                         className="absolute h-[350px] w-full bg-cover bg-bottom"
                     />
@@ -45,7 +46,7 @@ const PaySuccess = () => {
                         </div>
                         <div className="text-center font-medium text-[#F97316]">
                             <p>ການອະນຸມັດການຊຳລະເງິນໂດຍຈະໃຊ້ເວລາໂດຍປະມານ 3-5 ມື້</p>
-                            <p>ຕ້ອງການການຊ່ວຍເຫຼືອຕິດຕໍ່ 20 55847928</p>
+                            <p>ຕ້ອງການການຊ່ວຍເຫຼືອຕິດຕໍ່ 20 96596959</p>
                         </div>
                         <Link
                             to={"/"}

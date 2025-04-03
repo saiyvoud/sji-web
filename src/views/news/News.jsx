@@ -49,14 +49,13 @@ export const News = () => {
         <meta name="robots" content="index, follow" />
         <meta name="theme-color" content="#ffffff" />
         <meta name="author" content="MiDi Technology, ບໍລິສັດ ມີດີ ເທັກໂນໂລຊີ ຈຳກັດ" />
-        <meta name="keywords" content="News, ການບໍລິການ, SJI,Investment,ສອນເຈົ້າລົງທຶນ, ລົງທຶນ,สอนลงทุน, การลงทุน" />
+        <meta name="keywords" content="sji news, ການບໍລິການ, SJI,Investment,ສອນເຈົ້າລົງທຶນ, ລົງທຶນ,สอนลงทุน, การลงทุน" />
         <meta name="robots" content="index, follow" />
         <meta name="description" content="The Big Data for Your Win, and Smart Insights for Your Success ການລົງທຶນທີ່ປະສົບຄວາມສຳເລັດຂອງທ່ານມາຈາກຂໍ້ມູນ ຂະໜາດໃຫຍ່ຂອງພວກເຮົາ" />
         <meta property="og:title" content="News - SJI Investment" />
         <meta property="og:description" content="The Big Data for Your Win, and Smart Insights for Your Success ການລົງທຶນທີ່ປະສົບຄວາມສຳເລັດຂອງທ່ານມາຈາກຂໍ້ມູນ ຂະໜາດໃຫຍ່ຂອງພວກເຮົາ" />
-        <meta property="og:image" content="https://sji.homefind.la/assets/sji-logo-white-9gw7qHl4.png" />
-        <meta property="og:title" content="SJI Investment - " />
-        <meta property="og:url" content="https://sji.homefind.la" />
+        <meta property="og:image" content="" />
+        <meta property="og:url" content="http://sjiinvestment.la/news" />
       </Helmet>
       <Navbar>
         {isLoading ? (
@@ -94,7 +93,7 @@ export const News = () => {
                         className="group w-full relative p-4 bg-white rounded-lg shadow-sm hover:shadow-lg "
                       >
                         <div className="w-full h-[120px] lg:h-[200px] overflow-hidden">
-                          <img alt="" src={item?.cover} className=" w-full h-[120px] lg:h-[200px] object-cover transition-transform duration-300 ease-in-out hover:scale-110" />
+                          <img alt=""  loading="lazy"src={item?.cover} className=" w-full h-[120px] lg:h-[200px] object-cover transition-transform duration-300 ease-in-out hover:scale-110" />
                         </div>
                         <p className=" text-sm lg:text-lg font-medium mt-2 h-[60px]">{item.title}</p>
                         <p className=" text-sm italic text-gray-500 text-right">{item?.type}{","}{convertIsoToNormal(item.updatedAt)}</p>

@@ -42,7 +42,7 @@ a.manyloud@gmail.com
         <div className=" container px-2 lg:px-0 w-full lg:w-[1200px] md:[900px] mx-auto">
           <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
             <div className=" w-full">
-              <img src={Miditech_logo} />
+              <img src={Miditech_logo} loading="lazy"/>
             </div>
             <div className="lg:mt-20 md:mt-20 w-full">
               <p className=" text-lg md:text-2xl lg:text-2xl font-bold">ບໍລິສັດ ມິດິ ເທັກໂນໂລຊີ ຈຳກັດ</p>

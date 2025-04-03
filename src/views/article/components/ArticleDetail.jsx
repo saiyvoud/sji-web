@@ -12,6 +12,7 @@ import Skeleton from "../../../components/Skeleton";
 import { useTranslation } from "react-i18next";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { Helmet } from "react-helmet-async";
+import FacebookShareButton from "../../../components/FacebookShareButton";
 
 export const ArticleDetail = () => {
   const { id } = useParams();
@@ -32,15 +33,14 @@ export const ArticleDetail = () => {
       <Helmet>
         <title> {`${data?.data?.title} - SJI Investment`}</title>
         <meta name="robots" content="index, follow" />
-        <meta name="theme-color" content="#ffffff" />
         <meta name="author" content="MiDi Technology, ບໍລິສັດ ມີດີ ເທັກໂນໂລຊີ ຈຳກັດ" />
-        <meta name="keywords" content={`${data?.data?.title},Analysis, ການບໍລິການ, SJI,Investment,ສອນເຈົ້າລົງທຶນ, ລົງທຶນ,สอนลงทุน, การลงทุน`} />
+        <meta name="keywords" content={`article SJI,Investment,ສອນເຈົ້າລົງທຶນ, ລົງທຶນ,สอนลงทุน, การลงทุน`} />
         <meta name="robots" content="index, follow" />
         <meta name="description" content="The Big Data for Your Win, and Smart Insights for Your Success ການລົງທຶນທີ່ປະສົບຄວາມສຳເລັດຂອງທ່ານມາຈາກຂໍ້ມູນ ຂະໜາດໃຫຍ່ຂອງພວກເຮົາ" />
         <meta property="og:title" content={`${data?.data?.title} - SJI Investment`} />
-        <meta property="og:description" content={data?.data?.content } />
+        <meta property="og:description" content={data?.data?.content} />
         <meta property="og:image" content={data?.data?.cover} />
-        <meta property="og:url" content={"https://sji.homefind.la/article/" + id} />
+        <meta property="og:url" content={"https://www.sjiinvestment.la/article/" + id} />
       </Helmet>
       {isLoading ? (
         // <Loading fullScreen={true} size={50} />
@@ -65,6 +65,7 @@ export const ArticleDetail = () => {
               <div className=" grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-5">
                 <div className="">
                   <img
+                    loading="lazy"
                     src={data?.data?.cover}
                     alt=""
                     className="w-full rounded-lg"
@@ -72,6 +73,9 @@ export const ArticleDetail = () => {
                 </div>
                 <div className=" md:col-span-2 lg:col-span-2">
                   <div className=' mt-2' dangerouslySetInnerHTML={{ __html: data?.data?.content }} />
+                  <div>
+                    <FacebookShareButton url={`https://www.sjiinvestment.la/article/${id}`}/>
+                  </div>
                 </div>
               </div>
             </div>

@@ -46,13 +46,12 @@ export const Article = () => {
         <title>Article -SJI Investment</title>
         <meta name="robots" content="index, follow" />
         <meta name="author" content="MiDi Technology, ບໍລິສັດ ມີດີ ເທັກໂນໂລຊີ ຈຳກັດ" />
-        <meta name="keywords" content="Article, ການບໍລິການ, SJI,Investment,ສອນເຈົ້າລົງທຶນ, ລົງທຶນ,สอนลงทุน, การลงทุน" />
+        <meta name="keywords" content="Article SJI,Investment,ສອນເຈົ້າລົງທຶນ, ລົງທຶນ,สอนลงทุน, การลงทุน" />
         <meta name="robots" content="index, follow" />
         <meta name="description" content="The Big Data for Your Win, and Smart Insights for Your Success ການລົງທຶນທີ່ປະສົບຄວາມສຳເລັດຂອງທ່ານມາຈາກຂໍ້ມູນ ຂະໜາດໃຫຍ່ຂອງພວກເຮົາ" />
         <meta property="og:title" content="Article- SJI Investment" />
         <meta property="og:description" content="The Big Data for Your Win, and Smart Insights for Your Success ການລົງທຶນທີ່ປະສົບຄວາມສຳເລັດຂອງທ່ານມາຈາກຂໍ້ມູນ ຂະໜາດໃຫຍ່ຂອງພວກເຮົາ" />
-        <meta property="og:image" content="https://sji.homefind.la/assets/sji-logo-white-9gw7qHl4.png" />
-        {/* <meta property="og:url" content="https://sji.homefind.la" /> */}
+        <meta property="og:url" content="https://www.sjiinvestment.la/article" />
       </Helmet>
       {isLoading ? (
         // <Loading fullScreen={true} size={50} />
