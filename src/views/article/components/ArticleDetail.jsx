@@ -38,7 +38,7 @@ export const ArticleDetail = () => {
         <meta name="robots" content="index, follow" />
         <meta name="image" content={data?.data?.cover} />
         <meta name="url" content={"https://www.sjiinvestment.la/article/" + id} />
-        <meta name="description" content="The Big Data for Your Win, and Smart Insights for Your Success ການລົງທຶນທີ່ປະສົບຄວາມສຳເລັດຂອງທ່ານມາຈາກຂໍ້ມູນ ຂະໜາດໃຫຍ່ຂອງພວກເຮົາ" />
+        <meta name="description" content={data?.data?.content} />
         <meta property="og:title" content={`${data?.data?.title} - SJI Investment`} />
         <meta property="og:description" content={data?.data?.content} />
         <meta property="og:image" content={data?.data?.cover} />
