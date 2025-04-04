@@ -20,8 +20,8 @@ import SliderHomeMD from "../views/Homepage/SliderHomeMD";
 import { useAuthStore } from "../store/authStore";
 import Package from "./Package";
 import { useGetMe } from "../hooks/Auth.hook";
-import { Helmet } from "react-helmet-async";
-
+import { Helmet } from "react-helmet";
+import logo from "../assets/logo/sji-bg-blue.svg"
 export const Home = () => {
   const { t, i18n } = useTranslation();
   const { currentLanguage, changeLanguage } = useLanguageStore();
@@ -44,16 +44,20 @@ export const Home = () => {
   return (
     <>
       <Helmet>
+        <meta charSet="utf-8" />
         <title>SJI Investment - ສອນເຈົ້າລົງທຶນ</title>
-        {/* <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="http://sjiinvestment.la" />
+        <meta name="robots" content="index, follow" />
         <meta name="author" content="MiDi Technology, ບໍລິສັດ ມີດີ ເທັກໂນໂລຊີ ຈຳກັດ" />
         <meta name="keywords" content="SJI Investment,ສອນເຈົ້າລົງທຶນ, ລົງທຶນ,สอนลงทุน, การลงทุน" />
         <meta name="robots" content="index, follow" />
         <meta name="description" content="The Big Data for Your Win, and Smart Insights for Your Success ການລົງທຶນທີ່ປະສົບຄວາມສຳເລັດຂອງທ່ານມາຈາກຂໍ້ມູນ ຂະໜາດໃຫຍ່ຂອງພວກເຮົາ" />
         <meta property="og:title" content="SJI Investment - ສອນເຈົ້າລົງທຶນ" />
         <meta property="og:description" content="The Big Data for Your Win, and Smart Insights for Your Success ການລົງທຶນທີ່ປະສົບຄວາມສຳເລັດຂອງທ່ານມາຈາກຂໍ້ມູນ ຂະໜາດໃຫຍ່ຂອງພວກເຮົາ" />
-        <meta property="og:url" content="http://sjiinvestment.la" /> */}
+        <meta property="og:url" content="http://sjiinvestment.la" />
+        <meta property="og:image" content={logo}/>
       </Helmet>
+
       <Navbar>
         <div className="bg-[#002133] text-black pt-20 pb-5 lg:pt-20 ">
           <div className=" container px-2 lg:px-0 w-full lg:w-[1200px] md:[900px] mx-auto">
@@ -111,7 +115,7 @@ export const Home = () => {
               >
                 <div className="flex h-[370px] w-[350px] cursor-pointer items-end justify-center rounded-xl bg-[#457B9D] hover:shadow-md sm:h-[340px] sm:w-[300px] lg:w-full">
                   <img
-                  loading="lazy"
+                    loading="lazy"
                     src={aiyA}
                     alt=""
                     className="h-[350px] w-[300px] rounded-xl object-cover sm:h-[320px] sm:w-[280px]"

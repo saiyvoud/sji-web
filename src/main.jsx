@@ -26,11 +26,11 @@ const queryClient = new QueryClient({
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <QueryClientProvider client={queryClient}>
-
-    <ThemeProvider>
+    
+      <ThemeProvider>
       <HelmetProvider>
         <App />
-      </HelmetProvider>
-    </ThemeProvider>
+        </HelmetProvider>
+      </ThemeProvider>
   </QueryClientProvider>,
 );
