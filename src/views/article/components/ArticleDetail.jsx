@@ -76,7 +76,8 @@ export const ArticleDetail = () => {
                 <div className=" md:col-span-2 lg:col-span-2">
                   <div className=' mt-2' dangerouslySetInnerHTML={{ __html: data?.data?.content }} />
                   <div>
-                    <FacebookShareButton url={`https://www.sjiinvestment.la/article/${id}`}/>
+                    {/* <FacebookShareButton url={`https://www.sjiinvestment.la/article/${id}`}/> */}
+                    <FacebookShareButton url={`https://www.sjiinvestment.la/article/${id}`} title={"jhjkhjkhj"} description={data?.data?.content} image={data?.data?.cover} />
                   </div>
                 </div>
               </div>

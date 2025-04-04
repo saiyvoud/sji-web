@@ -6,6 +6,7 @@ import "./App.css";
 import RouterPath from "./router/Router";
 import { useAllowCookieStore } from "./store/authStore";
 import { Button } from "@material-tailwind/react";
+
 function App() {
   const { getAllow, setAllow } = useAllowCookieStore();
   const [show, setShow] = useState(!getAllow());

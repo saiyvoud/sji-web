@@ -8,7 +8,8 @@
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\""
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
+    "postbuild": "react-snap"
   },
   "dependencies": {
     "@material-tailwind/react": "^2.1.9",
@@ -40,7 +41,9 @@
     "react-phone-input-2": "^2.15.1",
     "react-phone-number-input": "^3.4.3",
     "react-router-dom": "^6.23.1",
+    "react-share": "^5.2.2",
     "react-slick": "^0.30.2",
+    "react-snap": "^1.23.0",
     "react-use-measure": "^2.1.1",
     "recharts": "^2.12.7",
     "slick-carousel": "^1.8.1",
