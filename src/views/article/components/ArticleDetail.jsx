@@ -12,7 +12,8 @@ import Skeleton from "../../../components/Skeleton";
 import { useTranslation } from "react-i18next";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { Helmet } from "react-helmet-async";
-import FacebookShareButton from "../../../components/FacebookShareButton";
+import { FacebookShareButton, WhatsappShareButton } from "react-share";
+
 
 export const ArticleDetail = () => {
   const { id } = useParams();
@@ -28,21 +29,16 @@ export const ArticleDetail = () => {
   }
   console.log(data?.data?.cover)
   const navigate = useNavigate();
+  const shortDescription = data?.data?.content?.substring(0, 100) + "..."; // ตัด 200 ตัวอักษรแรก
   return (
     <Navbar>
       <Helmet>
         <title> {`${data?.data?.title} - SJI Investment`}</title>
-        <meta name="robots" content="index, follow" />
-        <meta name="author" content="MiDi Technology, ບໍລິສັດ ມີດີ ເທັກໂນໂລຊີ ຈຳກັດ" />
-        <meta name="keywords" content={`article SJI,Investment,ສອນເຈົ້າລົງທຶນ, ລົງທຶນ,สอนลงทุน, การลงทุน`} />
-        <meta name="robots" content="index, follow" />
-        <meta name="image" content={data?.data?.cover} />
-        <meta name="url" content={"https://www.sjiinvestment.la/article/" + id} />
-        <meta name="description" content={data?.data?.content} />
         <meta property="og:title" content={`${data?.data?.title} - SJI Investment`} />
-        <meta property="og:description" content={data?.data?.content} />
         <meta property="og:image" content={data?.data?.cover} />
         <meta property="og:url" content={"https://www.sjiinvestment.la/article/" + id} />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="SJI Investment" />
       </Helmet>
       {isLoading ? (
         // <Loading fullScreen={true} size={50} />
@@ -75,12 +71,12 @@ export const ArticleDetail = () => {
                 </div>
                 <div className=" md:col-span-2 lg:col-span-2">
                   <div className=' mt-2' dangerouslySetInnerHTML={{ __html: data?.data?.content }} />
-                  <div>
-                    {/* <FacebookShareButton url={`https://www.sjiinvestment.la/article/${id}`}/> */}
-                    <FacebookShareButton url={`https://www.sjiinvestment.la/article/${id}`} title={"jhjkhjkhj"} description={data?.data?.content} image={data?.data?.cover} />
-                  </div>
+                  <FacebookShareButton url={`https://www.youtube.com/watch?v=LTWpY46ft3I`} title={"jhjhjkhjhkjk"} description={shortDescription} >ssss</FacebookShareButton>
                 </div>
               </div>
+            </div>
+            <div>
+              <FacebookShareButton url={`https://www.sjiinvestment.la`} quote={"dfdsfdf"} size={32} round={true} >fghgfdhgh</FacebookShareButton>
             </div>
           </div>
         </>

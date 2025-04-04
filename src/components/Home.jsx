@@ -45,14 +45,14 @@ export const Home = () => {
     <>
       <Helmet>
         <title>SJI Investment - ສອນເຈົ້າລົງທຶນ</title>
-        <meta name="robots" content="index, follow" />
+        {/* <meta name="robots" content="index, follow" />
         <meta name="author" content="MiDi Technology, ບໍລິສັດ ມີດີ ເທັກໂນໂລຊີ ຈຳກັດ" />
         <meta name="keywords" content="SJI Investment,ສອນເຈົ້າລົງທຶນ, ລົງທຶນ,สอนลงทุน, การลงทุน" />
         <meta name="robots" content="index, follow" />
         <meta name="description" content="The Big Data for Your Win, and Smart Insights for Your Success ການລົງທຶນທີ່ປະສົບຄວາມສຳເລັດຂອງທ່ານມາຈາກຂໍ້ມູນ ຂະໜາດໃຫຍ່ຂອງພວກເຮົາ" />
         <meta property="og:title" content="SJI Investment - ສອນເຈົ້າລົງທຶນ" />
         <meta property="og:description" content="The Big Data for Your Win, and Smart Insights for Your Success ການລົງທຶນທີ່ປະສົບຄວາມສຳເລັດຂອງທ່ານມາຈາກຂໍ້ມູນ ຂະໜາດໃຫຍ່ຂອງພວກເຮົາ" />
-        <meta property="og:url" content="http://sjiinvestment.la" />
+        <meta property="og:url" content="http://sjiinvestment.la" /> */}
       </Helmet>
       <Navbar>
         <div className="bg-[#002133] text-black pt-20 pb-5 lg:pt-20 ">
