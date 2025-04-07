@@ -12,8 +12,8 @@ import Skeleton from "../../../components/Skeleton";
 import { useTranslation } from "react-i18next";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { Helmet } from "react-helmet";
-import { FacebookShareButton, WhatsappShareButton } from "react-share";
 
+import { ButtonShare } from "../../../components/ButtonShare";
 
 export const ArticleDetail = () => {
   const { id } = useParams();
@@ -75,12 +75,9 @@ export const ArticleDetail = () => {
                   </div>
                   <div className=" md:col-span-2 lg:col-span-2">
                     <div className=' mt-2' dangerouslySetInnerHTML={{ __html: data?.data?.content }} />
-                    <FacebookShareButton url={`https://www.youtube.com/watch?v=LTWpY46ft3I`} title={"jhjhjkhjhkjk"} description={shortDescription} >ssss</FacebookShareButton>
+                    <ButtonShare id={id}/>
                   </div>
                 </div>
-              </div>
-              <div>
-                <FacebookShareButton url={`https://www.sjiinvestment.la`} quote={"dfdsfdf"} size={32} round={true} >fghgfdhgh</FacebookShareButton>
               </div>
             </div>
           </>
