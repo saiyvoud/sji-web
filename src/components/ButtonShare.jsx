@@ -16,7 +16,7 @@ export function ButtonShare({ id }) {
     const [copied, setCopied] = useState(false);
     const handleOpen = () => setOpen(!open);
     // const link = "https://sji-6jvwy.ondigitalocean.app/article/share/" + id;
-    const link = "https://sji-6jvwy.ondigitalocean.app/article/share/" + id;
+    const link = "https://serversji-qiie3.ondigitalocean.app/article/share/" + id;
 
     return (
         <>

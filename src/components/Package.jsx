@@ -60,7 +60,7 @@ const Package = () => {
             <div className="grid grid-cols-1 place-items-center gap-x-5 gap-y-8 sm:grid-cols-2 sm:gap-3 md:grid-cols-3 md:gap-x-1">
                 {
                     !isLoading &&
-                    packages.map((item, index) => {
+                    packages?.map((item, index) => {
                         return (
                             <div
                                 onClick={() => handleRegisterPackage(item.id)}
