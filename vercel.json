@@ -1,8 +1,8 @@
 {
-    "rewrites": [
-      {
-        "source": "/(.*)",
-        "destination": "/index.html"
-      }
-    ]
-  }
+  "rewrites": [
+    {
+      "source": "/article/(.*)",
+      "destination": "https://sji-seo-app.vercel.app//article/(.*)"
+    }
+  ]
+}
