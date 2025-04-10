@@ -75,10 +75,10 @@ export default function RouterPath() {
       path: "/article",
       element: <Article />,
     },
-    // {
-    //   path: "/article/:id",
-    //   element: <ArticleDetail />,
-    // },
+    {
+      path: "/article/:id",
+      element: <ArticleDetail />,
+    },
     {
       path: "/about",
       element: <AboutUs />,
