@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/article/(.*)",
-      "destination": "https://sji-seo-app.vercel.app//article/(.*)"
+      "destination": "https://sji-seo-app.vercel.app//article/$1"
     }
   ]
 }
