@@ -11,36 +11,12 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 import { useState } from "react";
 import { FacebookShareButton, WhatsappShareButton } from "react-share";
 import { FaFacebook, FaWhatsapp } from "react-icons/fa";
-export function ButtonShare({ id }) {
+export function ButtonShare({ link }) {
     const [open, setOpen] = React.useState(false);
     const [copied, setCopied] = useState(false);
     const handleOpen = () => setOpen(!open);
     // const link = "https://sji-6jvwy.ondigitalocean.app/article/share/" + id;
     // const link = "https://serversji-qiie3.ondigitalocean.app/article/share/" + id;
-    const link = `<!doctype html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="icon" href="/src/assets/logo/sji.ico" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Lao:wght@100..900&display=swap" rel="stylesheet">
-  <script src="https://cdn.jwplayer.com/libraries/your-library-id.js"></script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9025543071219832"
-    crossorigin="anonymous"></script>
-</head>
-
-<body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
-  <!-- <script src="echarts.js"></script> -->
-</body>
-
-</html>`
     return (
         <>
             <Button color="blue" onClick={handleOpen} variant="gradient" className=" mt-5 flex justify-self-start items-center gap-2">

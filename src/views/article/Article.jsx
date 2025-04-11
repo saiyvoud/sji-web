@@ -75,7 +75,7 @@ export const Article = () => {
                 {data?.data?.data?.length > 0 ? (
                   data?.data?.data.map((item, index) => (
                     <Link
-                      to={`${item.id}`}
+                      to={`https://blog.sjiinvestment.la/article/${item.id}`}
                       key={index}
                       className="group w-full relative p-4 bg-white rounded-lg shadow-sm hover:shadow-lg "
                     >
