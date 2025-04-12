@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { Navbar } from '../../components/Navbar'
-import bgOverlay from "../../assets/images/bg.png";
+// import bgOverlay from "../../assets/images/bg.png";
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from "react-i18next";
 import { Button, Input } from '@material-tailwind/react';
 import { useGetMe } from '../../hooks/Auth.hook';
 import Swal from 'sweetalert2';
 import { changePass, editProfile } from '../../api/Auth';
-import PhoneInput from "react-phone-input-2";
+// import PhoneInput from "react-phone-input-2";
 import { Error, Success } from '../../helper/sweetAlert';
 import Loading from '../../components/Loading';
 import { delay } from 'lodash';

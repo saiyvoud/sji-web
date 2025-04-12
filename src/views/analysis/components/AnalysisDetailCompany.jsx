@@ -1,21 +1,15 @@
 import React, { useState } from "react";
 
 // data countires
-import bgOverlay2 from "../../../assets/images/bg3.png";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { Navbar } from "../../../components/Navbar";
 
-import { IoSearchOutline } from "react-icons/io5";
-import { MdLockOutline } from "react-icons/md";
-import { FiChevronRight } from "react-icons/fi";
-import { GoTriangleDown } from "react-icons/go";
+
 import { AnalysisFinancial } from "./AnalysisFinancial";
 import { HistoryCompany } from "./HistoryCompany";
 import { useTranslation } from "react-i18next";
 import GraphChart from "./GraphChart";
 import { useGetOneCompany } from "../../../hooks/Company.hook";
-import Loading from "../../../components/Loading";
-
 import { Error } from "../../../helper/sweetAlert";
 import Skeleton from "../../../components/Skeleton";
 import ShowStatement from "./ShowStatement";

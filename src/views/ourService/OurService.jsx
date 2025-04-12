@@ -1,13 +1,7 @@
-import { useEffect } from "react";
-import AOS from "aos";
 import "aos/dist/aos.css";
 import { Navbar } from "../../components/Navbar";
 
 // image
-import bgOverlay from "../../assets/images/bg.png";
-import serviceImg from "../../assets/images/trade3.jpg";
-import { Services } from "./components/Services";
-import { ExampleService } from "./components/ExampleService";
 import { useTranslation } from "react-i18next";
 import bg_header from "../../assets/backgound/bg1.svg"
 import bg_header_mobile from "../../assets/backgound/bg1-smartphone.svg"

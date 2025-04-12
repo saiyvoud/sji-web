@@ -1,11 +1,9 @@
 import { useState } from "react";
 import { Navbar } from "../../components/Navbar";
 
-import bgOverlay from "../../assets/images/bg.png";
-import bgOverlay2 from "../../assets/images/bg3.png"
 import { Link } from "react-router-dom/dist";
 import { useGetArticle } from "../../hooks/News.hook";
-import Loading from "../../components/Loading";
+
 import Swal from "sweetalert2";
 import Empty from "../../components/Empty";
 import Skeleton from "../../components/Skeleton";

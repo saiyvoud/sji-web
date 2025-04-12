@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Navbar } from "../../../components/Navbar";
 import "react-phone-input-2/lib/style.css";
 import { useNavigate, useParams } from "react-router-dom";
-import bgOverlay2 from "../../../assets/images/bg3.png";
 import { ImArrowLeft } from "react-icons/im";
 import { MdOutlineFileUpload, MdDelete } from "react-icons/md";
 import { useGetPackage } from "../../../hooks/Package.hook";

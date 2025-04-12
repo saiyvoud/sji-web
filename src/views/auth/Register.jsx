@@ -4,8 +4,6 @@ import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
 import { LuLoader } from "react-icons/lu";
 import bgAuth from "../../assets/bg-register.jpg";
 import logo from "../../assets/logo/sji-bg-blue.png";
-import googleLogo from "../../assets/icons/google.png";
-import facebookLogo from "../../assets/icons/facebook.png";
 import { Link } from "react-router-dom";
 import { useSignup } from "../../hooks/Auth.hook";
 import { Navigate } from "react-router-dom";

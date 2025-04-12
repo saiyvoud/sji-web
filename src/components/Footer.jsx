@@ -1,23 +1,17 @@
 import React from "react";
-import { Navbar } from "./Navbar";
 
 // icons
 import {
-  FaLinkedinIn,
-  FaArrowLeft,
-  FaArrowDown,
   FaPhoneAlt,
 } from "react-icons/fa";
-import { FaFacebookF } from "react-icons/fa";
-import { FaTwitter } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
-import { FaAngleRight, FaAngleDown, FaLocationDot } from "react-icons/fa6";
+
+import { FaLocationDot } from "react-icons/fa6";
 import { IoMdMail } from "react-icons/io";
 import SJI_logo from "../assets/logo/sji-bg-blue.svg";
 
 // images
 import midiLogo from "../assets/images/midi-logo.jpg";
-import investingLogo from "../assets/images/investing-logo.jpg";
+
 
 export default function Footer() {
   return (

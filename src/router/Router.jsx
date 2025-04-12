@@ -4,22 +4,18 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import { Navbar } from "../components/Navbar";
+
 import { Home } from "../components/Home";
 import { OurService } from "../views/ourService/OurService";
 import { News } from "../views/news/News";
 import { Analysiss } from "../views/analysis/Analysiss";
 import { AboutUs } from "../views/aboutUs/AboutUs";
 import { NewsGold } from "../views/news/components/NewsGold";
-import { VideoExample } from "../views/ourService/components/VideoExample";
+
 import { Contact } from "../views/contact/Contact";
 import { Login } from "../views/auth/Login";
 import { Register } from "../views/auth/Register";
-import { MdOutlineFileUpload, MdDelete } from "react-icons/md";
-import { AiOutlineFileImage } from "react-icons/ai";
-import { Membership } from "../views/Homepage/components/Membership";
-import { Course } from "../views/ourService/components/Course";
-import { CourseDetail } from "../views/ourService/components/CourseDetail";
+
 import { AnalysisDetail } from "../views/analysis/components/AnalysisDetail";
 import { AnalysisDetailCompany } from "../views/analysis/components/AnalysisDetailCompany";
 import { Article } from "../views/article/Article";
@@ -42,14 +38,6 @@ export default function RouterPath() {
     {
       path: "/ourService",
       element: <OurService />,
-    },
-    {
-      path: "/ourService/course",
-      element: <Course />,
-    },
-    {
-      path: "ourService/course/:id",
-      element: <CourseDetail />,
     },
     {
       path: "/news",
@@ -102,10 +90,6 @@ export default function RouterPath() {
     {
       path: "/profile",
       element: <Profile />,
-    },
-    {
-      path: "/home/membership",
-      element: <Membership />,
     },
     {
       path: "/register/package/:id",

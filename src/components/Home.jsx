@@ -1,22 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { Navbar } from "./Navbar";
 
-import bgOverlay from "../assets/images/bg.png";
-import SJI_logo from "../assets/logo/sji-white.svg"
-import SJI_log_black from "../assets/logo/sji-bg-blue.svg"
+// import bgOverlay from "../assets/images/bg.png";
+// import SJI_logo from "../assets/logo/sji-white.svg"
+// import SJI_log_black from "../assets/logo/sji-bg-blue.svg"
 import SJI_log_white from "../assets/logo/sji-logo-white.png"
-import stockImg from "../assets/images/stock.jpg";
+// import stockImg from "../assets/images/stock.jpg";
 import MosueWheelSlider from "./MosueWheelSlider";
-import SliderHome from "../views/Homepage/SliderHome";
+// import SliderHome from "../views/Homepage/SliderHome";
 
 // image
-import graphImg from "../assets/images/graph.png";
+// import graphImg from "../assets/images/graph.png";
 import aiyA from "../assets/images/aiy-a.png";
-import SliderHomeMB from "../views/Homepage/SliderHomeMB";
+// import SliderHomeMB from "../views/Homepage/SliderHomeMB";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import useLanguageStore from "../store/languageStore";
-import SliderHomeMD from "../views/Homepage/SliderHomeMD";
+// import SliderHomeMD from "../views/Homepage/SliderHomeMD";
 import { useAuthStore } from "../store/authStore";
 import Package from "./Package";
 import { useGetMe } from "../hooks/Auth.hook";
@@ -85,7 +85,7 @@ export const Home = () => {
                   </button>
                 )}
               </div>
-              <div className=" w-[50%] hidden lg:block">
+              <div className=" w-[50%] h-[550px] hidden lg:block overflow-hidden ">
                 <MosueWheelSlider />
               </div>
             </div>

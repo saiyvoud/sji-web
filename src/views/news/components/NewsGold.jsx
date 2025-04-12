@@ -1,16 +1,11 @@
 import React from "react";
 import { Navbar } from "../../../components/Navbar";
 
-// image
-import bgOverlay2 from "../../../assets/images/bg3.png";
-import goldImg from "../../../assets/images/news/gold.jpg";
 
 // icons
-import { ImArrowLeft } from "react-icons/im";
 import { Link, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useGetOneArticle } from "../../../hooks/News.hook";
-import Loading from "../../../components/Loading";
 import Swal from "sweetalert2";
 import Skeleton from "../../../components/Skeleton";
 import { useNavigate } from "react-router-dom";

@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import { useLocation, NavLink, useNavigate, Link } from "react-router-dom";
 import { IoClose, IoMenu } from "react-icons/io5";
 import { useTranslation } from "react-i18next";
-import logo from "../assets/logo.png";
+
 import SJI_logo from "../assets/logo/sji-bg-blue.svg";
 import flagLaos from "../assets/images/flag-laos.png";
 import flagUs from "../assets/images/flag-us.png";
-import SelectCountry from "./SelectCountry";
+
 import Footer from "./Footer";
 import useLanguageStore from "../store/languageStore";
 import { useAuthStore } from "../store/authStore";

@@ -1,11 +1,11 @@
 import React from "react";
 import { Navbar } from "../../../components/Navbar";
 
-import bgOverlay2 from "../../../assets/images/bg3.png";
+// import bgOverlay2 from "../../../assets/images/bg3.png";
 import { useNavigate } from "react-router-dom/dist";
-import { ImArrowLeft } from "react-icons/im";
+
 import { useGetOneArticle } from "../../../hooks/News.hook";
-import Loading from "../../../components/Loading";
+// import Loading from "../../../components/Loading";
 import Swal from "sweetalert2";
 import { useParams } from "react-router-dom";
 import Skeleton from "../../../components/Skeleton";

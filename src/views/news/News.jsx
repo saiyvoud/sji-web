@@ -1,21 +1,10 @@
 import React from "react";
 import { Navbar } from "../../components/Navbar";
-import bgOverlay from "../../assets/images/bg.png";
-import bgOverlay2 from "../../assets/images/bg3.png";
 import serviceImg from "../../assets/images/trade3.jpg";
-import SliderNews from "./components/SliderNews";
-
-import newsImg1 from "../../assets/images/news/gold.jpg";
-import newsImg2 from "../../assets/images/news/rate.jpg";
-import newsImg3 from "../../assets/images/news/calendar.jpg";
-import newsImg4 from "../../assets/images/news/analysis.jpg";
-import newsImg5 from "../../assets/images/news/money.jpg";
-import newsImg6 from "../../assets/images/news/yuan.jpg";
 import { Link, Outlet } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
 import { useGetArticle } from "../../hooks/News.hook";
-import Loading from "../../components/Loading";
 import Swal from "sweetalert2";
 import Empty from "../../components/Empty";
 import Skeleton from "../../components/Skeleton";

@@ -46,6 +46,7 @@ export default function MosueWheelSlider() {
         mousewheel={true}
         modules={[Mousewheel, Pagination, Autoplay, FreeMode, EffectCoverflow]}
         className="mySwiper"
+        style={{height: "550px"}}
       >
         <SwiperSlide>
           <img

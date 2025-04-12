@@ -3,18 +3,10 @@ import "./analysiss.css"
 import { Navbar } from "../../components/Navbar";
 
 // data countires
-import { dataCountries } from "./dataCountires";
-
-import bgOverlay from "../../assets/images/bg.png";
-import bgOverlay2 from "../../assets/images/bg3.png";
-
-import usNewyork from "../../assets/images/countries/1_newyork.jpg";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useGetcountry } from "../../hooks/Country.hook";
-import Loading from "../../components/Loading";
 import Swal from "sweetalert2";
-import Empty from "../../components/Empty";
 import Skeleton from "../../components/Skeleton";
 import { Helmet } from "react-helmet-async";
 export const Analysiss = () => {

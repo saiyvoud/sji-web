@@ -1,16 +1,13 @@
 import React, { useEffect } from "react";
-import AOS from "aos";
 import "aos/dist/aos.css";
 import { Navbar } from "../../components/Navbar";
 import Miditech_logo from "../../assets/images/midi-logo.jpg"
-import bgOverlay from "../../assets/images/bg.png";
 import { useTranslation } from "react-i18next";
 import { MdEmail } from "react-icons/md";
 import { FaPhone } from "react-icons/fa6";
 import { FaLocationDot } from "react-icons/fa6";
 import { Helmet } from "react-helmet-async";
 export const Contact = () => {
-  const { t } = useTranslation();
   return (
     <Navbar>
       <Helmet>

@@ -5,7 +5,7 @@ import { LuLoader } from "react-icons/lu";
 import bgAuth from "../../assets/bg-register.jpg";
 import logo from "../../assets/logo/sji-bg-blue.svg";
 import googleLogo from "../../assets/icons/google.png";
-import facebookLogo from "../../assets/icons/facebook.png";
+
 import { Link } from "react-router-dom";
 import { useLogin, useLoginWithGoogle } from "../../hooks/Auth.hook";
 import { useRememberMeStore, useMyTempStore, useAuthStore } from "../../store/authStore";

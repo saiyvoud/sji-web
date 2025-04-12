@@ -1,11 +1,10 @@
-import bgOverlay2 from "../../../assets/images/bg3.png";
+
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { Navbar } from "../../../components/Navbar";
 import { useTranslation } from "react-i18next";
 import { useGetOnecountry } from "../../../hooks/Country.hook";
 import { useGetCompany } from "../../../hooks/Company.hook";
-import Loading from "../../../components/Loading";
-import Empty from "../../../components/Empty";
+
 import { Error } from "../../../helper/sweetAlert";
 import Skeleton from "../../../components/Skeleton";
 import { FaLongArrowAltRight } from "react-icons/fa";

@@ -1,20 +1,15 @@
 import React, { useEffect } from "react";
 import { Navbar } from "../../components/Navbar";
-import AOS from "aos";
+
 import "aos/dist/aos.css";
 // images
-import bgOverlay from "../../assets/images/bg.png";
-import personImg from "../../assets/images/emp.jpg";
 import aiyA from "../../assets/images/aiyA_.jpg";
 import aiyB from "../../assets/images/aiyB_.png";
-import visionImg from "../../assets/images/vision.png";
+import visionImg from "../../assets/images/muctieu1.webp";
 import visionImg2 from "../../assets/images/m2.webp";
 import visionImg3 from "../../assets/images/m1.webp";
 
-// icons
-import { FaLinkedinIn } from "react-icons/fa";
-import { FaFacebookF } from "react-icons/fa";
-import { FaTwitter } from "react-icons/fa";
+
 import { Link } from "react-router-dom";
 import { CiFacebook } from "react-icons/ci";
 import { Helmet } from "react-helmet-async";

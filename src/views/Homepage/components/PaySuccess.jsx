@@ -1,7 +1,7 @@
 import React from 'react'
 import { Navbar } from "../../../components/Navbar";
 import "react-phone-input-2/lib/style.css";
-import bgOverlay2 from "../../../assets/images/bg3.png";
+// import bgOverlay2 from "../../../assets/images/bg3.png";
 
 import stopWatch from "../../../assets/icons/stopwatch.png";
 
@@ -16,11 +16,11 @@ const PaySuccess = () => {
         <Navbar>
             <div>
                 <div className="relative z-0 w-full before:absolute before:-z-[1] before:h-[350px] before:w-full before:bg-[#003049]">
-                    <img
+                    {/* <img
                         loading="lazy"
                         src={bgOverlay2}
                         className="absolute h-[350px] w-full bg-cover bg-bottom"
-                    />
+                    /> */}
                     <div className="container relative z-50 mx-auto h-full pt-[70px] text-white sm:max-w-sm md:max-w-xl xl:max-w-4xl 2xl:max-w-7xl">
                         <div className="relative h-[280px]">
                             {/* <div onClick={prevForm} className='absolute bottom-4 left-2 flex cursor-pointer items-center hover:text-[#F97316]'>
