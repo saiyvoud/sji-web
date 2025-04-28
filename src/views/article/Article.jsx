@@ -10,6 +10,8 @@ import Skeleton from "../../components/Skeleton";
 import { useTranslation } from "react-i18next";
 import { convertIsoToNormal } from "../../helper/dateTime";
 import { Helmet } from "react-helmet-async";
+import { FaEye } from "react-icons/fa";
+
 export const Article = () => {
   const { t } = useTranslation();
   const [showAll, setShowAll] = useState(false);
@@ -81,7 +83,10 @@ export const Article = () => {
                         <img alt="" src={item?.cover} loading="lazy" className=" object-cover transition-transform duration-300 ease-in-out hover:scale-110" />
                       </div>
                       <p className=" text-sm lg:text-lg font-medium mt-2 h-[100px] lg:[75px]">{item.title}</p>
-                      <p className=" text-sm italic text-gray-500 text-right">{item?.type}{","}{convertIsoToNormal(item.updatedAt)}</p>
+                      <div className=" flex justify-between items-center text-gray-500">
+                        <p className=" flex justify-start items-center gap-1"><FaEye/> {" "+item?.views}</p>
+                        <p className=" text-sm italic ">{item?.type}{","}{convertIsoToNormal(item.updatedAt)}</p>
+                      </div>
                       <span className="z-50 absolute left-1/2 -translate-x-1/2 bottom-0 bg-orange-500 text-white px-3 rounded-lg text-lg hidden group-hover:bottom-[40%] group-hover:inline-block">ອ່ານຕໍ່</span>
                       <div className="w-full absolute transition-all duration-300 ease-in-out left-0 bottom-0 h-[0%] group-hover:h-[50%] bg-orange-500 opacity-20 rounded-t-full">
                       </div>
@@ -93,21 +98,6 @@ export const Article = () => {
               </div>
             </div>
           </div>
-
-          {/* <div className="container mx-auto h-full max-w-[340px] pb-5 sm:max-w-[620px] sm:pb-20 md:max-w-[700px] md:pb-10 lg:max-w-[900px] xl:max-w-6xl">
-
-              {data?.data?.data?.length > initialDisplayCount && (
-                <div className="mt-14 flex justify-center">
-                  <button
-                    onClick={handleLearnMore}
-                    className="w-[170px] rounded-lg bg-[#FB923C] py-2 text-[20px] font-semibold text-white shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px] sm:w-[200px]"
-                  >
-                    {showAll ? "ປິດອ່ານເພີ່ມເຕີມ" : "ອ່ານເພີ່ມເຕີມ"}
-                  </button>
-                </div>
-              )}
-            </div>
-          </div> */}
         </>
       )}
     </Navbar>
