@@ -3,13 +3,13 @@ import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
 const firebaseConfig = {
     apiKey: "AIzaSyCY5p-6uKdDoo2SbgmquzzcnbwbSqdSegc",
-    authDomain: "google.sjiinvestment.la", // ປ່ຽນແລ້ວ
+    authDomain: "sji-investment.firebaseapp.com",
     projectId: "sji-investment",
     storageBucket: "sji-investment.firebasestorage.app",
     messagingSenderId: "1033433010584",
     appId: "1:1033433010584:web:4a12cb504704d2917e1bed",
     measurementId: "G-Z1TEG0QLHT"
-  };
+};
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 
