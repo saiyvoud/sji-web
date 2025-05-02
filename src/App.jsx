@@ -6,7 +6,7 @@ import "./App.css";
 import RouterPath from "./router/Router";
 import { useAllowCookieStore } from "./store/authStore";
 import { Button } from "@material-tailwind/react";
-
+import { GoogleOAuthProvider } from '@react-oauth/google';
 function App() {
   const { getAllow, setAllow } = useAllowCookieStore();
   const [show, setShow] = useState(!getAllow());
@@ -15,7 +15,7 @@ function App() {
     AOS.init();
   }, []);
   return (
-    <>
+    <GoogleOAuthProvider clientId={"126390749733-b29ar5aca6nnpu00d0ldu68nb3o5fo5f.apps.googleusercontent.com"}>
       <RouterPath />
       {show &&
         <div
@@ -38,7 +38,8 @@ function App() {
             </div>
           </div>
         </div>}
-    </>
+    </GoogleOAuthProvider>
+
   );
 }
 

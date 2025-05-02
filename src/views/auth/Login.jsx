@@ -1,19 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Input, Checkbox } from "@material-tailwind/react";
 import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
 import { LuLoader } from "react-icons/lu";
 import bgAuth from "../../assets/bg-register.jpg";
 import logo from "../../assets/logo/sji-bg-blue.svg";
 import googleLogo from "../../assets/icons/google.png";
-
+import { jwtDecode } from 'jwt-decode';
 import { Link } from "react-router-dom";
 import { useLogin, useLoginWithGoogle } from "../../hooks/Auth.hook";
 import { useRememberMeStore, useMyTempStore, useAuthStore } from "../../store/authStore";
 import { decryptPassword } from "../../helper/cryptoJS";
 import { Navigate } from "react-router-dom";
-import { signInWithGoogle } from "../../helper/FirebaseApp";
+// import { signInWithGoogle } from "../../helper/FirebaseApp";
+import { GoogleLogin } from "@react-oauth/google";
+import { gapi } from "gapi-script";
 import Loading from "../../components/Loading";
 import { Helmet } from "react-helmet-async";
+
 
 export const Login = () => {
   const { mutate: Login, error, isPending } = useLogin();
@@ -29,6 +32,15 @@ export const Login = () => {
   const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
 
+  useEffect(() => {
+    const initClient = () => {
+      gapi.client.init({
+        clientId: client_id,
+        scope: "",
+      });
+    };
+    gapi.load("client:auth2", initClient);
+  }, [])
   const validate = () => {
     let errors = {};
     if (!formData.username) {
@@ -63,15 +75,15 @@ export const Login = () => {
   }
   const handlesignInWithGoogle = async () => {
     setIsLoading(true);
-    const user = await signInWithGoogle();
-    // console.log(user);
-    if (user) {
-      LoginWithGoogle({
-        "googleId": user.uid,
-        "name": user.displayName,
-        "email": user.email
-      })
-    }
+    // const user = await signInWithGoogle();
+    // // console.log(user);
+    // if (user) {
+    //   LoginWithGoogle({
+    //     "googleId": user.uid,
+    //     "name": user.displayName,
+    //     "email": user.email
+    //   })
+    // }
     setIsLoading(false);
   }
   // ll
@@ -79,7 +91,7 @@ export const Login = () => {
     <>
       <Helmet>
         <title>Login -SJI Investment</title>
-        <meta name="robots" content="noindex, nofollow"/>
+        <meta name="robots" content="noindex, nofollow" />
       </Helmet>
       {isLoading && <Loading />}
       <div className="grid grid-cols-1 md:grid-cols-12">
@@ -165,6 +177,25 @@ export const Login = () => {
               </span>
               <img src={googleLogo} alt="google" className="w-6" />
             </div>
+            <GoogleLogin
+              client_id={"126390749733-b29ar5aca6nnpu00d0ldu68nb3o5fo5f.apps.googleusercontent.com"}
+              buttonText="Login with Google"
+              onSuccess={(res) => {
+                setIsLoading(true);
+                const decoded = jwtDecode(res.credential);
+                  LoginWithGoogle({
+                    "googleId": decoded.jti,
+                    "name": decoded.name,
+                    "email": decoded.email
+                  })
+                console.log('User info:', decoded);
+                console.log('User info:', res);
+                setIsLoading(false);
+              }}
+              onError={(res) => {
+                console.log("Login Failed", res);
+              }}
+            />
             <p className="mt-2 text-center text-[14px]">
               Don't have an account ?{" "}
               <Link to="/register" className="text-orange-500 underline">
