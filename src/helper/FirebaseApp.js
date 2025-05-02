@@ -3,7 +3,7 @@ import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
 const firebaseConfig = {
     apiKey: "AIzaSyCY5p-6uKdDoo2SbgmquzzcnbwbSqdSegc",
-    authDomain: "sji-investment.firebaseapp.com",
+    authDomain: "google.sjiinvestment.la", // ປ່ຽນແລ້ວ
     projectId: "sji-investment",
     storageBucket: "sji-investment.firebasestorage.app",
     messagingSenderId: "1033433010584",
