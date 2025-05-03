@@ -12,14 +12,12 @@ import GraphChart from "./GraphChart";
 import { useGetOneCompany } from "../../../hooks/Company.hook";
 import { Error } from "../../../helper/sweetAlert";
 import Skeleton from "../../../components/Skeleton";
-import ShowStatement from "./ShowStatement";
 import SerachCompany from "./SerachCompany";
 import { Helmet } from "react-helmet-async";
-
+import ShowAnalysis2 from "./ShowAnalysis2";
 export const AnalysisDetailCompany = () => {
   const navigate = useNavigate();
   const { t, i18n } = useTranslation();
-  const [showRecieve, setShowRecieve] = useState("Income Statement");
   const [showAnalysis, setShowAnalysis] = useState(1);
   const { company } = useParams();
 
@@ -38,7 +36,7 @@ export const AnalysisDetailCompany = () => {
   const handleBackPage = () => {
     navigate(-1);
   };
-  console.log(data?.data?.company?.name);
+  console.log(data?.data);
   return (
     <>
       <Helmet>
@@ -58,7 +56,7 @@ export const AnalysisDetailCompany = () => {
           <div className="relative z-0 w-full before:absolute before:-z-[1] before:h-[350px] before:w-full before:bg-[#003049] sm:before:h-[300px] md:before:h-[320px]">
             <div className="container relative z-50 mx-auto h-full max-w-[340px] pt-[70px] text-white sm:max-w-[620px] md:max-w-[700px] lg:max-w-[900px] xl:max-w-6xl">
               <div className="flex h-full flex-col items-center justify-center pt-0 sm:relative sm:h-[250px] md:mt-0 md:h-[280px] md:justify-center">
-                <div className="mb-5 mt-3 flex w-full items-center justify-center gap-x-4 font-bold text-[#F97316] sm:absolute sm:left-[50%] sm:top-5 sm:mt-5 sm:-translate-x-1/2 sm:flex-row sm:justify-normal sm:text-[50px] md:top-14 md:mb-5 md:mt-0 lg:top-10">
+                <div className="mb-5 mt-3 flex w-full items-center justify-center gap-4 font-bold text-[#F97316] sm:absolute sm:left-[50%] sm:top-5 sm:mt-5 sm:-translate-x-1/2 sm:flex-row sm:justify-normal sm:text-[50px] md:top-14 md:mb-5 md:mt-0 lg:top-10">
                   <div className="flex h-[55px] w-[55px] items-center justify-center rounded-full bg-white">
                     <img
                       loading="lazy"
@@ -116,47 +114,8 @@ export const AnalysisDetailCompany = () => {
               )}
 
               {showAnalysis === 2 && (
-                <div className="mb-20 mt-10 h-full w-full bg-white sm:mt-0">
-                  <div className="flex flex-col items-center justify-between sm:mt-10 sm:flex-row sm:px-0 md:w-full md:justify-between md:px-0">
-                    <div className="mb-3 flex w-full items-center justify-start gap-x-3 sm:mb-0 md:gap-x-2">
-                      <button
-                        type="button"
-                        onClick={() => setShowRecieve("Income Statement")}
-                        className={`rounded-md px-2 py-1 text-[12px] font-medium sm:h-[35px] sm:w-[180px] sm:px-5 sm:text-[14px] md:h-[40px] md:w-[200px] md:px-2 ${showRecieve === "Income Statement" ? "bg-[#f97316]" : "border-2 border-[#f97316] text-[#f97316]"}`}
-                      >
-                        Income Statement
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => setShowRecieve("Balance Sheet")}
-                        className={`rounded-md px-2 py-1 text-[12px] font-medium sm:h-[35px] sm:w-[150px] sm:px-5 sm:text-[14px] md:h-[40px] md:w-[180px] md:px-2 ${showRecieve === "Balance Sheet" ? "bg-[#f97316]" : "border-2 border-[#f97316] text-[#f97316]"}`}
-                      >
-                        Balance Sheet
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => setShowRecieve("Cash Flow")}
-                        className={`rounded-md px-2 py-1 text-[12px] font-medium sm:h-[35px] sm:w-[130px] sm:px-5 sm:text-[14px] md:h-[40px] md:w-[160px] md:px-2 ${showRecieve === "Cash Flow" ? "bg-[#f97316]" : "border-2 border-[#f97316] text-[#f97316]"}`}
-                      >
-                        Cash Flow
-                      </button>
-                    </div>
-                    {/* <div className="flex w-full justify-end">
-                    <button
-                      type="button"
-                      className="flex w-[100px] items-center justify-around rounded-md border-2 border-[#f97316] bg-[#fff] text-[18px] font-medium text-[#f97316] sm:h-[35px] md:h-[40px]"
-                    >
-                      <span>ປະຈຳປີ</span>
-                      <GoTriangleDown />
-                    </button>
-                  </div> */}
-                  </div>
-                  <div className="mt-8 w-full rounded-lg p-6 shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px]">
-                    {showRecieve === "Income Statement" && (< ShowStatement data={data?.data?.financial?.income} />)}
-                    {showRecieve === "Balance Sheet" && (< ShowStatement data={data?.data?.financial?.balanceSheet} />)}
-                    {showRecieve === "Cash Flow" && (<ShowStatement data={data?.data?.financial?.cashFlow} />)}
-                  </div>
-                </div>
+
+                <ShowAnalysis2 data={data?.data?.financialFieldValue}/>
               )}
               {showAnalysis === 3 && (
                 <div className="mb-20 h-full w-full bg-white">

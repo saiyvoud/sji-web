@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect, useState} from "react";
 import PropTypes from "prop-types";
 import ReactECharts from "echarts-for-react";
 import * as echarts from "echarts";
@@ -6,11 +6,21 @@ import { FiChevronRight } from "react-icons/fi";
 import { MdLockOutline } from "react-icons/md";
 import { GoTriangleDown } from "react-icons/go";
 import Empty from "./../../../components/Empty";
+import ShowStatement from "./ShowStatement";
 
 export const AnalysisFinancial = ({ data }) => {
+  const [typeStatement, setTypeStatement] = React.useState("quarter");
+  const [statement, setStatement] = React.useState([]);
+  useEffect(()=>{
+    if(typeStatement === "quarter") {
+      setStatement(data?.financialRatios?.quarter);
+    }else{
+      setStatement(data?.financialRatios?.year);
+    }
+  },[typeStatement])
   const years = [];
   const values = [];
-  for(const i of data?.dividendPerYear){
+  for (const i of data?.dividendPerYear) {
     years.push(i.year);
     values.push(i.value);
   }
@@ -152,39 +162,6 @@ export const AnalysisFinancial = ({ data }) => {
             <ReactECharts option={option} className="h-full w-full" />
           </div>
         </div>
-        <div className="mt-10 overflow-x-auto pb-10">
-          <table className="w-max min-w-full sm:w-full">
-            <tbody>
-              {data?.financialRatios?.length > 0 ? (
-                data?.financialRatios?.map((item,index) => (
-                  <tr
-                    key={index}
-                    className="h-[70px] w-full border-b-2 text-[#003049]"
-                  >
-                    {item?.value?.map((val) => (
-                      <td
-                        key={val}
-                        className="w-[100px] text-center text-[15px] font-medium"
-                      >
-                        <div className="flex flex-col items-center justify-center">
-                          <p className="font-semibold">{val}</p>
-                        </div>
-                      </td>
-                    ))}
-                  </tr>
-                ))
-              ) : (
-                <tr>
-                  <td colSpan={7}>
-                    <div className="flex items-center justify-center">
-                      <Empty />
-                    </div>
-                  </td>
-                </tr>
-              )}
-            </tbody>
-          </table>
-        </div>
       </div>
 
       <div className="mt-10 rounded-lg px-1 py-4 shadow-md sm:px-8">
@@ -192,366 +169,15 @@ export const AnalysisFinancial = ({ data }) => {
           <h1 className="text-[20px] font-bold text-deep-orange-500">
             Financial Ratios
           </h1>
+          <select
+            onChange={(e) => setTypeStatement(e.target.value)}
+            value={typeStatement}
+            className="px-3 rounded-md border-2 border-[#f97316] bg-[#fff] text-[18px] font-medium text-[#f97316] sm:h-[35px] md:h-[40px]">
+            <option value="quarter">ໄຕມາດ</option>
+            <option value="year">ປະຈຳປີ</option>
+          </select>
         </div>
-
-        <div className="mt-10 overflow-x-auto pb-10">
-          {/* <table className="w-max min-w-full sm:w-full sm:min-w-max">
-            <thead>
-              <tr className="w-full border-b-2 text-gray-500">
-                <th className="w-[200px] px-5 py-4 text-start text-[15px] font-medium sm:w-[270px] md:w-[300px]">
-                  ສະກຸນເງິນ: USD
-                </th>
-                <th className="w-[120px] py-4 text-[16px] font-semibold sm:text-[15px] sm:font-medium">
-                  2024
-                </th>
-                <th className="w-[120px] py-4 text-[16px] font-semibold sm:text-[15px] sm:font-medium">
-                  2023
-                </th>
-                <th className="w-[120px] py-4 text-[16px] font-semibold sm:text-[15px] sm:font-medium">
-                  2022
-                </th>
-                <th className="w-[120px] py-4 text-[16px] font-semibold sm:text-[15px] sm:font-medium">
-                  2021
-                </th>
-                <th className="w-[120px] py-4 text-[16px] font-semibold sm:text-[15px] sm:font-medium">
-                  2020
-                </th>
-                <th className="w-[120px] py-4 text-[16px] font-semibold sm:text-[15px] sm:font-medium">
-                  2019
-                </th>
-                <th className="w-[120px] py-4 text-[16px] font-semibold sm:text-[15px] sm:font-medium">
-                  2018
-                </th>
-                <th className="w-[120px] py-4 text-[16px] font-semibold sm:text-[15px] sm:font-medium">
-                  2017
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className="h-[70px] w-full border-b-2 text-[#003049] sm:h-[50px] md:h-[70px]">
-                <td
-                  colSpan={9}
-                  className="w-[100px] bg-[#4E7D98] pl-5 text-start text-[18px] font-medium text-white sm:text-[16px] md:text-[18px]"
-                >
-                  <p className="font-bold">ອັດຕາສ່ວນສະພາບຄ່ອງ</p>
-                </td>
-              </tr>
-
-              <tr className="h-[70px] w-full border-b-2 text-[#003049]">
-                <td className="w-[100px] pl-5 text-start text-[18px] font-medium sm:text-[16px] md:text-[18px]">
-                  <p className="font-bold">ອັດຕາສ່ວນສະພາບຄ່ອງ</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">58.35548%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">58.35548%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">58.35548%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">58.35548%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">58.35548%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">58.35548%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">58.35548%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">58.35548%</p>
-                </td>
-              </tr>
-
-              <tr className="h-[70px] w-full border-b-2 text-[#003049]">
-                <td className="w-[100px] pl-5 text-start text-[18px] font-semibold">
-                  <p className="font-bold">ອັດຕາສ່ວນດ່ວນ</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">58.35548%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">58.35548%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">58.35548%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">58.35548%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">58.35548%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">58.35548%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">58.35548%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">58.35548%</p>
-                </td>
-              </tr>
-
-              <tr className="h-[70px] w-full border-b-2 text-[#003049]">
-                <td className="w-[100px] pl-5 text-start text-[18px] font-medium sm:text-[16px] md:text-[18px]">
-                  <p className="font-semibold">ອັດຕາສ່ວນເງິນສົດ</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">58.35548%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">58.35548%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">58.35548%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">58.35548%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">58.35548%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">58.35548%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">58.35548%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">58.35548%</p>
-                </td>
-              </tr>
-
-              <tr className="h-[70px] w-full border-b-2 text-[#003049] sm:h-[50px] md:h-[70px]">
-                <td
-                  colSpan={9}
-                  className="w-[100px] bg-[#4E7D98] pl-5 text-start text-[18px] font-medium text-white sm:text-[16px] md:text-[18px]"
-                >
-                  <p className="font-bold">ອັດຕາສ່ວນຄວາມສາມາດໃນການທຳກຳໄລ</p>
-                </td>
-              </tr>
-              <tr className="h-[70px] w-full border-b-2 text-[#003049]">
-                <td className="w-[100px] pl-5 text-start text-[18px] font-medium sm:text-[16px] md:text-[18px]">
-                  <p className="font-semibold">ອັດຕາກຳໄລຂັ້ນຕົ້ນ</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">58.35548%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">58.35548%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">58.35548%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">58.35548%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">58.35548%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">58.35548%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">58.35548%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">58.35548%</p>
-                </td>
-              </tr>
-
-              <tr className="h-[70px] w-full border-b-2 text-[#003049]">
-                <td className="w-[100px] pl-5 text-start text-[18px] font-medium sm:text-[16px] md:text-[18px]">
-                  <p className="font-semibold">ອັດຕາກຳໄລຈາກການດຳເນີນງານ</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">18.41651%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">18.41651%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">18.41651%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">18.41651%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">18.41651%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">18.41651%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">18.41651%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">18.41651%</p>
-                </td>
-              </tr>
-
-              <tr className="h-[70px] w-full border-b-2 text-[#003049]">
-                <td className="w-[100px] pl-5 text-start text-[18px] font-medium sm:text-[16px] md:text-[18px]">
-                  <p className="font-semibold">ອັດຕາກຳໄລກ່ອນຫັກພາສິ</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">11.8494%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">11.8494%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">11.8494%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">11.8494%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">11.8494%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">11.8494%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">11.8494%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">11.8494%</p>
-                </td>
-              </tr>
-
-              <tr className="h-[70px] w-full border-b-2 text-[#003049]">
-                <td className="w-[100px] pl-5 text-start text-[18px] font-medium sm:text-[16px] md:text-[18px]">
-                  <p className="font-semibold">Profit Margin</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">11.8494%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">11.8494%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">11.8494%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">11.8494%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">11.8494%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">11.8494%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">11.8494%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">11.8494%</p>
-                </td>
-              </tr>
-
-              <tr className="h-[70px] w-full border-b-2 text-[#003049]">
-                <td className="w-[100px] pl-5 text-start text-[18px] font-medium sm:text-[16px] md:text-[18px]">
-                  <p className="font-semibold">ROE ກ່ອນຫັກພາສີ</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">5.3738%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">5.3738%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">5.3738%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">5.3738%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">5.3738%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">5.3738%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">5.3738%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">5.3738%</p>
-                </td>
-              </tr>
-
-              <tr className="h-[70px] w-full border-b-2 text-[#003049]">
-                <td className="w-[100px] pl-5 text-start text-[18px] font-medium sm:text-[16px] md:text-[18px]">
-                  <p className="font-semibold">ຫລັງຫັກພາສີ ROE</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">5.3738%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">5.3738%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">5.3738%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">5.3738%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">5.3738%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">5.3738%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">5.3738%</p>
-                </td>
-                <td className="w-[100px] text-center text-[15px] font-medium">
-                  <p className="font-medium">5.3738%</p>
-                </td>
-              </tr>
-            </tbody>
-          </table> */}
-
-          <table className="w-max min-w-full sm:w-full">
-            <tbody>
-              {data?.financialRatios?.length > 0 ? (
-                data?.financialRatios?.map((item) => (
-                  <tr
-                    key={item?.id}
-                    className="h-[70px] w-full border-b-2 text-[#003049]"
-                  >
-                    {item?.value?.map((val) => (
-                      <td
-                        key={val}
-                        className="w-[100px] text-center text-[15px] font-medium"
-                      >
-                        <div className="flex flex-col items-center justify-center">
-                          <p className="font-semibold">{val}</p>
-                          {/* <span className="text-[14px] font-semibold text-red-500">
-                                                  +30.1 %
-                                                </span> */}
-                        </div>
-                      </td>
-                    ))}
-                  </tr>
-                ))
-              ) : (
-                <tr>
-                  <td colSpan={7}>
-                    <div className="flex items-center justify-center">
-                      <Empty />
-                    </div>
-                  </td>
-                </tr>
-              )}
-            </tbody>
-          </table>
-        </div>
+        <ShowStatement data={statement} />
       </div>
     </div>
   );

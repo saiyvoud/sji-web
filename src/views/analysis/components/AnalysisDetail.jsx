@@ -14,7 +14,7 @@ export const AnalysisDetail = () => {
 
   let finBy = "";
   finBy += "page=1";
-  finBy += "&limit=10";
+  finBy += "&limit=100";
   const {
     data: CompanyData,
     error: CompanyError,

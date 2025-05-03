@@ -250,9 +250,8 @@ export const Register = () => {
           </button> */}
 
           <p className="mt-2 text-center text-[14px]">
-            Have an account ?{" "}
             <Link to="/login" className="text-orange-500 underline">
-              Click here
+            Have an account ?
             </Link>
           </p>
         </form>

@@ -6,11 +6,12 @@ export const HistoryCompany = ({ company }) => {
   return (
     <div className="rounded-lg bg-white p-4 shadow-md sm:mb-10 sm:mt-0 sm:p-3">
       <div className="">
-        <div className=" grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3">
+        <div className=" grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-3">
           <div className="w-full">
             <img
               src={company?.image}
               alt=""
+              loading="lazy"
               className="w-full rounded-lg "
             />
             <h4 className="mt-2 text-center text-sm font-semibold text-[#1F2937]">
@@ -19,7 +20,7 @@ export const HistoryCompany = ({ company }) => {
           </div>
           <div className="w-full col-span-2">
             <p className=" text-center font-bold text-[#1F2937]">{company?.name}</p>
-            <div className=' mt-2 text-black' dangerouslySetInnerHTML={{ __html: company?.about }} />
+            <div className=' mt-2 text-black text-justify' dangerouslySetInnerHTML={{ __html: company?.about }} />
             <p className=" text-[#1F2937] italic">
               {company?.address}
             </p>

@@ -3,8 +3,8 @@ import Empty from "../../../components/Empty";
 const ShowStatement = ({ data }) => {
     console.log(data)
     return (
-        <div className="w-full overflow-x-auto">
-            <table className="w-max min-w-full">
+        <div className="w-full overflow-y-auto">
+            <table className=" table-auto w-full">
                 <tbody>
                     {data?.length > 0 ? (
                         data?.map((item) => {
@@ -12,16 +12,14 @@ const ShowStatement = ({ data }) => {
                                 return (
                                     <tr
                                         key={item?.id}
-                                        className="h-[70px] w-full border-b-2 text-[#003049]"
+                                        className="w-full border-b-2 text-[#003049] "
                                     >
-                                        {item?.value?.map((val) => (
+                                        {item?.value?.map((val,index) => (
                                             <td
-                                                key={val}
-                                                className="w-[100px] text-center text-[15px] font-medium"
+                                                key={index}
+                                                className={`${index === 0 ? 'w-[100px] lg:w-[200px] bg-white text-start sticky left-0 ':'text-end'} py-3 px-1 text-sm border-b-2 border-[#003049]`}
                                             >
-                                                <div className="flex flex-col items-center justify-center">
-                                                    <p className="font-semibold">{val !== "" ? val : "-"}</p>
-                                                </div>
+                                                {val !== "" ? val : "-"}
                                             </td>
                                         ))}
                                     </tr>
