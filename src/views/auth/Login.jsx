@@ -161,11 +161,11 @@ export const Login = () => {
                 "Login"
               )}
             </button>
-            <div className="relative mt-5 flex w-full items-center justify-center">
+            <div className="relative my-5 flex w-full items-center justify-center">
               <p className="absolute bg-white px-2 text-gray-500">or</p>
               <hr className="w-full border border-gray-300" />
             </div>
-            <div
+            {/* <div
               onClick={handlesignInWithGoogle}
               className="mt-5 flex w-full items-center justify-center gap-x-2 rounded-lg border border-gray-300 py-2">
               <span
@@ -176,20 +176,22 @@ export const Login = () => {
                 Sign in with Google
               </span>
               <img src={googleLogo} alt="google" className="w-6" />
-            </div>
+            </div> */}
             <GoogleLogin
+              className=" w-full"
               client_id={"126390749733-b29ar5aca6nnpu00d0ldu68nb3o5fo5f.apps.googleusercontent.com"}
               buttonText="Login with Google"
+              text="Login with Google"
               onSuccess={(res) => {
                 setIsLoading(true);
                 const decoded = jwtDecode(res.credential);
-                  LoginWithGoogle({
-                    "googleId": decoded.jti,
-                    "name": decoded.name,
-                    "email": decoded.email
-                  })
-                console.log('User info:', decoded);
-                console.log('User info:', res);
+                LoginWithGoogle({
+                  "googleId": decoded.jti,
+                  "name": decoded.name,
+                  "email": decoded.email
+                })
+                // console.log('User info:', decoded);
+                // console.log('User info:', res);
                 setIsLoading(false);
               }}
               onError={(res) => {
@@ -197,9 +199,8 @@ export const Login = () => {
               }}
             />
             <p className="mt-2 text-center text-[14px]">
-              Don't have an account ?{" "}
               <Link to="/register" className="text-orange-500 underline">
-                Click here
+                Don't have an account ?
               </Link>
             </p>
           </form>
