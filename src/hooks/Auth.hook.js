@@ -63,6 +63,7 @@ export const useSignup = () => {
         setRegisterTemp(variables);
         navigate("/verifyotp");
       } else {
+        console.log(error)
         Error("Signup error", error)
       }
     },

@@ -15,7 +15,7 @@ function App() {
     AOS.init();
   }, []);
   return (
-    <GoogleOAuthProvider clientId={"126390749733-b29ar5aca6nnpu00d0ldu68nb3o5fo5f.apps.googleusercontent.com"}>
+    <GoogleOAuthProvider clientId={"126390749733-b29ar5aca6nnpu00d0ldu68nb3o5fo5f.apps.googleusercontent.com"}  locale="en">
       <RouterPath />
       {show &&
         <div

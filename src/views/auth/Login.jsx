@@ -12,11 +12,11 @@ import { useRememberMeStore, useMyTempStore, useAuthStore } from "../../store/au
 import { decryptPassword } from "../../helper/cryptoJS";
 import { Navigate } from "react-router-dom";
 // import { signInWithGoogle } from "../../helper/FirebaseApp";
-import { GoogleLogin } from "@react-oauth/google";
+import { useGoogleLogin, GoogleLogin } from "@react-oauth/google";
 import { gapi } from "gapi-script";
 import Loading from "../../components/Loading";
 import { Helmet } from "react-helmet-async";
-
+import axios from "axios";
 
 export const Login = () => {
   const { mutate: Login, error, isPending } = useLogin();
@@ -32,15 +32,15 @@ export const Login = () => {
   const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
 
-  useEffect(() => {
-    const initClient = () => {
-      gapi.client.init({
-        clientId: client_id,
-        scope: "",
-      });
-    };
-    gapi.load("client:auth2", initClient);
-  }, [])
+  // useEffect(() => {
+  //   const initClient = () => {
+  //     gapi.client.init({
+  //       clientId: client_id,
+  //       scope: "",
+  //     });
+  //   };
+  //   gapi.load("client:auth2", initClient);
+  // }, [])
   const validate = () => {
     let errors = {};
     if (!formData.username) {
@@ -86,6 +86,29 @@ export const Login = () => {
     // }
     setIsLoading(false);
   }
+  const login = useGoogleLogin({
+    onSuccess: async (tokenResponse) => {
+      try {
+        const res = await axios.get("https://www.googleapis.com/oauth2/v3/userinfo", {
+          headers: {
+            Authorization: `Bearer ${tokenResponse.access_token}`,
+          },
+        });
+        if (res) {
+          LoginWithGoogle({
+            "googleId": res?.data?.sub,
+            "name": res?.data?.name,
+            "email": res?.data?.email
+          })
+        }
+      } catch (error) {
+        console.error("Lỗi lấy thông tin người dùng:", error);
+      }
+    },
+    onError: () => {
+      console.log("Login thất bại");
+    },
+  });
   // ll
   return (
     <>
@@ -165,8 +188,8 @@ export const Login = () => {
               <p className="absolute bg-white px-2 text-gray-500">or</p>
               <hr className="w-full border border-gray-300" />
             </div>
-            {/* <div
-              onClick={handlesignInWithGoogle}
+            <div
+              onClick={login}
               className="mt-5 flex w-full items-center justify-center gap-x-2 rounded-lg border border-gray-300 py-2">
               <span
 
@@ -176,28 +199,34 @@ export const Login = () => {
                 Sign in with Google
               </span>
               <img src={googleLogo} alt="google" className="w-6" />
-            </div> */}
-            <GoogleLogin
-              className=" w-full"
-              client_id={"126390749733-b29ar5aca6nnpu00d0ldu68nb3o5fo5f.apps.googleusercontent.com"}
-              buttonText="Login with Google"
-              text="Login with Google"
-              onSuccess={(res) => {
-                setIsLoading(true);
-                const decoded = jwtDecode(res.credential);
-                LoginWithGoogle({
-                  "googleId": decoded.jti,
-                  "name": decoded.name,
-                  "email": decoded.email
-                })
-                // console.log('User info:', decoded);
-                // console.log('User info:', res);
-                setIsLoading(false);
-              }}
-              onError={(res) => {
-                console.log("Login Failed", res);
-              }}
-            />
+            </div>
+            <div >
+              <GoogleLogin
+                client_id={"126390749733-b29ar5aca6nnpu00d0ldu68nb3o5fo5f.apps.googleusercontent.com"}
+                onSuccess={(res) => {
+                  setIsLoading(true);
+                  const decoded = jwtDecode(res.credential);
+                  LoginWithGoogle({
+                    "googleId": decoded.jti,
+                    "name": decoded.name,
+                    "email": decoded.email
+                  })
+                  setIsLoading(false);
+                }}
+                onError={(res) => {
+                  console.log("Login Failed", res);
+                }}
+                text="continue_with"
+                theme="outline"
+                width="100%"
+                containerProps={{
+                  style: {
+                    width: "100% !important",
+                  },
+                }}
+
+              />
+            </div>
             <p className="mt-2 text-center text-[14px]">
               <Link to="/register" className="text-orange-500 underline">
                 Don't have an account ?
