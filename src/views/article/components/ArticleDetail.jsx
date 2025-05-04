@@ -14,10 +14,11 @@ import { FaLongArrowAltRight } from "react-icons/fa";
 import { Helmet } from "react-helmet";
 
 import { ButtonShare } from "../../../components/ButtonShare";
-
+import { useAuthStore } from "../../../store/authStore";
 export const ArticleDetail = () => {
   const { id } = useParams();
   const { data, error, isLoading } = useGetOneArticle(id);
+  const { AuthDetail} = useAuthStore();
   const { t } = useTranslation();
   if (error) {
     Swal.fire({
@@ -27,9 +28,9 @@ export const ArticleDetail = () => {
       showConfirmButton: false,
     });
   }
-  console.log(data?.data?.cover)
+  // console.log(data?.data?.cover)
   const navigate = useNavigate();
-  const shortDescription = data?.data?.content?.substring(0, 100) + "..."; // ตัด 200 ตัวอักษรแรก
+  // const shortDescription = data?.data?.content?.substring(0, 100) + "..."; // ตัด 200 ตัวอักษรแรก
   return (
     <>
       <Helmet>

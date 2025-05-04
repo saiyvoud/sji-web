@@ -47,7 +47,6 @@ export const Home = () => {
         <meta charSet="utf-8" />
         <title>SJI Investment - ສອນເຈົ້າລົງທຶນ</title>
         <link rel="canonical" href="http://sjiinvestment.la" />
-        <meta name="robots" content="index, follow" />
         <meta name="author" content="MiDi Technology, ບໍລິສັດ ມີດີ ເທັກໂນໂລຊີ ຈຳກັດ" />
         <meta name="keywords" content="SJI Investment,ສອນເຈົ້າລົງທຶນ, ລົງທຶນ,สอนลงทุน, การลงทุน" />
         <meta name="robots" content="index, follow" />

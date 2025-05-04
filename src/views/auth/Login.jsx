@@ -73,22 +73,10 @@ export const Login = () => {
   if (isLoggedIn()) {
     return <Navigate to="/home" replace />;
   }
-  const handlesignInWithGoogle = async () => {
-    setIsLoading(true);
-    // const user = await signInWithGoogle();
-    // // console.log(user);
-    // if (user) {
-    //   LoginWithGoogle({
-    //     "googleId": user.uid,
-    //     "name": user.displayName,
-    //     "email": user.email
-    //   })
-    // }
-    setIsLoading(false);
-  }
   const login = useGoogleLogin({
     onSuccess: async (tokenResponse) => {
       try {
+        setIsLoading(true);
         const res = await axios.get("https://www.googleapis.com/oauth2/v3/userinfo", {
           headers: {
             Authorization: `Bearer ${tokenResponse.access_token}`,
@@ -100,8 +88,11 @@ export const Login = () => {
             "name": res?.data?.name,
             "email": res?.data?.email
           })
+          setIsLoading(false);
         }
+        
       } catch (error) {
+        setIsLoading(false);
         console.error("Lỗi lấy thông tin người dùng:", error);
       }
     },
@@ -199,33 +190,6 @@ export const Login = () => {
                 Sign in with Google
               </span>
               <img src={googleLogo} alt="google" className="w-6" />
-            </div>
-            <div >
-              <GoogleLogin
-                client_id={"126390749733-b29ar5aca6nnpu00d0ldu68nb3o5fo5f.apps.googleusercontent.com"}
-                onSuccess={(res) => {
-                  setIsLoading(true);
-                  const decoded = jwtDecode(res.credential);
-                  LoginWithGoogle({
-                    "googleId": decoded.jti,
-                    "name": decoded.name,
-                    "email": decoded.email
-                  })
-                  setIsLoading(false);
-                }}
-                onError={(res) => {
-                  console.log("Login Failed", res);
-                }}
-                text="continue_with"
-                theme="outline"
-                width="100%"
-                containerProps={{
-                  style: {
-                    width: "100% !important",
-                  },
-                }}
-
-              />
             </div>
             <p className="mt-2 text-center text-[14px]">
               <Link to="/register" className="text-orange-500 underline">

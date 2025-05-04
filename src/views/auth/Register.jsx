@@ -168,14 +168,14 @@ export const Register = () => {
           </div>
           <div className="mb-3">
             <Input
-              label="Phone number (02xxxxxxxx)"
+              label="Phone number (20xxxxxxxx)"
               name="phoneNumber"
               value={formData.phoneNumber}
               onChange={handleChange}
               color="orange"
             />
-            {errors.phone && (
-              <p className="text-xs text-red-500">{errors.phone}</p>
+            {errors.phoneNumber && (
+              <p className="text-xs text-red-500">{errors.phoneNumber}</p>
             )}
           </div>
           <div className="mb-3">
