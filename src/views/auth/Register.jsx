@@ -12,6 +12,7 @@ import { signInWithGoogle } from "../../helper/FirebaseApp";
 import Loading from "../../components/Loading";
 import { useLoginWithGoogle } from "../../hooks/Auth.hook";
 import { Helmet } from "react-helmet-async";
+import { ToastContainer } from "react-toastify";
 export const Register = () => {
   const { mutate: Signup, error, isPending } = useSignup();
   const { mutate: LoginWithGoogle, error1, isPending1 } = useLoginWithGoogle();
@@ -109,6 +110,7 @@ export const Register = () => {
         <title>Register -SJI Investment</title>
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
+      
       {isLoading && <Loading />}
       <div className="col-span-8 hidden w-full md:col-span-6 md:block lg:col-span-7">
         <img src={bgAuth} loading="lazy" alt="" className="h-[800px] w-full object-cover" />
@@ -254,6 +256,7 @@ export const Register = () => {
             Have an account ?
             </Link>
           </p>
+          <ToastContainer/>
         </form>
       </div>
     </div>

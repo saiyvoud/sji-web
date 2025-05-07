@@ -15,6 +15,7 @@ import Skeleton from "../../../components/Skeleton";
 import SerachCompany from "./SerachCompany";
 import { Helmet } from "react-helmet-async";
 import ShowAnalysis2 from "./ShowAnalysis2";
+import NotFound from "../../../components/NotFound";
 export const AnalysisDetailCompany = () => {
   const navigate = useNavigate();
   const { t, i18n } = useTranslation();
@@ -27,16 +28,17 @@ export const AnalysisDetailCompany = () => {
   // const cid = localStorage.getItem('cid')
 
   if (error) {
-    Error({
-      title: "ເກີດຂໍ້ຜິດພາດ",
-      text: "ບໍ່ສາມາດດຶງຂໍ້ມູນໄດ້",
-    });
+    return (
+      <Navbar>
+        <NotFound />
+      </Navbar>
+    )
   }
 
   const handleBackPage = () => {
     navigate(-1);
   };
-  console.log(data?.data);
+  // console.log(data?.data);
   return (
     <>
       <Helmet>
@@ -115,7 +117,7 @@ export const AnalysisDetailCompany = () => {
 
               {showAnalysis === 2 && (
 
-                <ShowAnalysis2 data={data?.data?.financialFieldValue}/>
+                <ShowAnalysis2 data={data?.data?.financialFieldValue} />
               )}
               {showAnalysis === 3 && (
                 <div className="mb-20 h-full w-full bg-white">

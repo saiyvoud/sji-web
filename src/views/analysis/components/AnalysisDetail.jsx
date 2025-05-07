@@ -8,6 +8,7 @@ import { useGetCompany } from "../../../hooks/Company.hook";
 import { Error } from "../../../helper/sweetAlert";
 import Skeleton from "../../../components/Skeleton";
 import { FaLongArrowAltRight } from "react-icons/fa";
+import NotFound from "../../../components/NotFound";
 export const AnalysisDetail = () => {
   const { id } = useParams();
   const { data, error, isLoading } = useGetOnecountry(id);
@@ -30,10 +31,11 @@ export const AnalysisDetail = () => {
   };
 
   if (error || CompanyError) {
-    Error({
-      title: "ເກີດຂໍ້ຜິດພາດ",
-      text: "ບໍ່ສາມາດດຶງຂໍ້ມູນໄດ້",
-    });
+    return(
+      <Navbar>
+        <NotFound/>
+      </Navbar>
+    )
   }
   // kdk
   return (
@@ -44,6 +46,7 @@ export const AnalysisDetail = () => {
       ) : (
         <>
           <div className="w-full bg-[#002133] pt-20 lg:pt-24 pb-8">
+            
             <div className=" container px-2 lg:px-0 w-full lg:w-[1200px] md:[900px] mx-auto">
               <h1 className=" flex justify-start items-center gap-2 text-white">
                 <FaLongArrowAltRight />

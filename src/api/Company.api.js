@@ -5,7 +5,7 @@ export const GetCompany = async (findby) => {
     const response = await api.get(`company/getall?${findby}`);
     return response.data;
   } catch (error) {
-    throw new Error(error.response?.data?.message || "Get company failed");
+    throw error;
   }
 };
 export const GetOneCompany = async (id) => {

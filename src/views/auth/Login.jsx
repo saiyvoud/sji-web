@@ -17,7 +17,8 @@ import { gapi } from "gapi-script";
 import Loading from "../../components/Loading";
 import { Helmet } from "react-helmet-async";
 import axios from "axios";
-
+import { toast, ToastContainer } from "react-toastify";
+import { Bounce } from 'react-toastify';
 export const Login = () => {
   const { mutate: Login, error, isPending } = useLogin();
   const { mutate: LoginWithGoogle, error1, isPending1 } = useLoginWithGoogle();
@@ -64,6 +65,7 @@ export const Login = () => {
     const validationErrors = validate();
     setErrors(validationErrors);
 
+
     if (Object.keys(validationErrors).length === 0) {
       isRememberMe() ? setMyTemp(formData.username, formData.password) : clearMyTemp();
       Login(formData);
@@ -90,7 +92,7 @@ export const Login = () => {
           })
           setIsLoading(false);
         }
-        
+
       } catch (error) {
         setIsLoading(false);
         console.error("Lỗi lấy thông tin người dùng:", error);
@@ -108,6 +110,7 @@ export const Login = () => {
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
       {isLoading && <Loading />}
+      <ToastContainer/>
       <div className="grid grid-cols-1 md:grid-cols-12">
         <div className="col-span-8 hidden w-full md:col-span-7 md:block">
           <img src={bgAuth} loading="lazy" alt="" className="h-screen w-full object-cover" />

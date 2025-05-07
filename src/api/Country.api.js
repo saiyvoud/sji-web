@@ -13,6 +13,6 @@ export const GetOnecountry = async (id) => {
     const response = await api.get(`country/getone/${id}`);
     return response.data;
   } catch (error) {
-    throw new Error(error.response?.data?.message || "Get One country failed");
+    throw error;
   }
 };
