@@ -183,13 +183,13 @@ const Profile = () => {
                             <Input
                                 type='text'
                                 label={t("profile.fname")}
-                                value={data?.data?.firstName}
+                                value={data?.data?.firstName === "required" ?"" : data?.data?.firstName}
                                 readOnly
                             />
                             <Input
                                 type='text'
                                 label={t("profile.lname")}
-                                value={data?.data?.lastName}
+                                value={data?.data?.lastName === "required" ?"" : data?.data?.lastName}
                                 readOnly
                             />
                         </div>
@@ -197,7 +197,7 @@ const Profile = () => {
                             <Input
                                 type='text'
                                 label={t("profile.phone")}
-                                value={data?.data?.phoneNumber}
+                                value={data?.data?.phoneNumber === "required" ?"" : data?.data?.phoneNumber}
                                 readOnly
                             />
                             <Input type='text' label={t("profile.email")} value={data?.data?.email} readOnly />
