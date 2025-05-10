@@ -7,6 +7,7 @@ import { Error, Success } from '../../helper/sweetAlert';
 //import { useLogin } from '../../hooks/Auth.hook';
 import { useSignup } from '../../hooks/Auth.hook';
 import { Helmet } from 'react-helmet-async';
+import { ToastContainer } from 'react-toastify';
 const VerifyOTP = () => {
     const navigate = useNavigate();
     const { mutate: Signup, error, isPending } = useSignup();
@@ -94,6 +95,7 @@ const VerifyOTP = () => {
             </Helmet>
             {isLoading && <Loading />}
             {isPending && <Loading />}
+            <ToastContainer/>
             <div class=" w-[300px] lg:w-[30%] md:w-[50%] mx-auto mt-20 border border-gray-300 rounded-lg shadow-lg p-5">
 
                 <div class="card p-2 text-center">

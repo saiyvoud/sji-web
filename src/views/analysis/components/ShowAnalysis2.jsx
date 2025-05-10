@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import ShowStatement from './ShowStatement'
 import { useState } from 'react'
 const ShowAnalysis2 = ({ data }) => {
-    console.log(data)
+    // console.log(data)
     const [showRecieve, setShowRecieve] = useState("");
     const [reciveIndex, setReciveIndex] = useState(0);
     const [currency, setCurrency] = useState("ລ້ານກີບ");

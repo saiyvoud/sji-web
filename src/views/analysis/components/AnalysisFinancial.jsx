@@ -24,7 +24,7 @@ export const AnalysisFinancial = ({ data }) => {
     years.push(i.year);
     values.push(i.value);
   }
-  console.log(data)
+  // console.log(data)
 
 
   const option = {

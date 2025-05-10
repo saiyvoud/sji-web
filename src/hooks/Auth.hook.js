@@ -63,7 +63,7 @@ export const useSignup = () => {
         setRegisterTemp(variables);
         navigate("/verifyotp");
       } else {
-        console.log(error)
+        // console.log(error)
         Error("Signup error", error)
       }
     },
@@ -95,7 +95,7 @@ export const useGetMe = () => {
     queryFn: () => getMe(), // Fetch company data
     // enabled: !!id,
     onError: (error) => {
-      console.error("Get me error:", error.message);
+      // console.error("Get me error:", error.message);
     },
   });
 };

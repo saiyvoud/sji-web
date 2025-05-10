@@ -44,6 +44,21 @@ export const Navbar = ({ children }) => {
   const toggleMenu = () => {
     setIsMenuVisible(!isMenuVisible);
   };
+  useEffect(() => {
+    // console.log(AuthDetail)
+    if (AuthDetail?.data?.token) {
+      const date = new Date();
+      const token_expired_at = new Date(AuthDetail?.data?.token_expired_at)
+      console.log(date > token_expired_at)
+      if (date > token_expired_at) {
+        if (AuthDetail?.data?.displayName !== null || AuthDetail?.data?.displayName !== "") {
+          signOutGoogle();
+        }
+        clearAuthDetail();
+        window.location.href = "/login"
+      }
+    }
+  }, [])
 
   const dataNav = [
     { title: "navbar.home", path: "/" },

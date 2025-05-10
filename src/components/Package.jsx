@@ -11,7 +11,7 @@ const Package = () => {
     const { data, error, isLoading } = useGetPAckages("page=1&limit=5");
     const { AuthDetail } = useAuthStore();
     const packages = data?.data?.data;
-    console.log(packages)
+    // console.log(packages)
     const handleRegisterPackage = (id) => {
         if (AuthDetail?.data?.token) {
             navigate("/register/package/" + id);

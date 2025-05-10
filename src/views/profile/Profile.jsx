@@ -11,6 +11,7 @@ import { changePass, editProfile } from '../../api/Auth';
 import { Error, Success } from '../../helper/sweetAlert';
 import Loading from '../../components/Loading';
 import { delay } from 'lodash';
+import { Bounce, toast, ToastContainer } from 'react-toastify';
 const Profile = () => {
     const navigate = useNavigate();
     const { data, error, isLoading } = useGetMe();
@@ -25,7 +26,7 @@ const Profile = () => {
     const [conPass, setConPass] = useState("");
 
     const { t } = useTranslation();
-
+    // console.log(data)
     // const handelFanme = (e) => {
     //     if (data?.data?.firstName === e.target.value || e.target.value === "") {
     //         setDisableEdit(true);
@@ -56,28 +57,54 @@ const Profile = () => {
         const { value: formValues } = await Swal.fire({
             title: t("profile.changeInfo") + " " + t("profile.title"),
             html: `
-              <input id="swal-input1" class="swal2-input" placeholder=${t("profile.fname")} value=${data?.data?.firstName} required >
-              <input id="swal-input2" class="swal2-input" placeholder=${t("profile.lname")} value=${data?.data?.lastName} required >
-              <input id="swal-input3" class="swal2-input" placeholder=${t("profile.phone")} value=${data?.data?.phoneNumber} required >
+              <input id="swal-input1" class="swal2-input" placeholder=${t("profile.fname")} >
+              <input id="swal-input2" class="swal2-input" placeholder=${t("profile.lname")}  >
+              <input id="swal-input3" class="swal2-input" placeholder=${t("profile.phone")} >
             `,
             focusConfirm: false,
             preConfirm: () => {
+                const firstName = document.getElementById("swal-input1").value;
+                const lastName = document.getElementById("swal-input2").value;
+                const phoneNumber = document.getElementById("swal-input3").value;
+                // Validate the inputs
+                if (!firstName || !lastName || !phoneNumber) {
+                    Swal.showValidationMessage(t("ກະລຸນາເພີ່ມຂໍ້ມູນໃຫ້ຄົນ"));
+                    return false; // Stop submission if fields are missing
+                }
+
+                // Validate phone number format (starting with '20' followed by 8 digits)
+                const phoneRegex = /^20\d{8}$/;
+                if (!phoneRegex.test(phoneNumber)) {
+                    Swal.showValidationMessage(t("ເບີບໍ່ຖືກຕ້ອງ (20xxxxxxxx)"));
+                    return false; // Stop submission if phone number is invalid
+                }
                 return {
-                    firstName: document.getElementById("swal-input1").value,
-                    lastName: document.getElementById("swal-input2").value,
-                    phoneNumber: document.getElementById("swal-input3").value
+                    firstName,
+                    lastName,
+                    phoneNumber
                 };
             }
         });
+        // console.log(formValues)
         if (formValues) {
             setLoading(true);
             const result = await editProfile(formValues)
             setLoading(false);
             if (result) {
-                Success("Edit success");
+                toast.success(Success, {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    transition: Bounce,
+                });
                 window.location.reload();
             } else {
-                Error("Edit Error");
+                // Error("Edit Error");
             }
         }
     }
@@ -97,19 +124,46 @@ const Profile = () => {
                 "password": newPass,
                 "confirmPassword": conPass
             });
+
             setLoading(false);
+            // console.log(result)
             if (result.status) {
-                Success("Success");
                 setOldPass("");
                 setConPass("");
                 setNewPass("");
+                toast.success("Success", {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    transition: Bounce,
+                })
 
-            }
-            if (result?.response?.data?.status !== 200) {
-                console.log(result)
+
+            } else {
                 Error(result?.response?.data?.messages || "Password is wrong")
             }
-
+            if (result?.response?.status !== 200) {
+                console.log(result)
+                toast.warning("Password is wrong", {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    transition: Bounce,
+                }).then(()=>{
+                    window.location.reload();
+                });
+                // Error(result?.response?.data?.messages || "Password is wrong")
+            }
         }
 
     }
@@ -117,6 +171,7 @@ const Profile = () => {
     return (
         <Navbar>
             {loading && <Loading />}
+            <ToastContainer />
             <div className=' py-28 bg-gray-200'>
                 <div className="container px-2 lg:px-0 w-full lg:w-[1200px] md:[900px] mx-auto ">
                     <div className=' bg-white px-3 py-5 rounded-lg'>

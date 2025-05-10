@@ -1,7 +1,7 @@
 import React from 'react'
 import Empty from "../../../components/Empty";
 const ShowStatement = ({ data }) => {
-    console.log(data)
+    // console.log(data)
     return (
         <div className="w-full overflow-y-auto">
             <table className=" table-auto w-full">

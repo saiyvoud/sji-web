@@ -30,7 +30,7 @@ const SerachCompany = () => {
                 return;
             }
             const res = await findCompany(`search=${key}&country=${country.name === 'all' ? '' : country.name}`)
-            console.log(res.data.data);
+            // console.log(res.data.data);
             setResults(res.data.data);
         }, 200); // Đợi 300ms sau khi nhập mới gọi API
 

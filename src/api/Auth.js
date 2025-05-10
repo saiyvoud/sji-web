@@ -32,7 +32,7 @@ export const getMe = async () => {
     const response = await api.get("/me");
     return response.data;
   } catch (error) {
-    throw error.response.data.messages
+    // throw error.response.data.messages
   }
 }
 
@@ -75,6 +75,7 @@ export const changePass = async (data) => {
     const response = await api.put("changed-password", data);
     return response.data;
   } catch (error) {
+    // console.log(error)
     return error;
   }
 }
