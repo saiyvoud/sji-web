@@ -49,7 +49,7 @@ export const Navbar = ({ children }) => {
     if (AuthDetail?.data?.token) {
       const date = new Date();
       const token_expired_at = new Date(AuthDetail?.data?.token_expired_at)
-      console.log(date > token_expired_at)
+      // console.log(date > token_expired_at)
       if (date > token_expired_at) {
         if (AuthDetail?.data?.displayName !== null || AuthDetail?.data?.displayName !== "") {
           signOutGoogle();
