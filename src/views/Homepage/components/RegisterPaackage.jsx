@@ -13,6 +13,7 @@ import { createOrderPackage } from "../../../api/Package";
 import Loading from "../../../components/Loading"
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet-async";
+import { Input } from "@material-tailwind/react";
 const RegisterPaackage = () => {
     const navigate = useNavigate();
     const { t } = useTranslation();
@@ -21,9 +22,11 @@ const RegisterPaackage = () => {
     const item = data?.data
     const [image, setImage] = useState(null);
     const [imageTemp, setImageTemp] = useState(null);
-
+    const [fname, setFname] = useState("");
+    const [lname, setLname] = useState("");
+    const [phone, setPhone] = useState("");
     const [loading, setLoading] = useState(false);
-
+    const [errors, setErrors] = useState(null);
     const handleFileChange = (event) => {
         const file = event.target.files?.[0];
         if (file && file.type.startsWith("image/")) {
@@ -62,13 +65,29 @@ const RegisterPaackage = () => {
 
     const Submit = async (event) => {
         event.preventDefault();
+        const error = {}
         if (!image) {
-            Warning("ບໍ່ສຳເລັດ", "ບໍ່ມີ slip ໂອນເງິນ");
-            return;
+            error.image = "ບໍ່ມີ slip ໂອນເງິນ"
+        }
+        if (fname === "") {
+            error.fname = "ໃສ່ຊື່"
+        }
+        if (lname === "") {
+            error.lname = "ໃສ່ນາມສະກຸນ"
+        }
+        if (phone === "") {
+            error.phone = "ເບີ whatapp"
         } else {
+            const phoneRegex = /^20\d{8}$/;
+            if (!phoneRegex.test(phone)) {
+                error.phone = "ເບີບໍ່ຖືກຕ້ອງ (20xxxxxxxx)";
+            }
+        }
+
+        if (Object.keys(error).length === 0) {
             try {
                 setLoading(true);
-                const x = await createOrderPackage({ packageId: id, slip: image })
+                const x = await createOrderPackage({ packageId: id, slip: image,firstName:fname,lastName:lname,phoneNumber:phone })
                 const jsonString = encodeURIComponent(JSON.stringify(x.data));
                 navigate(`/package/success/${jsonString}`);
                 setLoading(false);
@@ -77,6 +96,9 @@ const RegisterPaackage = () => {
                 setLoading(false);
                 throw error;
             }
+        }
+        else {
+            setErrors(error);
         }
     }
     return (
@@ -120,10 +142,33 @@ const RegisterPaackage = () => {
                 <div className="container mx-auto mt-5 mb-20 h-full w-full max-w-[340px] rounded-lg border-2 bg-white sm:max-w-[620px] lg:max-w-[900px]">
 
                     <h1 className="w-full rounded-t-lg bg-[#7AA3B2] py-4 text-center text-[30px] font-extrabold text-white">
-                        ຊ່ອງທາງການຊຳລະເງິນ
+                        ສະໝັກສະມາຊິກ
                     </h1>
                     <div className="rounded-lg bg-white pb-4">
-                        <form onSubmit={Submit} className="h-full w-full rounded-lg">
+                        <form onSubmit={Submit} className="h-full w-full rounded-lg px-2">
+                            <div className="mt-3 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-3">
+                                <div>
+                                    <Input
+                                        type="text" label="ຊື່"
+                                        value={fname}
+                                        onChange={(e) => setFname(e.target.value)} />
+                                    <span className=" text-sm text-red-500">{errors?.fname && errors?.fname}</span>
+                                </div>
+                                <div>
+                                    <Input
+                                        type="text" label="ນາມສະກຸນ"
+                                        value={lname}
+                                        onChange={(e) => setLname(e.target.value)} />
+                                    <span className=" text-sm text-red-500">{errors?.lname && errors?.lname}</span>
+                                </div>
+                                <div>
+                                    <Input
+                                        type="text" label="ເບີ whatapp"
+                                        value={phone}
+                                        onChange={(e) => setPhone(e.target.value)} />
+                                    <span className=" text-sm text-red-500">{errors?.phone && errors?.phone}</span>
+                                </div>
+                            </div>
                             <div className="w-full mt-4 grid grid-cols-1 md:flex md:justify-around lg::flex lg::justify-around">
                                 <div className="w-full mb-4 flex flex-col  justify-center items-center">
                                     <p>BCEL ONE</p>

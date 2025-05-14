@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Navbar } from "../../../components/Navbar";
 import "react-phone-input-2/lib/style.css";
 // import bgOverlay2 from "../../../assets/images/bg3.png";
@@ -6,11 +6,21 @@ import "react-phone-input-2/lib/style.css";
 import stopWatch from "../../../assets/icons/stopwatch.png";
 
 import { Link, useParams } from "react-router-dom";
+import NotFound from '../../../components/NotFound';
 
 const PaySuccess = () => {
     const { data } = useParams();
-
-    const jsonData = JSON.parse(decodeURIComponent(data));
+    const [jsonData, setJsondata] = useState([]);
+    try {
+        const jsonData = JSON.parse(decodeURIComponent(data));
+        setJsondata(jsonData);
+    } catch (error) {
+        return (
+            <Navbar>
+                <NotFound />
+            </Navbar>
+        )
+    }
     // console.log(jsonData);
     return (
         <Navbar>
@@ -36,7 +46,7 @@ const PaySuccess = () => {
                             ລຳຖ້າການອະມຸມັດການຊຳລະເງິນຈາກແອດມິນ
                         </h1>
                         <div>
-                            <p>ເລກທີ: {jsonData.id}</p>
+                            {/* <p>ເລກທີ: {jsonData.id}</p> */}
                             <p>ຈຳນວນເງິນ: {Number(jsonData.price)}</p>
                             <p>ສະຖານະ: {jsonData.status}</p>
 
